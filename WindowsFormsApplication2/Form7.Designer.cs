@@ -41,7 +41,7 @@
             // 
             this.metroProgressBar1.Location = new System.Drawing.Point(23, 130);
             this.metroProgressBar1.Name = "metroProgressBar1";
-            this.metroProgressBar1.Size = new System.Drawing.Size(478, 33);
+            this.metroProgressBar1.Size = new System.Drawing.Size(613, 33);
             this.metroProgressBar1.TabIndex = 0;
             // 
             // timer1
@@ -104,7 +104,7 @@
             this.metroTextBox1.SelectionLength = 0;
             this.metroTextBox1.SelectionStart = 0;
             this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(409, 23);
+            this.metroTextBox1.Size = new System.Drawing.Size(544, 23);
             this.metroTextBox1.TabIndex = 5;
             this.metroTextBox1.Text = "...";
             this.metroTextBox1.UseSelectable = true;
@@ -115,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 209);
+            this.ClientSize = new System.Drawing.Size(659, 209);
             this.ControlBox = false;
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroLabel3);
@@ -128,7 +128,7 @@
             this.Name = "Form7";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
-            this.Text = "Extracting ISO files and verifiying install.wim";
+            this.Text = "Extracting ISO files and verifiying Windows Setup Package";
             this.Load += new System.EventHandler(this.Form7_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

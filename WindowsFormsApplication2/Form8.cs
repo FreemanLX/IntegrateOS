@@ -43,28 +43,32 @@ namespace WindowsFormsApplication2
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "*.esd|*.esd";
-            if (ofd.ShowDialog() == DialogResult.OK)
+            try
             {
-
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Filter = "*.esd|*.esd";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    txtPath.Text = ofd.FileName;
-                    WindowsSetup.Variabile.locatie = txtPath.Text;
-                    MessageBox.Show("Your WIM file has been chosen successfully!");
+
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        txtPath.Text = ofd.FileName;
+                        WindowsSetup.Variabile.locatie = txtPath.Text;
+                        MessageBox.Show("Your WIM file has been chosen successfully!");
+                    }
+                }
+
+                if (WindowsSetup.Variabile.locatie.Length > 0)
+                {
+                    metroButton3.Visible = true;
+                }
+
+                if (WindowsSetup.Variabile.locatie.Length == 1)
+                {
+                    metroButton3.Visible = false;
                 }
             }
-
-            if(WindowsSetup.Variabile.locatie.Length > 0)
-            {
-                metroButton3.Visible = true;
-            }
-
-            if (WindowsSetup.Variabile.locatie.Length == 1)
-            {
-                metroButton3.Visible = false;
-            }
+            catch { }
         }
 
         private void metroButton2_Click(object sender, EventArgs e)

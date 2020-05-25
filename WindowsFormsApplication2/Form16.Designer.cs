@@ -46,11 +46,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(38, 182);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(510, 30);
+            this.label2.Size = new System.Drawing.Size(507, 30);
             this.label2.TabIndex = 5;
             this.label2.Text = "Installation failed. You closed the installation progress\r\n";
             this.label2.Click += new System.EventHandler(this.label2_Click);

@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Security.Principal;
 using System.IO;
-using System.Diagnostics;
 
 namespace WindowsFormsApplication2
 {
@@ -18,44 +11,10 @@ namespace WindowsFormsApplication2
         {
             InitializeComponent();
         }
+        WindowsSetup.Variabile g = new WindowsSetup.Variabile(); 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            if (File.Exists(@"1.txt"))
-            {
-                File.Delete(@"1.txt");
-            }
-            if (File.Exists(@"2.txt"))
-            {
-                File.Delete(@"2.txt");
-            }
-            if (File.Exists(@"disk.txt"))
-            {
-                File.Delete(@"disk.txt");
-            }
-            if (File.Exists(@"done.dll"))
-            {
-                File.Delete(@"done.dll");
-            }
-            File.Delete("drive.txt");
-            File.Delete("edit.dll");
-            File.Delete("error.dll");
-            File.Delete("fix.txt");
-            File.Delete("format1.txt");
-            File.Delete("hdd.dll");
-            if (File.Exists("hdd1.dll"))
-            {
-                File.Delete("hdd1.dll");
-            }
-            File.Delete("location.txt");
-            File.Delete("temp.dll");
-            File.Delete("upv.dll");
-            File.Delete("verify.dll");
-            File.Delete("wimdone.dll");
-            File.Delete("work.dll");
-            File.Delete("index.dll");
-            File.Delete("indice.dll");
-            File.Delete("fedition.txt");
-            File.Delete("edition.txt");
+            g.Clear();
             Environment.Exit(0);
 
         }
@@ -80,7 +39,7 @@ namespace WindowsFormsApplication2
 
 
             
-            if (File.Exists("imagex.exe") && File.Exists("bcdboot.exe") && File.Exists("bootsect.exe") && File.Exists("bcdedit.exe"))
+            if (File.Exists("Packages\\imagex.exe") && File.Exists("Packages\\bcdboot.exe") && File.Exists("Packages\\bootsect.exe") && File.Exists("Packages\\bcdedit.exe") && File.Exists("Packages\\dism.exe"))
             {
 
 

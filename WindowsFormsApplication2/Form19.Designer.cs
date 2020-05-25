@@ -29,30 +29,41 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form19));
-            this.label1 = new System.Windows.Forms.Label();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(100, 137);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(372, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Your Windows is installed. Click \"Close\".";
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(154, 194);
+            this.metroButton1.Location = new System.Drawing.Point(23, 440);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(244, 44);
+            this.metroButton1.Size = new System.Drawing.Size(139, 29);
             this.metroButton1.TabIndex = 1;
-            this.metroButton1.Text = "Close";
+            this.metroButton1.Text = "Exit";
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.Location = new System.Drawing.Point(438, 440);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(139, 29);
+            this.metroButton2.TabIndex = 2;
+            this.metroButton2.Text = "Restart now";
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.Location = new System.Drawing.Point(43, 211);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(509, 50);
+            this.metroLabel1.TabIndex = 3;
+            this.metroLabel1.Text = "Click restart if you want to restart to see directly the results or exit \r\nif you" +
+    " want to exit";
             // 
             // Form19
             // 
@@ -60,8 +71,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(600, 480);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
-            this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -77,8 +89,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }

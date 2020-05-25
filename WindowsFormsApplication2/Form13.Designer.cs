@@ -38,7 +38,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -121,17 +120,6 @@
             this.label8.TabIndex = 18;
             this.label8.Text = "(0 %)";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(353, 76);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 24);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "(0 %)";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -175,7 +163,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
@@ -207,7 +194,6 @@
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label8;
-        public System.Windows.Forms.Label label9;
         public MetroFramework.Controls.MetroProgressBar progressBar1;
     }
 }

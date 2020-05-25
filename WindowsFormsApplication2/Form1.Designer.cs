@@ -80,9 +80,9 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(224, 416);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(121, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(129, 19);
             this.metroLabel1.TabIndex = 9;
-            this.metroLabel1.Text = "Version: v0.1.5_beta";
+            this.metroLabel1.Text = "Version: v0.1.8.1_beta";
             // 
             // pictureBox2
             // 

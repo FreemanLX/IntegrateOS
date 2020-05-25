@@ -65,11 +65,11 @@ namespace WindowsSetup
                     Directory.CreateDirectory(path);
                 }
             }
-            catch (DirectoryNotFoundException Ex)
+            catch (DirectoryNotFoundException)
             {
                 AppendDirectory(Path.GetDirectoryName(path));
             }
-            catch (PathTooLongException Exx)
+            catch (PathTooLongException)
             {
                 AppendDirectory(Path.GetDirectoryName(path));
             }

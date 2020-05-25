@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Diagnostics;
-using SevenZip.Compression.LZMA;
 using System.IO;
 
 namespace WindowsSetup
@@ -15,9 +13,6 @@ namespace WindowsSetup
         }
         WindowsSetup.Variabile g = new WindowsSetup.Variabile();
         internal static string alg;
-
-
-
 
         private void Form6_Load(object sender, EventArgs e)
         {

@@ -32,7 +32,6 @@
             this.button2 = new MetroFramework.Controls.MetroButton();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.button0 = new MetroFramework.Controls.MetroButton();
@@ -43,9 +42,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(23, 412);
+            this.button2.Location = new System.Drawing.Point(23, 373);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(203, 36);
+            this.button2.Size = new System.Drawing.Size(120, 33);
             this.button2.TabIndex = 1;
             this.button2.Text = "Folder";
             this.button2.UseSelectable = true;
@@ -53,7 +52,7 @@
             // 
             // metroLabel2
             // 
-            this.metroLabel2.Location = new System.Drawing.Point(23, 99);
+            this.metroLabel2.Location = new System.Drawing.Point(23, 70);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(554, 44);
             this.metroLabel2.TabIndex = 3;
@@ -65,35 +64,26 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(23, 196);
+            this.metroLabel3.Location = new System.Drawing.Point(23, 167);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(510, 38);
+            this.metroLabel3.Size = new System.Drawing.Size(510, 19);
             this.metroLabel3.TabIndex = 4;
             this.metroLabel3.Text = "Windows Imaging Format is a file-based disk image format. (for advanced users onl" +
-    "y)\r\n";
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 60);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(386, 26);
-            this.metroLabel1.TabIndex = 6;
-            this.metroLabel1.Text = "Select one button below to continue\r\n\r\n";
+    "y)";
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(23, 321);
+            this.metroButton2.Location = new System.Drawing.Point(23, 283);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(203, 36);
+            this.metroButton2.Size = new System.Drawing.Size(120, 31);
             this.metroButton2.TabIndex = 7;
-            this.metroButton2.Text = "ISO (Udf type file)";
+            this.metroButton2.Text = "ISO";
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroLabel4
             // 
-            this.metroLabel4.Location = new System.Drawing.Point(23, 276);
+            this.metroLabel4.Location = new System.Drawing.Point(23, 238);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(554, 42);
             this.metroLabel4.TabIndex = 8;
@@ -104,9 +94,9 @@
             // 
             // button0
             // 
-            this.button0.Location = new System.Drawing.Point(23, 146);
+            this.button0.Location = new System.Drawing.Point(23, 117);
             this.button0.Name = "button0";
-            this.button0.Size = new System.Drawing.Size(203, 36);
+            this.button0.Size = new System.Drawing.Size(120, 34);
             this.button0.TabIndex = 9;
             this.button0.Text = "ESD";
             this.button0.UseSelectable = true;
@@ -117,7 +107,7 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.BackColor = System.Drawing.Color.Red;
             this.metroLabel5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.metroLabel5.Location = new System.Drawing.Point(23, 371);
+            this.metroLabel5.Location = new System.Drawing.Point(23, 332);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(433, 38);
             this.metroLabel5.TabIndex = 10;
@@ -128,9 +118,9 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(23, 227);
+            this.metroButton1.Location = new System.Drawing.Point(23, 189);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(203, 36);
+            this.metroButton1.Size = new System.Drawing.Size(120, 32);
             this.metroButton1.TabIndex = 11;
             this.metroButton1.Text = "WIM";
             this.metroButton1.UseSelectable = true;
@@ -138,12 +128,11 @@
             // 
             // metroButton3
             // 
-            this.metroButton3.Enabled = false;
             this.metroButton3.Location = new System.Drawing.Point(482, 434);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(107, 36);
             this.metroButton3.TabIndex = 12;
-            this.metroButton3.Text = "Page2";
+            this.metroButton3.Text = "Page 2";
             this.metroButton3.UseSelectable = true;
             // 
             // Form5
@@ -158,7 +147,6 @@
             this.Controls.Add(this.button0);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.button2);
@@ -179,7 +167,6 @@
         private MetroFramework.Controls.MetroButton button2;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroButton button0;

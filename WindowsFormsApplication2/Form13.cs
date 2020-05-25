@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
 using System.Threading;
+using WindowsSetup;
+
 
 namespace WindowsFormsApplication2
 {
@@ -19,32 +21,12 @@ namespace WindowsFormsApplication2
            
         }
 
-        private void cmd(string s, int e = 1)
-         {
-            
-            Process cmd = new Process();
-            cmd.StartInfo.FileName = "cmd.exe";
-            cmd.StartInfo.RedirectStandardInput = true;
-            cmd.StartInfo.RedirectStandardOutput = true;
-            cmd.StartInfo.CreateNoWindow = true;
-            cmd.StartInfo.UseShellExecute = false;
-            cmd.Start();
 
-            cmd.StandardInput.WriteLine(s);
-            cmd.StandardInput.Flush();
-            cmd.StandardInput.Close();
-            if (e == 1)
-            {
-                cmd.WaitForExit();
-                Console.WriteLine(cmd.StandardOutput.ReadToEnd());
-            }
-        }
 
         private void Conquer(string loading)
         {
-            string dism = "dism /export-image /SourceImageFile:" + loading + " /SourceIndex:" + WindowsSetup.Variabile.fix + " /DestinationImageFile:" + WindowsSetup.Variabile.format + "\\install.wim " + "/Compress:none / CheckIntegrity";
-            cmd(dism);
-
+            string dism = "Packages\\dism /export-image /SourceImageFile:" + "\"" + loading + "\"" + " /SourceIndex:" + WindowsSetup.Variabile.fix + " /DestinationImageFile:" + WindowsSetup.Variabile.format + "\\install.wim " + "/Compress:none / CheckIntegrity";
+            CMD_Process_Class.Process_CMD(dism);
         }
         long min(long a, long b)
         {
@@ -67,132 +49,61 @@ namespace WindowsFormsApplication2
             return result;
         }
 
-            private void Imagex(string loading)
-            {
-            int load_temp_c = 0;
-            string imagex = "dism /Apply-Image /ImageFile:" + loading + " /index:" + WindowsSetup.Variabile.fix + " /ApplyDir:" + WindowsSetup.Variabile.format + "\\ > temp.txt";
-            Process cmd1 = new Process();
-            cmd1.StartInfo.FileName = "cmd.exe";
-            cmd1.StartInfo.RedirectStandardInput = true;
-            cmd1.StartInfo.RedirectStandardOutput = true;
-            cmd1.StartInfo.CreateNoWindow = true;
-            cmd1.StartInfo.UseShellExecute = false;
-            cmd1.Start();
-            cmd1.StandardInput.WriteLine(imagex);
-            cmd1.StandardInput.Flush();
-            int e = 0;
-            label9.Text = String.Format("(0 %)");
-            int fu = 1;
-            int f = 6;
-            string temp = "";
-            string co = fu.ToString();
-            string complete = "Temp\\temp" + co + ".txt";
-            Thread.Sleep(3000);
-            label9.Text = string.Format("({0} %)", e);
-            while (e < 95)
-            {
-                if (File.Exists("temp.txt"))
+         private void Imagex(string loading)
+         {
+            Thread t1 = new Thread(
+                ()=>
                 {
-                   
-                    string[] load_all;
-                    if (e == 0)
-                        load_all = File.ReadAllLines("TEMP\\temp0.txt");
-                    else
-                    {
-                        File.Copy("temp.txt", complete, true);
-                        load_all = File.ReadAllLines(complete);
-                    }
-
-                    string complete_load = "";
-                    if (load_all.Length != 0)
-                    {
-                        int gaa;
-                        if (e == 0)
-                        {
-                            gaa = 6;
-
-                        }
-                        else
-                            gaa = CountLines(complete) - 1;
-
-
-                        int k;
-                        for (k = 0; k <= gaa; k++)
-                        {
-                            if (load_all[gaa][0] == '[' && load_all[gaa] != " ")
-                            {
-                                complete_load = load_all[gaa];
-                                break;
-                            }
-                        }
-                        string load = complete_load;
-                        if (load != null && load!="")
-                        {
-                            int kx = 0;
-                            for (int i = 0; i < load.Length; i++)
-                                if (load[i] <= '9' && load[i] >= '0')
-                                {
-                                    kx = kx + load[i] - '0';
-                                    kx *= 10;
-                                }
-                            kx /= 100;
-                            e = kx;
-                            label9.Text = string.Format("({0} %)", kx);
-                            label9.Refresh();
-                            if (load_temp_c != e / 4)
-                            {
-                                if (e == 94)
-                                    progressBar1.Value = 40;
-                                else
-                                {
-                                    progressBar1.Value = 15 + e / 4;
-                                    load_temp_c = e / 4;
-                                }
-                            }
-                            label7.Text = progressBar1.Value.ToString() + " %";
-                            label7.Refresh();
-                            fu++;
-                            f += 2;
-                            co = fu.ToString();
-                            complete = "Temp\\temp" + co + ".txt";
-                            Thread.Sleep(5000);
-                            temp = load;
-                        }
-                    }
+                    string imagex = "Packages\\dism /Apply-Image /ImageFile:" + "\"" + loading + "\"" + " /index:" + WindowsSetup.Variabile.fix + " /ApplyDir:" + WindowsSetup.Variabile.format + "\\ > Packages\\temp.txt";
+                    Process cmd1 = new Process();
+                    cmd1.StartInfo.FileName = "cmd.exe";
+                    cmd1.StartInfo.RedirectStandardInput = true;
+                    cmd1.StartInfo.RedirectStandardOutput = true;
+                    cmd1.StartInfo.CreateNoWindow = true;
+                    cmd1.StartInfo.UseShellExecute = false;
+                    cmd1.Start();
+                    cmd1.StandardInput.WriteLine(imagex);
+                    cmd1.StandardInput.Flush();
+                    cmd1.WaitForExit();
                 }
+            )
+            { IsBackground = true};
+            t1.Start();
+            while (t1.IsAlive)
+            {
+                Thread.Sleep(500);
+                Application.DoEvents();
             }
-            label9.Text = "(100 %)";
-            label9.Refresh();
-            Thread.Sleep(1000);
+
 
         }
 
         private void Bcdboot()
         {
             string bcdboot;
-            bcdboot = "bcdboot " + WindowsSetup.Variabile.format + "\\Windows /s " + WindowsSetup.Variabile.format + "\\" + " /f all";
-            cmd(bcdboot);
+            bcdboot = "Packages\\bcdboot " + WindowsSetup.Variabile.format + "\\Windows /s " + WindowsSetup.Variabile.format + "\\" + " /f all";
+            CMD_Process_Class.Process_CMD(bcdboot);
 
         }
         private void Bootsect()
         {
-            string bootsect = "bootsect /NT60 " + WindowsSetup.Variabile.format + " /force";
-            cmd(bootsect);
+            string bootsect = "Packages\\bootsect /NT60 " + WindowsSetup.Variabile.format + " /force";
+            CMD_Process_Class.Process_CMD(bootsect);
         }
 
         private void Bcdedit()
         {
             string firstbcdedit;
-            firstbcdedit = "bcdedit /copy {current} /d \"Windows\" > edit.dll";
-            cmd(firstbcdedit);
+            firstbcdedit = "Packages\\bcdedit /copy {current} /d \"Windows\" > edit.dll";
+            CMD_Process_Class.Process_CMD(firstbcdedit);
             string lines = File.ReadAllText(@"edit.dll");
             string[] s1 = lines.Split('{');
-            string ep = "bcdedit.exe /set " + s1[1] + "device partiion=" + WindowsSetup.Variabile.format;
-            cmd(ep);
-            string ep1 = "bcdedit.exe /set " + s1[1] + " path \\Windows\\system32\\winload.exe";
-            cmd(ep1);
-            string ep2 = "bcdedit.exe /set " + s1[1] + " systemroot \\Windows";
-            cmd(ep2);
+            string ep = "Packages\\bcdedit.exe /set " + s1[1] + "device partiion=" + WindowsSetup.Variabile.format;
+            CMD_Process_Class.Process_CMD(ep);
+            string ep1 = "Packages\\bcdedit.exe /set " + s1[1] + " path \\Windows\\system32\\winload.exe";
+            CMD_Process_Class.Process_CMD(ep1);
+            string ep2 = "Packages\\bcdedit.exe /set " + s1[1] + " systemroot \\Windows";
+            CMD_Process_Class.Process_CMD(ep2);
         }
 
         WindowsSetup.Variabile g = new WindowsSetup.Variabile();
@@ -214,42 +125,19 @@ namespace WindowsFormsApplication2
             label7.Text = string.Format("{0} %", progressBar1.Value);
             label7.Refresh();
             if (WindowsSetup.Variabile.var == "wim")
-            {
-                int epsilon = 0;
-                
+            {                
                 if (progressBar1.Value == 0)
                 {
-                    while (epsilon <= 100)
-                    {
-                        label8.Text = "(" + epsilon.ToString() + "  %)";
-                        label8.Refresh();
-                        epsilon++;
-                        Thread.Sleep(300);
-                        if (epsilon % 10 == 0 && epsilon != 0)
-                        {
-                            progressBar1.Increment(1);
-                            label7.Text = progressBar1.Value.ToString() + " %";
-                            label7.Refresh();
-                        }
-                    }
-                    Thread.Sleep(1000);
+                    progressBar1.Value = 20;
                     label4.Visible = false;
                     label8.Visible = false;
-                    while (progressBar1.Value < 15)
-                    {
-                        progressBar1.Increment(1);
-                        label7.Text = progressBar1.Value.ToString() + " %";
-                        label7.Refresh();
-                        Thread.Sleep(500);
-                    }
                     Imagex(ss);
-                    progressBar1.Value = 40;
+                    progressBar1.Value = 80;
                     label7.Text = progressBar1.Value.ToString() + " %";
                     label7.Refresh();
-                    label9.Text = "";
                     label12.Visible = true;
                 }
-                if (progressBar1.Value == 40)
+                if (progressBar1.Value == 80)
                 {
                     label1.Font = new Font("Arial", 14, FontStyle.Regular);
                     label5.Font = new Font("Arial", 14, FontStyle.Bold);
@@ -260,29 +148,22 @@ namespace WindowsFormsApplication2
                     label7.Text = progressBar1.Value.ToString() +  "%";
                     label7.Refresh();
                 }
-                if (progressBar1.Value == 50)
+                if (progressBar1.Value == 90)
                 {
-                    progressBar1.Value += 10;
+                    progressBar1.Value += 5;
                     Bcdboot();
                     label7.Text = progressBar1.Value.ToString() + " %";
                     label7.Refresh();
                 }
-                if (progressBar1.Value == 60)
+                if (progressBar1.Value == 95)
                 {
-                    progressBar1.Value += 20;
+                    progressBar1.Value += 5;
                     label5.Font = new Font("Arial", 14, FontStyle.Regular);
                     label6.Font = new Font("Arial", 14, FontStyle.Bold);
                     label7.Text = progressBar1.Value.ToString() + " %";
                     label7.Refresh();
                     Thread.Sleep(5000);
-                }
-                if (progressBar1.Value == 80)
-                {
-                    progressBar1.Value += 20;
                     Bcdedit();
-                    label7.Text = progressBar1.Value.ToString() + " %";
-                    label7.Refresh();
-                    Thread.Sleep(5000);
                 }
                 if (progressBar1. Value == 100)
                 {

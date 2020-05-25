@@ -14,7 +14,6 @@ namespace WindowsFormsApplication2
         WindowsSetup.Variabile g = new WindowsSetup.Variabile();
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            
             g.Clear();
             Environment.Exit(0);
         }
@@ -52,24 +51,18 @@ namespace WindowsFormsApplication2
         private void Form2_Load(object sender, EventArgs e)
         {
 
-            var form4 = new WindowsSetup.Form4();
-            form4.Show();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
             var form25 = new WindowsSetup.Form25();
             form25.Show();
-
-
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
             var form3 = new WindowsSetup.Form3();
             form3.Show();
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Threading;
 
 namespace WindowsFormsApplication2
 {
@@ -20,6 +22,22 @@ namespace WindowsFormsApplication2
            
             g.Clear();
             Environment.Exit(1);
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            string s = "shutdowns -r -t 0";
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.Start();
+            cmd.StandardInput.WriteLine(s);
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            cmd.WaitForExit();
         }
     }
 }
