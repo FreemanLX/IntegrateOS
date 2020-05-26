@@ -11,3 +11,30 @@ To install Windows without Windows Setup, we need to use AIK tools (imagex and d
  
 Details:  It was made using Visual C# language. 
 Right now the program can install Windows, but in the next releases, I will happly implement the other Operating Systems.
+
+Update - alpha v0.1.8.1
+ 
+What is new: 
+  1) The IntegrateOS license has been updated. 
+  2) Right now, the app doesn't go to full screen.
+  3) New optimization algorithms has been implemented to this app. 
+  4) Introduced another 2 options to install Windows:
+     a) Install by selecting a Windows Folder
+     b) Install by selecting a ISO
+
+Bugs:
+ 
+ During the Windows Installation the app freeze, but it installs.
+  To complete the installation you have to use the following commands:
+  -> bcdboot <driveletter>:\Windows /s <driveletter> /f all (%works even in UEFI)
+     If doesn't work write the command: "bootsect /NT60 <driveletter>:" and press enter, if is successfully retry the command above.
+  -> bcedit /copy {current} /d "The entry name"; (You ll retrieve a code in parantases {})
+     Copy that code and copy to a text document where you want to save it.
+     Ok let's define entry_code as a pseudoname for that code in parantases so you ll have the following commands:
+        -> bcedit /set {entry_code} device partition = <driveletter>
+        -> bcedit /set {entry_code} path \Windows\system32\winload.exe
+        -> bcedit /set {entry_code} systemroot \Windows
+ 
+ If the commands successfully worked, you done!
+ 
+ 
