@@ -24,7 +24,7 @@ What is new:
 
 Bugs:
  
- During the Windows Installation the app freeze, but it installs.
+ During the Windows Installation the app freezes, but it installs.
   To complete the installation you have to use the following commands:
   1) bcdboot {driveletter}:\Windows /s {driveletter} /f all (%works even in UEFI)
      If doesn't work write the command: "bootsect /NT60 {driveletter}:" and press enter, if is successfully retry the command above.
