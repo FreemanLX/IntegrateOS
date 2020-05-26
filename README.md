@@ -26,14 +26,14 @@ Bugs:
  
  During the Windows Installation the app freeze, but it installs.
   To complete the installation you have to use the following commands:
-  -> bcdboot <driveletter>:\Windows /s <driveletter> /f all (%works even in UEFI)
+  1) bcdboot <driveletter>:\Windows /s <driveletter> /f all (%works even in UEFI)
      If doesn't work write the command: "bootsect /NT60 <driveletter>:" and press enter, if is successfully retry the command above.
-  -> bcedit /copy {current} /d "The entry name"; (You ll retrieve a code in parantases {})
+  2) bcedit /copy {current} /d "The entry name"; (You ll retrieve a code in parantases {})
      Copy that code and copy to a text document where you want to save it.
      Ok let's define entry_code as a pseudoname for that code in parantases so you ll have the following commands:
-        -> bcedit /set {entry_code} device partition = <driveletter>
-        -> bcedit /set {entry_code} path \Windows\system32\winload.exe
-        -> bcedit /set {entry_code} systemroot \Windows
+  3) bcedit /set {entry_code} device partition = <driveletter>
+  4) bcedit /set {entry_code} path \Windows\system32\winload.exe
+  5) bcedit /set {entry_code} systemroot \Windows
  
  If the commands successfully worked, you done!
  
