@@ -19,8 +19,8 @@ What is new:
   2) Right now, the app doesn't go to full screen.
   3) New optimization algorithms has been implemented to this app. 
   4) Introduced another 2 options to install Windows:
-     a) Install by selecting a Windows Folder
-     b) Install by selecting a ISO
+     1) Install by selecting a Windows Folder
+     2) Install by selecting a ISO
 
 Bugs:
  
