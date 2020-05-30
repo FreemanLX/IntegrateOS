@@ -14,19 +14,19 @@ Right now the program can install Windows, but in the next releases, I will happ
 
 Update - beta v0.2.0.1
 
-What is new:
-	1) Updating the License section form
-    2) Introduced a new form "Selection-OS" to make a choice between Windows, Linux or Android (ps: doesn’t work the Linux and Android buttons)
-	3) Updated a new algorithm to format the selected disk drive (in the next update, you can choice the format type)
-	4) Introduced WIM API to extract WIM without using DISM (now it is unusuable, until the next update).
-	5) Now the application and the source code is more structured, and fixed.
-	6) Now you can select every path of wim to install Windows
-	7) New visuals added.
+What is new:\
+	1. Updating the License section form\
+    	2. Introduced a new form "Selection-OS" to make a choice between Windows, Linux or Android (ps: doesn’t work the Linux and Android buttons)\
+	3. Updated a new algorithm to format the selected disk drive (in the next update, you can choice the format type)\
+	4. Introduced WIM API to extract WIM without using DISM (now it is unusuable, until the next update)\
+	5. Now the application and the source code is more structured, and fixed\
+	6. Now you can select every path of wim to install Windows\
+	7. New visuals added.\
 
-Fixed bugs:
-    1) Fixed the 0.1.8.1 bug (with freeze)
-    2) Fixed the format bug by implementing a new algorithm.
-    3) Fixed minor bugs and visual.	
+Fixed bugs:\
+   	1. Fixed the 0.1.8.1 bug (with freeze)\
+    	2. Fixed the format bug by implementing a new algorithm\
+    	3. Fixed minor bugs and visual.\
 
 
 
