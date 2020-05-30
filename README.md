@@ -30,6 +30,9 @@ Fixed bugs:\
     	2. Fixed the format bug by implementing a new algorithm\
     	3. Fixed minor bugs and visual.
 
+Possible bug:\
+        It exists a possibility, if you choose esd option in Windows Setup, the installation fails. If it's true I will fix in the next release.
+       
 
 
 <b>Update - alpha v0.1.8.1</b>
