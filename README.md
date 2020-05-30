@@ -31,7 +31,7 @@ Fixed bugs:\
     	3. Fixed minor bugs and visual.
 
 Possible bug:\
-        It exists a possibility, if you choose esd option in Windows Setup, the installation fails. If it's true I will fix in the next release.
+        It exists a possibility when you choose the esd option, the installation fails. If it's true I will fix in the next release.
        
 
 
