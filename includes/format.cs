@@ -24,10 +24,18 @@ namespace IntegrateOS
             return true;
 
         }
-        public format(string s, Form11 t)
+        int format_type_cluster;
+        string format_type_fileSystem, partition_name_type;
+        bool format_type_quickformat;
+        
+        public format(string s, string partition_name, int clusterSize, string fileSystem, bool quickFormat)
         {
-            test = t;
+           
             InitializeComponent();
+            format_type_cluster = clusterSize;
+            format_type_fileSystem = fileSystem;
+            format_type_quickformat = quickFormat;
+            partition_name_type = partition_name;
             metroLabel2.Text = s;
             metroLabel2.Refresh();
         }
@@ -43,7 +51,7 @@ namespace IntegrateOS
             temp = new Thread(
                         () =>
                         {
-                            if (FormatDrive(metroLabel2.Text, "Windows") == true)
+                            if (FormatDrive(metroLabel2.Text, partition_name_type, format_type_fileSystem, format_type_quickformat, format_type_cluster) == true)
                             {
                                 Invoke(new Action(() =>
                                 {
@@ -76,6 +84,11 @@ namespace IntegrateOS
         }
 
         private void metroLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel3_Click(object sender, EventArgs e)
         {
 
         }

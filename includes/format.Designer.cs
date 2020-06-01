@@ -37,7 +37,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(125, 25);
+            this.metroLabel1.Location = new System.Drawing.Point(69, 60);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(140, 25);
             this.metroLabel1.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.Location = new System.Drawing.Point(271, 25);
+            this.metroLabel2.Location = new System.Drawing.Point(203, 60);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(59, 25);
             this.metroLabel2.TabIndex = 1;
@@ -58,18 +58,19 @@
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.Location = new System.Drawing.Point(176, 60);
+            this.metroLabel3.Location = new System.Drawing.Point(257, 60);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(98, 25);
+            this.metroLabel3.Size = new System.Drawing.Size(95, 25);
             this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Please Wait";
+            this.metroLabel3.Text = "please wait";
+            this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
             // 
             // format
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(471, 145);
+            this.ClientSize = new System.Drawing.Size(445, 145);
             this.ControlBox = false;
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);

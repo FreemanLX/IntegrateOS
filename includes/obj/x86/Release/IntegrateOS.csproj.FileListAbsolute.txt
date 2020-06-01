@@ -81,3 +81,5 @@ D:\Eu\IntegrateOS\includes\bin\Release\DiscUtils.dll
 D:\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.selection_os.resources
 D:\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.MetroFramework_licence.resources
 D:\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.format.resources
+D:\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.Bcdedit_name.resources
+D:\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.set_partition.resources

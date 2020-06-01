@@ -2,11 +2,11 @@
 Deployment Image Servicing and Management tool
 Version: 10.0.18362.1
 
-Details for image : D:\Windows 10 Home Lite\Sources\install.wim
+Details for image : D:\Windows 10 Home Lite\sources\boot.wim
 
 Index : 1
-Name : Windows 10 Home                                STD
-Description : STD = Standard installation - For those with own License Key
-Size : 4,635,374,650 bytes
+Name : Microsoft Windows Setup (x64)
+Description : Microsoft Windows Setup (x64)
+Size : 890,507,906 bytes
 
 The operation completed successfully.

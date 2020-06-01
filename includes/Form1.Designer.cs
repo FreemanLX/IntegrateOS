@@ -82,7 +82,7 @@
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(131, 19);
             this.metroLabel1.TabIndex = 9;
-            this.metroLabel1.Text = "Version: v0.2.0.1_beta";
+            this.metroLabel1.Text = "Version: v0.2.1.5_beta";
             // 
             // pictureBox2
             // 

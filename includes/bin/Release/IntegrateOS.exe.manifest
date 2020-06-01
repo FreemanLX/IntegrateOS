@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IntegrateOS.exe" size="7019488">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IntegrateOS.exe" size="7025632">
       <assemblyIdentity name="IntegrateOS" version="0.2.0.1" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ePuNCfh7HufS73cAjSOKrYyQXmE3k5whEWzIz2BDPkw=</dsig:DigestValue>
+        <dsig:DigestValue>3iyI0r7oM6z1BB/knwDeXgOBQ1n+LR5tsJiNJnuCQhg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VfmhFCGu6JFMMJeudUBIRqUvlGt9mdVrpVl/ZCjfBA0=</dsig:DigestValue>
+        <dsig:DigestValue>Z7DmaTQ9ePbjFFGxF9mZJIHD9bshSjHT4pEombTxfrc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

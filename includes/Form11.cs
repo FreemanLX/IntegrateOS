@@ -30,7 +30,7 @@ namespace WindowsFormsApplication2
                         else
                         {
                             e = e + 0.5;
-                            metroLabel2.Text = e.ToString() + " GB";
+                            metroLabel2.Text = e.ToString() + " MB";
                             metroLabel2.Refresh();
                             if (d.DriveFormat == "NTFS")
                             {
@@ -84,7 +84,6 @@ namespace WindowsFormsApplication2
             s[0] = drive_letter[0];
             s[1] = drive_letter[1];
             string ga = new string(s);
-            MessageBox.Show(ga);
             string k = ga + t;
             string t1 = "\\hiberfile.sys";
             if (drive_letter != "")
@@ -104,10 +103,9 @@ namespace WindowsFormsApplication2
                     var result = MessageBox.Show("You really want to install Windows?", "Install Windows", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
-                        IntegrateOS.format temp_form = new IntegrateOS.format(ga, this);
-                        temp_form.ShowDialog();
-                        if (temp_form.Get() == true)
-                            this.Hide();
+                        IntegrateOS.set_partition temp_form = new IntegrateOS.set_partition(ga);
+                        temp_form.Show();
+                        this.Hide();
                     }
 
                 }
