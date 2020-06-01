@@ -60,32 +60,14 @@ namespace WindowsFormsApplication2
             {
 
             }
-            string dism = "dism /Get-WimInfo /WimFile:";
-            string install = "\"" + WindowsSetup.Variabile.locatie + "\" > Packages\\fix.txt";
-            string installing = dism + install;
-            CMD_Process_Class.Process_CMD(installing);
+            
+            string install = "Get-WindowsImage -Imagepath \"" + WindowsSetup.Variabile.locatie + "\" | Select-Object ImageName > Packages\\fix.txt ";
+            CMD_Process_Class.Process_Powershell(install);
             string[] lines = File.ReadAllLines("Packages\\fix.txt");
             var lineCount = File.ReadAllLines("Packages\\fix.txt").Length;
-            int i = 7, j = 1;
-            for (i = 7; i < lineCount; i += 5)
+            for(int i = 3; i<lineCount; i++)
             {
-                string ep = lines[i];
-                string[] lines3 = ep.Split(':');
-                string gamma = lines[i + 2];
-                string lines2 = "Index " + j.ToString() + ":" + lines3[1] + " ";
-                string[] lines1 = new String[] { lines2 };
-                string[] gamma_space = gamma.Split(':');
-                string comp = gamma_space[1];
-                lines2 += comp;
-                string[] comp_sp = comp.Split(',');
-                int space_nu = Int32.Parse(comp_sp[0]);
-                WindowsSetup.Variabile.space_gb_ver = space_nu;
-                checkedListBox1.Items.AddRange(lines1);
-                if (i > lineCount)
-                {
-                    break;
-                }
-                j++;
+                if(lines[i].Length > 1) checkedListBox1.Items.Add(lines[i]);
             }
       
             
@@ -101,16 +83,9 @@ namespace WindowsFormsApplication2
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            string s = "";
-            foreach (string lambda in checkedListBox1.Items)
-            {
-                s = lambda;
-            }
-            string[] tmp = s.Split(' ');
-            string number = tmp[1];
-            string[] number1 = number.Split(':');
-            string number2 = number1[0];
-            WindowsSetup.Variabile.fix = number2;
+
+            WindowsSetup.Variabile.fix = (checkedListBox1.SelectedIndex + 1).ToString();
+            MessageBox.Show(WindowsSetup.Variabile.fix);
             var form = new Form11();
             this.Hide();
             form.Show();
@@ -123,36 +98,16 @@ namespace WindowsFormsApplication2
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            string dism = "dism /Get-WimInfo /WimFile:";
-            string install = "\"" + WindowsSetup.Variabile.locatie + "\" > Packages\\fix.txt";
-            string installing = dism + install;
-            CMD_Process_Class.Process_CMD(installing);
-            while (!File.Exists("Packages\\fix.txt"))
-                Thread.Sleep(2000);
+            checkedListBox1.Items.Clear();
+            string install = "Get-WindowsImage -Imagepath \"" + WindowsSetup.Variabile.locatie + "\" | Select-Object ImageName > Packages\\fix.txt ";
+            CMD_Process_Class.Process_Powershell(install);
             string[] lines = File.ReadAllLines("Packages\\fix.txt");
             var lineCount = File.ReadAllLines("Packages\\fix.txt").Length;
-
-            int i = 7, j = 1;
-            for (i = 7; i < lineCount; i += 5)
+            for (int i = 3; i < lineCount; i++)
             {
-                string ep = lines[i];
-                string[] lines3 = ep.Split(':');
-                string gamma = lines[i + 2];
-                string lines2 = "Index " + j.ToString() + ":" + lines3[1] + " ";
-                string[] lines1 = new String[] { lines2 };
-                string[] gamma_space = gamma.Split(':');
-                string comp = gamma_space[1];
-                lines2 += comp;
-                string[] comp_sp = comp.Split(',');
-                int space_nu = Int32.Parse(comp_sp[0]);
-                WindowsSetup.Variabile.space_gb_ver = space_nu;
-                checkedListBox1.Items.AddRange(lines1);
-                if (i > lineCount)
-                {
-                    break;
-                }
-                j++;
+                if (lines[i].Length > 1) checkedListBox1.Items.Add(lines[i]);
             }
+
         }
     }
 }
