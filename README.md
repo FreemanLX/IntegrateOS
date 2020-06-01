@@ -12,7 +12,9 @@ To install Windows without Windows Setup, we need to use AIK tools (imagex and d
 Details:  It was made using Visual C# language. 
 Right now the program can install Windows, but in the next releases, I will happly implement the other Operating Systems.
 
-Update - beta v0.2.0.1
+<b>Update - beta v0.2.0.1</b>
+
+
 
 What is new:\
 	1. Updating the License section form\
@@ -21,16 +23,20 @@ What is new:\
 	4. Introduced WIM API to extract WIM without using DISM (now it is unusuable, until the next update)\
 	5. Now the application and the source code is more structured, and fixed\
 	6. Now you can select every path of wim to install Windows\
-	7. New visuals added.\
+	7. New visuals added.
 
 Fixed bugs:\
    	1. Fixed the 0.1.8.1 bug (with freeze)\
     	2. Fixed the format bug by implementing a new algorithm\
-    	3. Fixed minor bugs and visual.\
+    	3. Fixed minor bugs and visual.
+
+Detected bugs:\
+       1. It doesn't create a corectly boot entry, this will be fixed in the next release.\
+       2. Minor visual bugs, this will be fixed in the next release.\
+       3. If you choose the esd option, the program freezes, this will be fixed in the next release.
 
 
-
-Update - alpha v0.1.8.1
+<b>Update - alpha v0.1.8.1</b>
  
 What is new: 
   1) The IntegrateOS license has been updated. 
