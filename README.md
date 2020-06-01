@@ -24,7 +24,7 @@ Right now the program can install Windows, but in the next releases, I will happ
 <b>Update - beta v0.2.1.5 VERSION 2</b>
 
 What is new:\
-        1. All bugs except visual fixed.\
+        1. All bugs except visual fixed.
 
 <b>Update - beta v0.2.1.5</b>
 
