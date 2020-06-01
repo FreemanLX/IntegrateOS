@@ -30,9 +30,10 @@ Fixed bugs:\
     	2. Fixed the format bug by implementing a new algorithm\
     	3. Fixed minor bugs and visual.
 
-Possible bug:\
-        It exists a possibility when you choose the esd option, the installation fails. If it's true I will fix in the next release.
-       
+Detected bugs:\
+       1. It doesn't create a corectly boot entry, this will be fixed in the next release.\
+       2. Minor visual bugs, this will be fixed in the next release.\
+       3. If you choose the esd option, the program freezes, this will be fixed in the next release.
 
 
 <b>Update - alpha v0.1.8.1</b>
