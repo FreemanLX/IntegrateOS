@@ -17,8 +17,9 @@ Right now the program can install Windows, but in the next releases, I will happ
  	At least 1 GB RAM (32 BITS) and 2 GB RAM (64 BITS)\
  	At least 100 MB space for both.
         
-        
- 
+ Daca nu aveti intrati pe acest link (presupunand ca sunteti pe Windows 7):\
+ https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7
+ \
  
 
 <b>Update - beta v0.2.1.5 VERSION 2</b>
