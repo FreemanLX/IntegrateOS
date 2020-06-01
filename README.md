@@ -12,6 +12,18 @@ To install Windows without Windows Setup, we need to use AIK tools (imagex and d
 Details:  It was made using Visual C# language. 
 Right now the program can install Windows, but in the next releases, I will happly implement the other Operating Systems.
 
+<b>Update - beta v0.2.1.5</b>
+What is new:\
+         1. Imported a new form to select the format type.\
+	 2. Imported a new form to name the boot entry\
+	 3. Fixed bug, now It does create a correctly boot entry.\
+	 4. Fixed almost all visual bugs.\
+	 5. Fixed the problem with esd.\
+
+Bugs:
+         1. During the Windows installation you'll encounter several visual bugs.
+
+
 <b>Update - beta v0.2.0.1</b>
 
 
