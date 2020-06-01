@@ -12,6 +12,20 @@ To install Windows without Windows Setup, we need to use AIK tools (imagex and d
 Details:  It was made using Visual C# language. 
 Right now the program can install Windows, but in the next releases, I will happly implement the other Operating Systems.
 
+<b> System Requirements: </b>\
+ 	Windows 10 / 8.1 / 8 with powershell 5+ and Microsoft Net 4.5\
+ 	At least 1 GB RAM (32 BITS) and 2 GB RAM (64 BITS)\
+ 	At least 100 MB space for both.
+        
+        
+ 
+ 
+
+<b>Update - beta v0.2.1.5 VERSION 2</b>
+
+What is new:\
+        1. All bugs except visual fixed.\
+
 <b>Update - beta v0.2.1.5</b>
 
 What is new:\
