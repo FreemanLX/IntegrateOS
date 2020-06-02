@@ -13,13 +13,14 @@ Details:  It was made using Visual C# language.
 Right now the program can install Windows, but in the next releases, I will happly implement the other Operating Systems.
 
 <b> System Requirements: </b>\
- 	Windows 10 / 8.1 / 8 with powershell 5+ and Microsoft Net 4.5\
+ 	Windows 10 / 8.1 / 8 / 7 (not tested) with powershell 5+ and Microsoft Net 4.5\
  	At least 1 GB RAM (32 BITS) and 2 GB RAM (64 BITS)\
  	At least 100 MB space for both.
         
- Daca nu aveti intrati pe acest link (presupunand ca sunteti pe Windows 7):\
+If you don't have Powershell 5+ you have the link below:\
  https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7
- \
+ 
+ PS: You need Windows 7+ to work 
  
 
 <b>Update - beta v0.2.1.5 VERSION 2</b>
