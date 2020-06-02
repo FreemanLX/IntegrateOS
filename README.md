@@ -17,7 +17,7 @@ Right now the program can install Windows, but in the next releases, I will happ
  	At least 1 GB RAM (32 BITS) and 2 GB RAM (64 BITS)\
  	At least 100 MB space for both.
         
-If you don't have Powershell 5+ you have the link below:\
+If you don't have Powershell 5+ you have the link below to download:\
  https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7
  
  PS: You need Windows 7+ to work 
