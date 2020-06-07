@@ -33,6 +33,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -121,6 +122,18 @@
       <DependentUpon>Bcdedit_name.cs</DependentUpon>
     </Compile>
     <Compile Include="CMD_Process_Class.cs" />
+    <Compile Include="DiskUtils_License.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiskUtils_License.Designer.cs">
+      <DependentUpon>DiskUtils_License.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Download_Linux.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Download_Linux.Designer.cs">
+      <DependentUpon>Download_Linux.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,11 +237,23 @@
       <DependentUpon>format.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Linux.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Linux.Designer.cs">
+      <DependentUpon>Linux.cs</DependentUpon>
+    </Compile>
     <Compile Include="MetroFramework_licence.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MetroFramework_licence.Designer.cs">
       <DependentUpon>MetroFramework_licence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="preparing_installing_linux.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="preparing_installing_linux.Designer.cs">
+      <DependentUpon>preparing_installing_linux.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -248,6 +273,12 @@
     <Compile Include="WIM_API.cs" />
     <EmbeddedResource Include="Bcdedit_name.resx">
       <DependentUpon>Bcdedit_name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiskUtils_License.resx">
+      <DependentUpon>DiskUtils_License.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Download_Linux.resx">
+      <DependentUpon>Download_Linux.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -303,8 +334,14 @@
     <EmbeddedResource Include="format.resx">
       <DependentUpon>format.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Linux.resx">
+      <DependentUpon>Linux.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MetroFramework_licence.resx">
       <DependentUpon>MetroFramework_licence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="preparing_installing_linux.resx">
+      <DependentUpon>preparing_installing_linux.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -365,4 +402,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <PostBuildEvent>if /I "$(ConfigurationName)" == "Release" Eazfuscator.NET.exe "$(TargetPath)" --msbuild-project-path "$(ProjectPath)" --msbuild-project-configuration "$(ConfigurationName)" --msbuild-project-platform "$(PlatformName)" --msbuild-solution-path "$(SolutionPath)" -n --newline-flush -v 2020.1</PostBuildEvent>
+  </PropertyGroup>
 </Project>

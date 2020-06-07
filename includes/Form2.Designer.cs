@@ -44,7 +44,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.checkBox1.Location = new System.Drawing.Point(23, 348);
+            this.checkBox1.Location = new System.Drawing.Point(23, 361);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(159, 25);
             this.checkBox1.TabIndex = 1;
@@ -57,7 +57,7 @@
             this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(460, 433);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 24);
+            this.button1.Size = new System.Drawing.Size(117, 26);
             this.button1.TabIndex = 4;
             this.button1.Text = "Next";
             this.button1.UseSelectable = true;
@@ -65,9 +65,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(314, 433);
+            this.button2.Location = new System.Drawing.Point(309, 433);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 24);
+            this.button2.Size = new System.Drawing.Size(117, 26);
             this.button2.TabIndex = 5;
             this.button2.Text = "Close";
             this.button2.UseSelectable = true;
@@ -76,17 +76,18 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(25, 72);
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.Location = new System.Drawing.Point(23, 72);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(442, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(403, 50);
             this.metroLabel1.TabIndex = 8;
-            this.metroLabel1.Text = "You need to accept all licenses, if you want to read, click the buttons below";
+            this.metroLabel1.Text = "You need to accept all licenses, if you want to read, \r\nclick the buttons below";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLabel2.Location = new System.Drawing.Point(23, 154);
+            this.metroLabel2.Location = new System.Drawing.Point(43, 138);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(179, 19);
             this.metroLabel2.TabIndex = 9;
@@ -97,7 +98,7 @@
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLabel3.Location = new System.Drawing.Point(23, 184);
+            this.metroLabel3.Location = new System.Drawing.Point(43, 174);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(135, 19);
             this.metroLabel3.TabIndex = 10;
@@ -108,7 +109,7 @@
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLabel4.Location = new System.Drawing.Point(23, 214);
+            this.metroLabel4.Location = new System.Drawing.Point(43, 211);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(125, 19);
             this.metroLabel4.TabIndex = 11;
@@ -119,11 +120,12 @@
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLabel5.Location = new System.Drawing.Point(23, 244);
+            this.metroLabel5.Location = new System.Drawing.Point(43, 247);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(70, 19);
             this.metroLabel5.TabIndex = 12;
             this.metroLabel5.Text = "4. DiscUtils";
+            this.metroLabel5.Click += new System.EventHandler(this.metroLabel5_Click);
             // 
             // Form2
             // 

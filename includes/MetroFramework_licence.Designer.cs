@@ -35,20 +35,22 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.richTextBox1.Location = new System.Drawing.Point(23, 74);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(443, 239);
+            this.richTextBox1.Size = new System.Drawing.Size(554, 328);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(193, 348);
+            this.button1.Location = new System.Drawing.Point(244, 431);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(117, 26);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Close";
+            this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -57,7 +59,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(489, 394);
+            this.ClientSize = new System.Drawing.Size(600, 480);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox1);
             this.MaximizeBox = false;

@@ -9,10 +9,12 @@ namespace WindowsFormsApplication2
 {
     public partial class Form11 : MetroFramework.Forms.MetroForm
     {
+        int linux_temp = 0;
 
-        public Form11()
+        public Form11(int linux = 0)
         {
             InitializeComponent();
+            linux_temp = linux;
             string[] drivers = new string[10];
             DriveInfo[] driverslist = DriveInfo.GetDrives();
             foreach (DriveInfo d in driverslist)
@@ -25,14 +27,23 @@ namespace WindowsFormsApplication2
                     else
                     {
                         long gamma = d.TotalSize;
-                        double e = WindowsSetup.Variabile.space_gb_ver;
-                        if (gamma < e) { }
+                        bool cond1;
+                        if (linux == 1)
+                            cond1 = gamma < 10000000000;
                         else
                         {
-                            e = e + 0.5;
-                            metroLabel2.Text = e.ToString() + " MB";
-                            metroLabel2.Refresh();
-                            if (d.DriveFormat == "NTFS")
+                            cond1 = gamma < 2000000000;
+                        }
+                        if (cond1) { }
+                        else
+                        {
+                            
+                            bool cond;
+                            if (linux == 1)
+                                cond = (d.DriveFormat == "NTFS") || (d.DriveFormat=="FAT32") || (d.DriveFormat == "EXFAT");
+                            else 
+                                cond = (d.DriveFormat == "NTFS");
+                            if (cond)
                             {
                                 drivers[i] = d.Name; i++;
                                 drivers[i] = d.DriveFormat.ToString();
@@ -103,7 +114,15 @@ namespace WindowsFormsApplication2
                     var result = MessageBox.Show("You really want to install Windows?", "Install Windows", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
-                        IntegrateOS.set_partition temp_form = new IntegrateOS.set_partition(ga);
+                        IntegrateOS.set_partition temp_form;
+                        if (linux_temp == 1)
+                        {
+                            temp_form = new IntegrateOS.set_partition(ga, "EXT4");
+                        }
+                        else
+                        {
+                            temp_form = new IntegrateOS.set_partition(ga);
+                        }
                         temp_form.Show();
                         this.Hide();
                     }
@@ -127,9 +146,18 @@ namespace WindowsFormsApplication2
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            var form3 = new Form5();
-            this.Hide();
-            form3.Show();    
+            if (linux_temp == 1)
+            {
+                var form4 = new IntegrateOS.Linux();
+                this.Hide();
+                form4.Show();
+            }
+            else
+            {
+                var form3 = new Form5();
+                this.Hide();
+                form3.Show();
+            }
         }
 
         private void metroLabel2_Click_1(object sender, EventArgs e)

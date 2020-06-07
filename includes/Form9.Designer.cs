@@ -35,7 +35,7 @@
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(174, 235);
+            this.metroButton2.Location = new System.Drawing.Point(174, 242);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(240, 41);
             this.metroButton2.TabIndex = 1;
@@ -47,7 +47,7 @@
             // 
             this.metroButton3.Location = new System.Drawing.Point(23, 433);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(139, 24);
+            this.metroButton3.Size = new System.Drawing.Size(117, 26);
             this.metroButton3.TabIndex = 2;
             this.metroButton3.Text = "Back";
             this.metroButton3.UseSelectable = true;

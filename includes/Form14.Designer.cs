@@ -58,9 +58,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(23, 428);
+            this.button3.Location = new System.Drawing.Point(23, 440);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 29);
+            this.button3.Size = new System.Drawing.Size(117, 26);
             this.button3.TabIndex = 9;
             this.button3.Text = "Back";
             this.button3.UseSelectable = true;
@@ -68,9 +68,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(433, 428);
+            this.button2.Location = new System.Drawing.Point(460, 440);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 29);
+            this.button2.Size = new System.Drawing.Size(117, 26);
             this.button2.TabIndex = 10;
             this.button2.Text = "Next";
             this.button2.UseSelectable = true;

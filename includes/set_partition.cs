@@ -12,9 +12,10 @@ namespace IntegrateOS
 {
     public partial class set_partition : MetroFramework.Forms.MetroForm
     {
-        public set_partition(string partition)
+        public set_partition(string partition, string type = "NTFS")
         {
             InitializeComponent();
+            comboBox3.Text = type;
             comboBox1.Text = partition;
             comboBox2.Items.Add("Fast");
             comboBox2.Items.Add("Normal");
@@ -24,6 +25,7 @@ namespace IntegrateOS
             comboBox4.Items.Add("32 KB");
             comboBox4.Items.Add("64 KB");
         }
+
 
         private void set_partition_Load(object sender, EventArgs e)
         {

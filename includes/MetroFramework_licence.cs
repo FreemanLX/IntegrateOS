@@ -24,7 +24,9 @@ namespace IntegrateOS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            var x = new WindowsFormsApplication2.Form2();
+            x.Show();
+            this.Hide();
         }
     }
 }

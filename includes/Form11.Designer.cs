@@ -35,8 +35,6 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.button1 = new MetroFramework.Controls.MetroButton();
             this.button2 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +56,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 86);
+            this.metroLabel1.Location = new System.Drawing.Point(23, 72);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(279, 25);
             this.metroLabel1.TabIndex = 7;
@@ -84,25 +82,6 @@
             this.button2.UseSelectable = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(23, 366);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(194, 19);
-            this.metroLabel3.TabIndex = 13;
-            this.metroLabel3.Text = "The Windows Size installation is:";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(223, 366);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(16, 19);
-            this.metroLabel2.TabIndex = 14;
-            this.metroLabel2.Text = "0";
-            this.metroLabel2.Click += new System.EventHandler(this.metroLabel2_Click_1);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -123,7 +102,7 @@
             this.Column3,
             this.Column2});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 132);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 118);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -145,7 +124,7 @@
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(550, 221);
+            this.dataGridView1.Size = new System.Drawing.Size(550, 279);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -181,8 +160,6 @@
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(600, 480);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.metroLabel1);
@@ -205,8 +182,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton button1;
         private MetroFramework.Controls.MetroButton button2;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;

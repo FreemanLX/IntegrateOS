@@ -78,11 +78,11 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(224, 416);
+            this.metroLabel1.Location = new System.Drawing.Point(216, 416);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(131, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(133, 19);
             this.metroLabel1.TabIndex = 9;
-            this.metroLabel1.Text = "Version: v0.2.1.5_beta";
+            this.metroLabel1.Text = "Version: v0.2.3.0_beta";
             // 
             // pictureBox2
             // 

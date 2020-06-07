@@ -37,7 +37,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(27, 425);
+            this.textBox1.Location = new System.Drawing.Point(23, 311);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(10, 20);
             this.textBox1.TabIndex = 2;
@@ -46,9 +46,9 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(457, 425);
+            this.metroButton1.Location = new System.Drawing.Point(460, 441);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(120, 32);
+            this.metroButton1.Size = new System.Drawing.Size(117, 26);
             this.metroButton1.TabIndex = 3;
             this.metroButton1.Text = "Next";
             this.metroButton1.UseSelectable = true;
@@ -60,15 +60,15 @@
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(23, 63);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(554, 277);
+            this.checkedListBox1.Size = new System.Drawing.Size(554, 268);
             this.checkedListBox1.TabIndex = 4;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(23, 346);
+            this.metroButton2.Location = new System.Drawing.Point(23, 441);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(105, 24);
+            this.metroButton2.Size = new System.Drawing.Size(117, 26);
             this.metroButton2.TabIndex = 5;
             this.metroButton2.Text = "Refresh";
             this.metroButton2.UseSelectable = true;

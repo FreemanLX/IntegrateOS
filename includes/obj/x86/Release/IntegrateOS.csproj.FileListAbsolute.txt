@@ -83,3 +83,7 @@ D:\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.MetroFramework_licence.re
 D:\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.format.resources
 D:\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.Bcdedit_name.resources
 D:\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.set_partition.resources
+D:\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.Linux.resources
+D:\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.Download_Linux.resources
+D:\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.DiskUtils_License.resources
+D:\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.preparing_installing_linux.resources

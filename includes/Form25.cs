@@ -19,7 +19,9 @@ namespace WindowsSetup
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            var x = new WindowsFormsApplication2.Form2();
+            x.Show();
+            this.Hide();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)

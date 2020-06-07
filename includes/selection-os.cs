@@ -33,5 +33,12 @@ namespace IntegrateOS
             t.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var x = new Linux();
+            x.Show();
+            this.Hide();
+        }
     }
 }

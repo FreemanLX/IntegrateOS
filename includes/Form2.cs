@@ -30,18 +30,28 @@ namespace WindowsFormsApplication2
         {
             var form25 = new WindowsSetup.Form25();
             form25.Show();
+            this.Hide();
         }
 
         private void metroLabel3_Click(object sender, EventArgs e)
         {
             var form25 = new WindowsSetup.Form3();
             form25.Show();
+            this.Hide();
         }
 
         private void metroLabel4_Click(object sender, EventArgs e)
         {
             var form = new IntegrateOS.MetroFramework_licence();
-            form.ShowDialog();
+            form.Show();
+            this.Hide();
+        }
+
+        private void metroLabel5_Click(object sender, EventArgs e)
+        {
+            var form = new IntegrateOS.DiskUtils_License();
+            form.Show();
+            this.Hide();
         }
     }
 

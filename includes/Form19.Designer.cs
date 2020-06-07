@@ -36,9 +36,9 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(23, 440);
+            this.metroButton1.Location = new System.Drawing.Point(39, 189);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(139, 29);
+            this.metroButton1.Size = new System.Drawing.Size(117, 26);
             this.metroButton1.TabIndex = 1;
             this.metroButton1.Text = "Exit";
             this.metroButton1.UseSelectable = true;
@@ -46,9 +46,9 @@
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(438, 440);
+            this.metroButton2.Location = new System.Drawing.Point(431, 189);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(139, 29);
+            this.metroButton2.Size = new System.Drawing.Size(117, 26);
             this.metroButton2.TabIndex = 2;
             this.metroButton2.Text = "Restart now";
             this.metroButton2.UseSelectable = true;
@@ -58,7 +58,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(43, 211);
+            this.metroLabel1.Location = new System.Drawing.Point(39, 76);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(509, 50);
             this.metroLabel1.TabIndex = 3;
@@ -70,7 +70,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(600, 480);
+            this.ClientSize = new System.Drawing.Size(600, 238);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);

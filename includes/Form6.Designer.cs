@@ -36,9 +36,9 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(487, 213);
+            this.metroButton1.Location = new System.Drawing.Point(504, 213);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(99, 30);
+            this.metroButton1.Size = new System.Drawing.Size(73, 40);
             this.metroButton1.TabIndex = 0;
             this.metroButton1.Text = "Browse";
             this.metroButton1.UseSelectable = true;
@@ -46,9 +46,9 @@
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(468, 431);
+            this.metroButton2.Location = new System.Drawing.Point(460, 440);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(109, 26);
+            this.metroButton2.Size = new System.Drawing.Size(117, 26);
             this.metroButton2.TabIndex = 1;
             this.metroButton2.Text = "Next";
             this.metroButton2.UseSelectable = true;
@@ -61,15 +61,15 @@
             // 
             // 
             this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(422, 1);
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(426, 2);
             this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(35, 35);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox1.CustomButton.TabIndex = 1;
             this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox1.CustomButton.UseSelectable = true;
             this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.metroTextBox1.Lines = new string[0];
             this.metroTextBox1.Location = new System.Drawing.Point(23, 213);
             this.metroTextBox1.MaxLength = 32767;
@@ -81,7 +81,7 @@
             this.metroTextBox1.SelectionLength = 0;
             this.metroTextBox1.SelectionStart = 0;
             this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(444, 30);
+            this.metroTextBox1.Size = new System.Drawing.Size(464, 40);
             this.metroTextBox1.TabIndex = 2;
             this.metroTextBox1.UseSelectable = true;
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -90,9 +90,9 @@
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(23, 431);
+            this.metroButton3.Location = new System.Drawing.Point(23, 440);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(111, 26);
+            this.metroButton3.Size = new System.Drawing.Size(117, 26);
             this.metroButton3.TabIndex = 3;
             this.metroButton3.Text = "Back";
             this.metroButton3.UseSelectable = true;

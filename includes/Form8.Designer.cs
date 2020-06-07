@@ -38,11 +38,12 @@
             // 
             // txtPath
             // 
+            this.txtPath.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtPath.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPath.Location = new System.Drawing.Point(23, 249);
             this.txtPath.Name = "txtPath";
             this.txtPath.ReadOnly = true;
-            this.txtPath.Size = new System.Drawing.Size(438, 33);
+            this.txtPath.Size = new System.Drawing.Size(448, 33);
             this.txtPath.TabIndex = 8;
             // 
             // metroButton1
@@ -59,7 +60,7 @@
             // 
             this.metroButton2.Location = new System.Drawing.Point(23, 431);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(133, 26);
+            this.metroButton2.Size = new System.Drawing.Size(117, 26);
             this.metroButton2.TabIndex = 11;
             this.metroButton2.Text = "Back";
             this.metroButton2.UseSelectable = true;
@@ -67,9 +68,9 @@
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(444, 431);
+            this.metroButton3.Location = new System.Drawing.Point(460, 431);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(133, 26);
+            this.metroButton3.Size = new System.Drawing.Size(117, 26);
             this.metroButton3.TabIndex = 12;
             this.metroButton3.Text = "Next";
             this.metroButton3.UseSelectable = true;
