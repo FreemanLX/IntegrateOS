@@ -108,7 +108,7 @@ Bugs:
  If the commands successfully worked, you done!
  
  
-<b> Contribuitors </b> 
+<b> Contribuitors </b>\
 -> Andreas Mihalea (Freeman - A)\
 -> Horia (HoriaAdv)\
 -> Guita Oana Bianca
