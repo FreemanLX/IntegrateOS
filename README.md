@@ -90,6 +90,12 @@ What is new:
   4) Introduced another 2 options to install Windows:
      1) Install by selecting a Windows Folder
      2) Install by selecting a ISO
+    
+<b> Contribuitors </b> 
+-> Andreas Mihalea (Freeman - A)
+-> Horia (HoriaAdv)
+-> Guita Oana Bianca
+     
 
 Bugs:
  
