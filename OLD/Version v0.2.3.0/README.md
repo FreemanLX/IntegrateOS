@@ -12,9 +12,11 @@ To install Windows without Windows Setup, we need to use AIK tools (imagex and d
 Details:  It was made using Visual C# language. 
 Right now the program can install Windows, but in the next releases, I will happly implement the other Operating Systems.
 
-<b> System Requirements: </b>\
- 	Windows 10 / 8.1 / 8 / 7 (not tested) with powershell 5+ and Microsoft Net 4.5\
- 	At least 1 GB RAM (32 BITS) and 2 GB RAM (64 BITS)\
+
+<b> System Requirements: </b>
+
+ 	Windows 10 / 8.1 / 8 / 7 (not tested) with powershell 5+ and Microsoft Net 4.5
+ 	At least 1 GB RAM (32 BITS) and 2 GB RAM (64 BITS)
  	At least 100 MB space for both.
         
 If you don't have Powershell 5+ you have the link below to download:\
@@ -22,6 +24,20 @@ If you don't have Powershell 5+ you have the link below to download:\
  
  PS: You need Windows 7+ to work 
  
+<b>Update - beta v0.2.3.0 VERSION 1</b>
+
+What is new:\
+        1. Visual bugs fixed.\
+	2. Added and enabled the linux option button\
+	3. You can download 9 different linux distros depending the architecture. (32 BITS and 64 BITS until now)\
+	4. Implemented a download section to download linux\
+	5. Now you are able to format in EXT4.\
+	6. Implemented the discutils license (you can find in github)\
+	7. Updated and fixed font bugs in the license section
+	
+Bugs:\
+       1. It doesn't work well the format drive thanks to Windows, I will fix in the next release.\
+       2. The program doesn't install the linux, because I didn't implemented yet.
 
 <b>Update - beta v0.2.1.5 VERSION 2</b>
 
@@ -74,6 +90,7 @@ What is new:
   4) Introduced another 2 options to install Windows:
      1) Install by selecting a Windows Folder
      2) Install by selecting a ISO
+         
 
 Bugs:
  
@@ -91,3 +108,7 @@ Bugs:
  If the commands successfully worked, you done!
  
  
+<b> Contribuitors </b>\
+-> Andreas Mihalea (Freeman - A)\
+-> Horia (HoriaAdv)\
+-> Guita Oana Bianca
