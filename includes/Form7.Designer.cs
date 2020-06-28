@@ -39,9 +39,9 @@
             // 
             // metroProgressBar1
             // 
-            this.metroProgressBar1.Location = new System.Drawing.Point(23, 130);
+            this.metroProgressBar1.Location = new System.Drawing.Point(17, 135);
             this.metroProgressBar1.Name = "metroProgressBar1";
-            this.metroProgressBar1.Size = new System.Drawing.Size(613, 33);
+            this.metroProgressBar1.Size = new System.Drawing.Size(550, 33);
             this.metroProgressBar1.TabIndex = 0;
             // 
             // timer1
@@ -52,7 +52,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 97);
+            this.metroLabel1.Location = new System.Drawing.Point(17, 102);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(63, 19);
             this.metroLabel1.TabIndex = 1;
@@ -61,7 +61,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(92, 97);
+            this.metroLabel2.Location = new System.Drawing.Point(86, 102);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(31, 19);
             this.metroLabel2.TabIndex = 2;
@@ -70,11 +70,12 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(23, 170);
+            this.metroLabel3.Location = new System.Drawing.Point(17, 183);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(69, 19);
             this.metroLabel3.TabIndex = 3;
             this.metroLabel3.Text = "Extracting:";
+            this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
             // 
             // metroTextBox1
             // 
@@ -84,7 +85,7 @@
             // 
             this.metroTextBox1.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(387, 1);
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(453, 1);
             this.metroTextBox1.CustomButton.Name = "";
             this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -92,9 +93,10 @@
             this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox1.CustomButton.UseSelectable = true;
             this.metroTextBox1.CustomButton.Visible = false;
+            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.metroTextBox1.Lines = new string[] {
         "..."};
-            this.metroTextBox1.Location = new System.Drawing.Point(92, 170);
+            this.metroTextBox1.Location = new System.Drawing.Point(92, 183);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -104,7 +106,7 @@
             this.metroTextBox1.SelectionLength = 0;
             this.metroTextBox1.SelectionStart = 0;
             this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(544, 23);
+            this.metroTextBox1.Size = new System.Drawing.Size(475, 23);
             this.metroTextBox1.TabIndex = 5;
             this.metroTextBox1.Text = "...";
             this.metroTextBox1.UseSelectable = true;
@@ -115,7 +117,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 209);
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
+            this.ClientSize = new System.Drawing.Size(594, 230);
             this.ControlBox = false;
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroLabel3);
@@ -128,7 +131,7 @@
             this.Name = "Form7";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
-            this.Text = "Extracting ISO files and verifiying Windows Setup Package";
+            this.Text = "Extracting ISO files";
             this.Load += new System.EventHandler(this.Form7_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

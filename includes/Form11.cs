@@ -146,16 +146,17 @@ namespace WindowsFormsApplication2
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            this.Hide();
             if (linux_temp == 1)
             {
                 var form4 = new IntegrateOS.Linux();
-                this.Hide();
+                
                 form4.Show();
             }
             else
             {
                 var form3 = new Form5();
-                this.Hide();
+        
                 form3.Show();
             }
         }
@@ -168,6 +169,65 @@ namespace WindowsFormsApplication2
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+            string[] drivers = new string[10];
+            DriveInfo[] driverslist = DriveInfo.GetDrives();
+            foreach (DriveInfo d in driverslist)
+            {
+                int i = 0;
+                if (d.DriveType == 0) { }
+                else
+                {
+                    if (d.DriveType == DriveType.CDRom || d.DriveType == DriveType.Network) { }
+                    else
+                    {
+                        long gamma = d.TotalSize;
+                        bool cond1;
+                        if (linux_temp == 1)
+                            cond1 = gamma < 10000000000;
+                        else
+                        {
+                            cond1 = gamma < 2000000000;
+                        }
+                        if (cond1) { }
+                        else
+                        {
+
+                            bool cond;
+                            if (linux_temp == 1)
+                                cond = (d.DriveFormat == "NTFS") || (d.DriveFormat == "FAT32") || (d.DriveFormat == "EXFAT");
+                            else
+                                cond = (d.DriveFormat == "NTFS");
+                            if (cond)
+                            {
+                                drivers[i] = d.Name; i++;
+                                drivers[i] = d.DriveFormat.ToString();
+                                i++;
+                                if (d.IsReady == true)
+                                {
+
+                                    string TotalSize = (d.TotalSize / (1024 * 1024 * 1024)).ToString() + " GB";
+                                    drivers[i] = TotalSize;
+                                    i++;
+                                    string AvailabeFree = (d.AvailableFreeSpace / (1024 * 1024 * 1024)).ToString() + " GB";
+                                    drivers[i] = AvailabeFree;
+                                    i++;
+                                }
+                            }
+
+                        }
+
+                    }
+                    dataGridView1.Rows.Add(drivers);
+
+                }
+
+            }
         }
     }
 }

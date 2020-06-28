@@ -62,9 +62,7 @@ D:\Eu\IntegrateOS\includes\obj\x86\Release\WindowsSetup.Form25.resources
 D:\Eu\IntegrateOS\includes\obj\x86\Release\WindowsSetup.Form3.resources
 D:\Eu\IntegrateOS\includes\obj\x86\Release\WindowsSetup.Form4.resources
 D:\Eu\IntegrateOS\includes\obj\x86\Release\WindowsFormsApplication2.Form5.resources
-D:\Eu\IntegrateOS\includes\obj\x86\Release\WindowsSetup.Form6.resources
 D:\Eu\IntegrateOS\includes\obj\x86\Release\WindowsSetup.Form7.resources
-D:\Eu\IntegrateOS\includes\obj\x86\Release\WindowsFormsApplication2.Form8.resources
 D:\Eu\IntegrateOS\includes\obj\x86\Release\WindowsSetup.Form9.resources
 D:\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.Properties.Resources.resources
 D:\Eu\IntegrateOS\includes\obj\x86\Release\WindowsSetup.Form9.aa.resources

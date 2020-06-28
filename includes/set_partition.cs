@@ -19,11 +19,18 @@ namespace IntegrateOS
             comboBox1.Text = partition;
             comboBox2.Items.Add("Fast");
             comboBox2.Items.Add("Normal");
-            comboBox4.Items.Add("4 KB");
-            comboBox4.Items.Add("8 KB");
-            comboBox4.Items.Add("16 KB");
-            comboBox4.Items.Add("32 KB");
-            comboBox4.Items.Add("64 KB");
+            if (type == "EXT4")
+            {
+                comboBox4.Items.Add("4 KB");
+            }
+            else
+            {
+                comboBox4.Items.Add("4 KB");
+                comboBox4.Items.Add("8 KB");
+                comboBox4.Items.Add("16 KB");
+                comboBox4.Items.Add("32 KB");
+                comboBox4.Items.Add("64 KB");
+            }
         }
 
 

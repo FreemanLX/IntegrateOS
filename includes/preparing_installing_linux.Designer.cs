@@ -66,7 +66,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(23, 406);
+            this.progressBar1.Location = new System.Drawing.Point(23, 383);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(554, 34);
             this.progressBar1.Step = 1;
@@ -87,7 +87,7 @@
             this.Name = "preparing_installing_linux";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
-            this.Text = "Preparing to install linux with Restart";
+            this.Text = "Preparing to install linux with Several restart";
             this.Load += new System.EventHandler(this.preparing_installing_linux_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

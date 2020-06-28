@@ -27,7 +27,7 @@ namespace IntegrateOS
         int format_type_cluster;
         string format_type_fileSystem, partition_name_type;
         bool format_type_quickformat;
-        
+        string format_t;
         public format(string s, string partition_name, int clusterSize, string fileSystem, bool quickFormat)
         {
            
@@ -36,8 +36,7 @@ namespace IntegrateOS
             format_type_fileSystem = fileSystem;
             format_type_quickformat = quickFormat;
             partition_name_type = partition_name;
-            metroLabel2.Text = s;
-            metroLabel2.Refresh();
+            format_t = s;
         }
 
         Thread temp;
@@ -51,7 +50,7 @@ namespace IntegrateOS
             temp = new Thread(
                         () =>
                         {
-                            if (FormatDrive(metroLabel2.Text, partition_name_type, format_type_fileSystem, format_type_quickformat, format_type_cluster) == true)
+                            if (FormatDrive(format_t, partition_name_type, format_type_fileSystem, format_type_quickformat, format_type_cluster) == true)
                             {
                                 Invoke(new Action(() =>
                                 {

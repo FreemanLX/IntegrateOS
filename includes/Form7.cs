@@ -44,14 +44,14 @@ namespace WindowsSetup
                 
                 using (Stream FileStr = finfo.OpenRead())
                 {
-                    using (FileStream Fs = File.Create(RootPath + "\\" + finfo.Name)) // Here you can Set the BufferSize Also e.g. File.Create(RootPath + "\\" + finfo.Name, 4 * 1024)
+                    using (FileStream Fs = File.Create(RootPath + "\\" + finfo.Name)) 
                     {
                         metroProgressBar1.Increment(1);
                         metroLabel2.Text = metroProgressBar1.Value.ToString() + " %";
                         metroLabel2.Refresh();
                         metroTextBox1.Text = finfo.Name.ToString();
                         metroTextBox1.Refresh();
-                        FileStr.CopyTo(Fs, 8 * 1024); // Buffer Size is 4 * 1024 but you can modify it in your code as per your need
+                        FileStr.CopyTo(Fs, 8 * 1024); 
                     }
                 }
             }
@@ -77,32 +77,18 @@ namespace WindowsSetup
 
 
 
-        private void cmd(string s, int e = 1)
-        {
-
-            Process cmd = new Process();
-            cmd.StartInfo.FileName = "cmd.exe";
-            cmd.StartInfo.RedirectStandardInput = true;
-            cmd.StartInfo.RedirectStandardOutput = true;
-            cmd.StartInfo.CreateNoWindow = true;
-            cmd.StartInfo.UseShellExecute = false;
-            cmd.Start();
-
-            cmd.StandardInput.WriteLine(s);
-            cmd.StandardInput.Flush();
-            cmd.StandardInput.Close();
-            if (e == 1)
-            {
-                cmd.WaitForExit();
-                Console.WriteLine(cmd.StandardOutput.ReadToEnd());
-            }
-        }
 
         private void Form7_Load(object sender, EventArgs e)
         {
 
         }
         string esd, wim;
+
+        private void metroLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             metroProgressBar1.Minimum = 0;
@@ -127,12 +113,8 @@ namespace WindowsSetup
                 metroLabel2.Refresh();
                 timer1.Stop();
                 
-
-                string te = Form6.alg;
-                cmd("rename " + WindowsSetup.Variabile.locatie + " " + te);
-
-                 esd = "Windows_TEMP\\sources\\install.esd";
-                 wim = "Windows_TEMP\\sources\\install.wim";
+                esd = "Windows_TEMP\\sources\\install.esd";
+                wim = "Windows_TEMP\\sources\\install.wim";
                
             }
             if (metroProgressBar1.Value == 100) { 
@@ -142,7 +124,7 @@ namespace WindowsSetup
                     if (!File.Exists(wim))
                     {
                         MessageBox.Show("It isn't an official Windows iso!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        var form = new Form6();
+                        var form = new WindowsFormsApplication2.Form5();
                         timer1.Enabled = false;
                         timer1.Stop();
                         this.Hide();
@@ -170,11 +152,6 @@ namespace WindowsSetup
                 }
                 
             }
-        }
-
-        private void metroLabel4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

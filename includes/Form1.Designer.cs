@@ -82,14 +82,14 @@
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(133, 19);
             this.metroLabel1.TabIndex = 9;
-            this.metroLabel1.Text = "Version: v0.2.3.0_beta";
+            this.metroLabel1.Text = "Version: v0.2.4.5_beta";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(282, 149);
+            this.pictureBox2.Location = new System.Drawing.Point(269, 147);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(184, 173);
+            this.pictureBox2.Size = new System.Drawing.Size(184, 127);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -97,9 +97,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(50, 102);
+            this.pictureBox1.Location = new System.Drawing.Point(36, 104);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(238, 203);
+            this.pictureBox1.Size = new System.Drawing.Size(237, 203);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
