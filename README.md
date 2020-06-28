@@ -25,6 +25,8 @@ If you don't have Powershell 5+ you have the link below to download:\
  PS: You need Windows 7+ to work 
  
 <b>Update - beta v0.2.3.0 VERSION 2</b>
+
+
 What is new:\
     1. New design implemented\
 	2. The code has been optimized
