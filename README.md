@@ -121,6 +121,4 @@ Bugs:
  
  
 <b> Contribuitors </b>\
--> Andreas Mihalea (Freeman - A)\
--> Horia (HoriaAdv)\
--> Guita Oana Bianca
+-> Andreas Mihalea (FreemanLX)\
