@@ -24,7 +24,9 @@ If you don't have Powershell 5+ you have the link below to download:\
  
  PS: You need Windows 7+ to work 
 
-<b>Update - beta v0.2.7.5c0</b>\
+<b>Update - beta v0.2.7.5c0</b>
+
+
 What is new:\
 	1. Added a new option: IntegrateOS Tools: Contains right now, some Windows tools not very advanced from DISM\
 	2. Changed the first form to an program selector, it depends if is trial or not.\
@@ -33,7 +35,7 @@ What is new:\
 	5. Changed the resolution to 800 x 600.
 
 Temporary removed features:\
-	1. Right now the licenses were removed, it will be implemented back in the next release.
+	1. Right now the licenses has been removed, it will be implemented back in the next release.
 
 Bugs:\
        Not necessary bugs, but it has some features / options not implemented yet.
