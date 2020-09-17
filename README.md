@@ -24,7 +24,7 @@ If you don't have Powershell 5+ you have the link below to download:\
  
  PS: You need Windows 7+ to work 
 
-<b>Update - beta v0.2.7.5c0</b>
+<b>Update - beta v0.2.7.5c0</b>\
 What is new:\
 	1. Added a new option: IntegrateOS Tools\
    		i) Contains right now some Windows tools not very advanced from DISM
