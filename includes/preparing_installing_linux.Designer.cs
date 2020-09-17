@@ -87,7 +87,7 @@
             this.Name = "preparing_installing_linux";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
-            this.Text = "Preparing to install linux with Several restart";
+            this.Text = "Preparing to install linux with Several restarts";
             this.Load += new System.EventHandler(this.preparing_installing_linux_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -30,7 +30,8 @@
         {
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button1 = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // checkedListBox1
@@ -49,7 +50,7 @@
             "OpenBSD"});
             this.checkedListBox1.Location = new System.Drawing.Point(24, 72);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(553, 220);
+            this.checkedListBox1.Size = new System.Drawing.Size(741, 364);
             this.checkedListBox1.TabIndex = 0;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
@@ -60,28 +61,51 @@
             this.metroComboBox1.Items.AddRange(new object[] {
             "32 BITS",
             "64 BITS"});
-            this.metroComboBox1.Location = new System.Drawing.Point(24, 312);
+            this.metroComboBox1.Location = new System.Drawing.Point(23, 473);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
+            this.metroComboBox1.Size = new System.Drawing.Size(173, 29);
             this.metroComboBox1.TabIndex = 2;
             this.metroComboBox1.UseSelectable = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(236, 361);
+            this.button1.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.button1.Location = new System.Drawing.Point(656, 541);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 26);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Size = new System.Drawing.Size(97, 36);
+            this.button1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Next";
+            this.button1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.button1.UseCustomBackColor = true;
+            this.button1.UseCustomForeColor = true;
+            this.button1.UseSelectable = true;
+            this.button1.UseStyleColors = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.metroButton1.Location = new System.Drawing.Point(23, 541);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(97, 36);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroButton1.TabIndex = 8;
+            this.metroButton1.Text = "Back";
+            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroButton1.UseCustomBackColor = true;
+            this.metroButton1.UseCustomForeColor = true;
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.UseStyleColors = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // Linux
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(600, 400);
+            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.checkedListBox1);
@@ -100,6 +124,7 @@
 
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private System.Windows.Forms.Button button1;
+        private MetroFramework.Controls.MetroButton button1;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IntegrateOS
@@ -19,22 +12,24 @@ namespace IntegrateOS
 
         private void selection_os_Load(object sender, EventArgs e)
         {
-
+            ///
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void metroButton1_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            var x = new IntegrateOS.Menu(WindowsSetup.Variabile.version);
+            x.Show();
+            this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void metroTile1_Click(object sender, EventArgs e)
         {
             var t = new WindowsFormsApplication2.Form5();
             t.Show();
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void metroTile2_Click(object sender, EventArgs e)
         {
             var x = new Linux();
             x.Show();

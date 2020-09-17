@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IntegrateOS.exe" size="6482400">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IntegrateOS.exe" size="5196288">
       <assemblyIdentity name="IntegrateOS" version="0.2.0.1" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>p1TUbKFY1hwt3BdZc2P/eoa6DdmgE3DXPxq5Uix3+2A=</dsig:DigestValue>
+        <dsig:DigestValue>O7mFcLKbys4GF1uTlNQtdJd2lFCdKwC37zmngoClhDM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cmQb3LVssW9D8bQDNouITFSP0llt/n3Jt61nJIWU2CU=</dsig:DigestValue>
+        <dsig:DigestValue>s2MMcLUj5lle3mwX1ksdwpbvoVxy+g1iyOgAatM5SfE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -123,6 +123,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>yEOGmqylE1wtRylphfNcccqK9EMSiNBNSBxORsyT7iY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Dism.dll" size="57856">
+      <assemblyIdentity name="Microsoft.Dism" version="1.0.0.0" publicKeyToken="5BBA90053B345501" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>FV7hXK6FOAnH5UUSL9CGgTF3mouNyIVgtS2MFXMmaTc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -46,7 +46,7 @@ namespace IntegrateOS
             return maximum;
         }
         private void format_Load(object sender, EventArgs e)
-        {
+        { ///si asta e un mesaj care iti formateaza partitia, nu o sa intru in detalii ca e deja mult prea complicat
             temp = new Thread(
                         () =>
                         {
@@ -54,6 +54,8 @@ namespace IntegrateOS
                             {
                                 Invoke(new Action(() =>
                                 {
+
+                                    ///Form13 este formul in care vrem sa instalam Windows ul (extractam SWM, WIM etc)
                                     maximum = true;
                                     var form2 = new Form13();
                                     this.Hide();

@@ -46,7 +46,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(460, 441);
+            this.metroButton1.Location = new System.Drawing.Point(643, 551);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(117, 26);
             this.metroButton1.TabIndex = 3;
@@ -60,13 +60,13 @@
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(23, 63);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(554, 268);
+            this.checkedListBox1.Size = new System.Drawing.Size(737, 364);
             this.checkedListBox1.TabIndex = 4;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(23, 441);
+            this.metroButton2.Location = new System.Drawing.Point(23, 450);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(117, 26);
             this.metroButton2.TabIndex = 5;
@@ -79,7 +79,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(600, 480);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.metroButton1);

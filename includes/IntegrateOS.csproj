@@ -17,6 +17,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -33,7 +34,6 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -71,7 +71,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>windows_update.ico</ApplicationIcon>
@@ -102,6 +102,12 @@
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Dism, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5bba90053b345501, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Dism.2.1.9\lib\net40\Microsoft.Dism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -122,11 +128,11 @@
       <DependentUpon>Bcdedit_name.cs</DependentUpon>
     </Compile>
     <Compile Include="CMD_Process_Class.cs" />
-    <Compile Include="DiskUtils_License.cs">
+    <Compile Include="convert_wim_esd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DiskUtils_License.Designer.cs">
-      <DependentUpon>DiskUtils_License.cs</DependentUpon>
+    <Compile Include="convert_wim_esd.Designer.cs">
+      <DependentUpon>convert_wim_esd.cs</DependentUpon>
     </Compile>
     <Compile Include="Download_Linux.cs">
       <SubType>Form</SubType>
@@ -176,30 +182,6 @@
     <Compile Include="Form19.Designer.cs">
       <DependentUpon>Form19.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form25.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form25.Designer.cs">
-      <DependentUpon>Form25.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form5.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,11 +213,23 @@
     <Compile Include="Linux.Designer.cs">
       <DependentUpon>Linux.cs</DependentUpon>
     </Compile>
-    <Compile Include="MetroFramework_licence.cs">
+    <Compile Include="loading_converting_final.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MetroFramework_licence.Designer.cs">
-      <DependentUpon>MetroFramework_licence.cs</DependentUpon>
+    <Compile Include="loading_converting_final.Designer.cs">
+      <DependentUpon>loading_converting_final.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mount_Windows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mount_Windows.Designer.cs">
+      <DependentUpon>Mount_Windows.cs</DependentUpon>
     </Compile>
     <Compile Include="preparing_installing_linux.cs">
       <SubType>Form</SubType>
@@ -251,19 +245,33 @@
     <Compile Include="selection-os.Designer.cs">
       <DependentUpon>selection-os.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="set_partition.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="set_partition.Designer.cs">
       <DependentUpon>set_partition.cs</DependentUpon>
     </Compile>
+    <Compile Include="tools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tools.Designer.cs">
+      <DependentUpon>tools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tools_location.cs" />
+    <Compile Include="user_settings.cs" />
     <Compile Include="Variabile.cs" />
     <Compile Include="WIM_API.cs" />
     <EmbeddedResource Include="Bcdedit_name.resx">
       <DependentUpon>Bcdedit_name.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DiskUtils_License.resx">
-      <DependentUpon>DiskUtils_License.cs</DependentUpon>
+    <EmbeddedResource Include="convert_wim_esd.resx">
+      <DependentUpon>convert_wim_esd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Download_Linux.resx">
       <DependentUpon>Download_Linux.cs</DependentUpon>
@@ -289,18 +297,6 @@
     <EmbeddedResource Include="Form19.resx">
       <DependentUpon>Form19.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form25.resx">
-      <DependentUpon>Form25.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form5.resx">
       <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,8 +315,14 @@
     <EmbeddedResource Include="Linux.resx">
       <DependentUpon>Linux.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MetroFramework_licence.resx">
-      <DependentUpon>MetroFramework_licence.cs</DependentUpon>
+    <EmbeddedResource Include="loading_converting_final.resx">
+      <DependentUpon>loading_converting_final.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mount_Windows.resx">
+      <DependentUpon>Mount_Windows.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="preparing_installing_linux.resx">
       <DependentUpon>preparing_installing_linux.cs</DependentUpon>
@@ -338,11 +340,19 @@
     <EmbeddedResource Include="selection-os.resx">
       <DependentUpon>selection-os.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="set_partition.resx">
       <DependentUpon>set_partition.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="tools.resx">
+      <DependentUpon>tools.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -385,6 +395,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>if /I "$(ConfigurationName)" == "Release" Eazfuscator.NET.exe "$(TargetPath)" --msbuild-project-path "$(ProjectPath)" --msbuild-project-configuration "$(ConfigurationName)" --msbuild-project-platform "$(PlatformName)" --msbuild-solution-path "$(SolutionPath)" -n --newline-flush -v 2020.1</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

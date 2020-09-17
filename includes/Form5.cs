@@ -51,5 +51,12 @@ namespace WindowsFormsApplication2
             t.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var t = new Form14("SWM");
+            t.Show(); ///functia Show() din obiectul t care e un obiect al Form ului cu numarul 14
+            this.Hide();
+        }
     }
 }

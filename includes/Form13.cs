@@ -13,10 +13,54 @@ namespace WindowsFormsApplication2
     public partial class Form13 : MetroFramework.Forms.MetroForm
     {
         public Form13(){InitializeComponent();}
-        private void Form13_Load(object sender, EventArgs e){}
+        private void Form13_Load(object sender, EventArgs e){///asta e formul pe care vrem sa l extractam si sa l instalam
+        }
         Thread t2;
-        private void Conquer(string loading)
+
+        Thread ExtractSWM_1;
+        private void ExtractSWM ()
         {
+            ///asta e comanda ne vom folosi de ea: dism /apply-image /ImageFile:C:\install.swm /SWMFile:install*.swm   /Index:1 /ApplyDir:E:\ /checkintegrity
+            ///si avem asa
+            ///
+
+            string dism = "dism /apply image /ImageFile:" + "\"" + WindowsSetup.Variabile.locatie + "\"" + " /SWMFile:"; ///problema devine mai grea ca trebuie sa avem * la final, dar e in regula se rezolva.
+            string[] get_name = WindowsSetup.Variabile.locatie.Split('.');
+            ///functia da split cand vede primul . deci daca avem C:\Windows\Nume.swm atunci get_name[0] e C:\Windows\Nume
+            ///si get_name[1] e .swm
+            ///Vom folosi get_name[0] ca de el avem nevoie.
+            ///
+            ///deci vom unii si finaliza comanda
+            /// 
+
+            ///evident noi nu vrem ca programul sa se blocheze cand apelam un proces deci folosim un thread
+            dism = dism + "\"" + get_name + "*.swm\"" + " /Index: " + WindowsSetup.Variabile.fix + " /ApplyDir:" + WindowsSetup.Variabile.format + "\\ /checkintegrity";
+            MessageBox.Show(dism); ///for tests purposes
+            ExtractSWM_1 = new Thread(
+                () =>
+            {
+                CMD_Process_Class.Process_CMD(dism);
+                ///Am integrat procesul in thread vrem sa invokam ca grafica sa nu aibe probleme
+                Invoke(new Action(() =>
+                {
+                    ExtractSWM_1.Abort();
+                }));
+                
+            });
+            ///Si in final apelam threadul
+            ///Inainte de asta vrem ca threadu sa fie in Background deci
+
+            ExtractSWM_1.IsBackground = true;
+            while (ExtractSWM_1.IsAlive)
+            {
+                Thread.Sleep(500); ///blocam acest form pentru extractare ...
+                Application.DoEvents(); ///Lasam formul sa respire cat timp functioneaza threadul
+            }
+
+            ///am codat cum sa extractezi un SWM
+        }
+        private void Conquer(string loading)
+        {////Functia asta extracteaza un fisier WIM fiindca lucram cu SWM vom folosi pentru SWM si cred ca daca fac o functie ajunge 
             string dism = "Packages\\dism /export-image /SourceImageFile:" + "\"" + loading + "\"" + " /SourceIndex:" + WindowsSetup.Variabile.fix + " /DestinationImageFile:" + WindowsSetup.Variabile.format + "\\install.wim " + "/Compress:none /CheckIntegrity";
             t2 = new Thread(
              () =>
@@ -141,14 +185,24 @@ namespace WindowsFormsApplication2
             string ss = WindowsSetup.Variabile.locatie;
             label7.Text = string.Format("{0} %", progressBar1.Value);
             label7.Refresh();
-            if (WindowsSetup.Variabile.var == "wim")
+
+            ///creem aici o obtiune pt swm
+            ///
+            
+            if (WindowsSetup.Variabile.var == "wim" || WindowsSetup.Variabile.var == "swm")
             {                
                 if (progressBar1.Value == 0)
                 {
-                    progressBar1.Value = 20;
+                    progressBar1.Value = progressBar1.Value + 20;
                     label4.Visible = false;
                     label8.Visible = false;
-                    Imagex(ss);
+                    if (WindowsSetup.Variabile.var == "wim")
+                        Imagex(ss);
+                    else
+                    {
+                        if (WindowsSetup.Variabile.var == "swm")
+                            ExtractSWM();
+                    }
                     progressBar1.Value = 60;
                     label7.Text = progressBar1.Value.ToString() + " %";
                     label7.Refresh();
@@ -265,6 +319,10 @@ namespace WindowsFormsApplication2
                     this.Hide();
                     formga.Show();
                 }
+
+                ///Am terminat I guess
+                ///hai cu eroriile
+                ///Uite c o mers
             }
 
         }
@@ -305,6 +363,11 @@ namespace WindowsFormsApplication2
         }
 
         private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

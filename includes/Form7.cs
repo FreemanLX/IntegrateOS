@@ -18,7 +18,7 @@ namespace WindowsSetup
             InitializeComponent();
         }
 
-        void ExtractISO(string ISOName, string ExtractionPath)
+        private void ExtractISO(string ISOName, string ExtractionPath)
         {
             using (FileStream ISOStream = File.Open(ISOName, FileMode.Open))
             {

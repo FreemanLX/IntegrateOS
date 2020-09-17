@@ -23,8 +23,25 @@ If you don't have Powershell 5+ you have the link below to download:\
  https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7
  
  PS: You need Windows 7+ to work 
+
+<b>Update - beta v0.2.7.5c0</b>
+What is new:\
+	1. Added a new option: IntegrateOS Tools\
+   		i) Contains right now some Windows tools not very advanced from DISM
+   
+	2. Changed the first form to an program selector, it depends if is trial or not.\
+	3. Fixed visual bugs and implemented a lot of new visuals such as tiles\
+	4. Added a new option for Windows Installation (SWM filetype)\
+	5. Changed the resolution to 800 x 600.
+
+Temporary removed features:\
+	1. Right now the licenses were removed, it will be implemented back in the next release.
+
+Bugs:\
+       Not necessary bugs, but it has some features / options not implemented yet.
+
  
-<b>Update - beta v0.2.3.0 VERSION 2</b>
+<b>Update - beta v0.2.3.0c2</b>
 
 
 What is new:\
@@ -36,7 +53,7 @@ Bugs:\
     2. The program doesn't install the linux, because I didn't implemented yet.	
     
  
-<b>Update - beta v0.2.3.0 VERSION 1</b>
+<b>Update - beta v0.2.3.0c1</b>
 
 What is new:\
         1. Visual bugs fixed.\

@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form14));
             this.button1 = new MetroFramework.Controls.MetroButton();
-            this.button3 = new MetroFramework.Controls.MetroButton();
-            this.button2 = new MetroFramework.Controls.MetroButton();
             this.txtPath = new MetroFramework.Controls.MetroTextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(620, 109);
+            this.button1.Location = new System.Drawing.Point(634, 139);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 33);
             this.button1.TabIndex = 8;
@@ -45,34 +45,13 @@
             this.button1.UseSelectable = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(34, 190);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 26);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Back";
-            this.button3.UseSelectable = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(634, 190);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 26);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Next";
-            this.button2.UseSelectable = true;
-            this.button2.Visible = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
             // txtPath
             // 
             // 
             // 
             // 
             this.txtPath.CustomButton.Image = null;
-            this.txtPath.CustomButton.Location = new System.Drawing.Point(538, 1);
+            this.txtPath.CustomButton.Location = new System.Drawing.Point(561, 1);
             this.txtPath.CustomButton.Name = "";
             this.txtPath.CustomButton.Size = new System.Drawing.Size(31, 31);
             this.txtPath.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -83,7 +62,7 @@
             this.txtPath.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtPath.Lines = new string[] {
         "Click browse to select"};
-            this.txtPath.Location = new System.Drawing.Point(34, 109);
+            this.txtPath.Location = new System.Drawing.Point(23, 139);
             this.txtPath.MaxLength = 32767;
             this.txtPath.Name = "txtPath";
             this.txtPath.PasswordChar = '\0';
@@ -93,7 +72,7 @@
             this.txtPath.SelectionLength = 0;
             this.txtPath.SelectionStart = 0;
             this.txtPath.ShortcutsEnabled = true;
-            this.txtPath.Size = new System.Drawing.Size(570, 33);
+            this.txtPath.Size = new System.Drawing.Size(593, 33);
             this.txtPath.TabIndex = 12;
             this.txtPath.Text = "Click browse to select";
             this.txtPath.UseSelectable = true;
@@ -103,16 +82,45 @@
             this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
             this.txtPath.Click += new System.EventHandler(this.txtPath_Click);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(657, 546);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(120, 40);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Next";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(23, 546);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(120, 40);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "Back";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form14
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(786, 237);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.txtPath);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -129,8 +137,8 @@
 
         #endregion
         private MetroFramework.Controls.MetroButton button1;
-        private MetroFramework.Controls.MetroButton button3;
-        private MetroFramework.Controls.MetroButton button2;
         private MetroFramework.Controls.MetroTextBox txtPath;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -32,7 +32,7 @@ namespace IntegrateOS
             
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click_2(object sender, EventArgs e)
         {
             string which = checkedListBox1.SelectedItem.ToString();
             Download_Linux x;
@@ -45,6 +45,13 @@ namespace IntegrateOS
                 x = new Download_Linux(which, 32);
             }
             x.Show();
+            this.Hide();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            var menu = new IntegrateOS.Menu(WindowsSetup.Variabile.version);
+            menu.Show();
             this.Hide();
         }
     }

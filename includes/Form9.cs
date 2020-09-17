@@ -66,6 +66,10 @@ namespace WindowsSetup
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
             var z = new WindowsFormsApplication2.Form5();
             this.Hide();
             z.Show();

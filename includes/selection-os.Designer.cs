@@ -28,119 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.metroTile3 = new MetroFramework.Controls.MetroTile();
+            this.metroTile5 = new MetroFramework.Controls.MetroTile();
             this.label5 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.metroScrollBar1 = new MetroFramework.Controls.MetroScrollBar();
             this.SuspendLayout();
             // 
-            // button1
+            // metroButton1
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkCyan;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(381, 178);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Select Linux";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.metroButton1.Location = new System.Drawing.Point(344, 537);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(120, 40);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroButton1.TabIndex = 14;
+            this.metroButton1.Text = "Back";
+            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroButton1.UseCustomBackColor = true;
+            this.metroButton1.UseCustomForeColor = true;
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.UseStyleColors = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
-            // button2
+            // metroTile1
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkCyan;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(381, 269);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Select Android";
-            this.button2.UseVisualStyleBackColor = false;
+            this.metroTile1.ActiveControl = null;
+            this.metroTile1.Location = new System.Drawing.Point(23, 116);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(194, 136);
+            this.metroTile1.TabIndex = 15;
+            this.metroTile1.Text = "Windows";
+            this.metroTile1.UseSelectable = true;
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
-            // button3
+            // metroTile2
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkCyan;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(381, 87);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 40);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Select Windows";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.metroTile2.ActiveControl = null;
+            this.metroTile2.Location = new System.Drawing.Point(23, 329);
+            this.metroTile2.Name = "metroTile2";
+            this.metroTile2.Size = new System.Drawing.Size(194, 136);
+            this.metroTile2.TabIndex = 16;
+            this.metroTile2.Text = "Linux";
+            this.metroTile2.UseSelectable = true;
+            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
-            // label1
+            // metroTile3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Windows";
+            this.metroTile3.ActiveControl = null;
+            this.metroTile3.Location = new System.Drawing.Point(223, 329);
+            this.metroTile3.Name = "metroTile3";
+            this.metroTile3.Size = new System.Drawing.Size(194, 136);
+            this.metroTile3.TabIndex = 17;
+            this.metroTile3.Text = "Android";
+            this.metroTile3.UseSelectable = true;
             // 
-            // label4
+            // metroTile5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(52, 275);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 25);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Android";
+            this.metroTile5.ActiveControl = null;
+            this.metroTile5.Location = new System.Drawing.Point(223, 116);
+            this.metroTile5.Name = "metroTile5";
+            this.metroTile5.Size = new System.Drawing.Size(194, 136);
+            this.metroTile5.TabIndex = 19;
+            this.metroTile5.Text = "Windows Phone (Advanced Users Only)";
+            this.metroTile5.UseSelectable = true;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(52, 178);
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(23, 73);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 25);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Linux OS";
+            this.label5.Size = new System.Drawing.Size(379, 25);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "1) Microsoft Corporation\'s Operating Systems";
             // 
-            // button4
+            // label1
             // 
-            this.button4.BackColor = System.Drawing.Color.DarkCyan;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(221, 381);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 40);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Exit";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(18, 290);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(298, 25);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "2) Open Source Operating Systems";
+            // 
+            // metroScrollBar1
+            // 
+            this.metroScrollBar1.HighlightOnWheel = true;
+            this.metroScrollBar1.LargeChange = 10;
+            this.metroScrollBar1.Location = new System.Drawing.Point(789, 73);
+            this.metroScrollBar1.Maximum = 100;
+            this.metroScrollBar1.Minimum = 0;
+            this.metroScrollBar1.MouseWheelBarPartitions = 10;
+            this.metroScrollBar1.Name = "metroScrollBar1";
+            this.metroScrollBar1.Orientation = MetroFramework.Controls.MetroScrollOrientation.Vertical;
+            this.metroScrollBar1.ScrollbarSize = 10;
+            this.metroScrollBar1.Size = new System.Drawing.Size(10, 390);
+            this.metroScrollBar1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroScrollBar1.TabIndex = 2;
+            this.metroScrollBar1.UseBarColor = true;
+            this.metroScrollBar1.UseSelectable = true;
             // 
             // selection_os
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(582, 444);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.metroScrollBar1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.metroTile5);
+            this.Controls.Add(this.metroTile3);
+            this.Controls.Add(this.metroTile2);
+            this.Controls.Add(this.metroTile1);
+            this.Controls.Add(this.metroButton1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "selection_os";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
-            this.Text = "Select OS";
+            this.Text = "Select OS to Install (Full Version)";
             this.Load += new System.EventHandler(this.selection_os_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,13 +160,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroTile metroTile1;
+        private MetroFramework.Controls.MetroTile metroTile2;
+        private MetroFramework.Controls.MetroTile metroTile3;
+        private MetroFramework.Controls.MetroTile metroTile5;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroScrollBar metroScrollBar1;
     }
 }

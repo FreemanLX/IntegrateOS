@@ -38,13 +38,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // metroLabel2
             // 
-            this.metroLabel2.Location = new System.Drawing.Point(23, 70);
+            this.metroLabel2.Location = new System.Drawing.Point(167, 92);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(554, 44);
+            this.metroLabel2.Size = new System.Drawing.Size(577, 44);
             this.metroLabel2.TabIndex = 3;
             this.metroLabel2.Text = "Electronic Software Download is a technology that is used for downloading purchas" +
     "ed Microsoft products. (for advanced users only).\r\n";
@@ -54,7 +55,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(23, 167);
+            this.metroLabel3.Location = new System.Drawing.Point(167, 200);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(510, 19);
             this.metroLabel3.TabIndex = 4;
@@ -63,9 +64,9 @@
             // 
             // metroLabel4
             // 
-            this.metroLabel4.Location = new System.Drawing.Point(23, 238);
+            this.metroLabel4.Location = new System.Drawing.Point(167, 369);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(554, 42);
+            this.metroLabel4.Size = new System.Drawing.Size(610, 42);
             this.metroLabel4.TabIndex = 8;
             this.metroLabel4.Text = "It is an archive file that contains everything that would be written to an optica" +
     "l disc, sector by sector, including the optical disc file system. \r\n\r\n";
@@ -77,7 +78,7 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.BackColor = System.Drawing.Color.Red;
             this.metroLabel5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.metroLabel5.Location = new System.Drawing.Point(23, 332);
+            this.metroLabel5.Location = new System.Drawing.Point(167, 459);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(433, 38);
             this.metroLabel5.TabIndex = 10;
@@ -88,7 +89,7 @@
             // 
             // metroButton4
             // 
-            this.metroButton4.Location = new System.Drawing.Point(463, 433);
+            this.metroButton4.Location = new System.Drawing.Point(663, 541);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(114, 36);
             this.metroButton4.TabIndex = 13;
@@ -98,10 +99,10 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkCyan;
+            this.button3.BackColor = System.Drawing.Color.White;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(23, 189);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 40);
@@ -112,11 +113,11 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkCyan;
+            this.button1.BackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(23, 117);
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(23, 92);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 40);
             this.button1.TabIndex = 16;
@@ -126,11 +127,11 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.DarkCyan;
+            this.button4.BackColor = System.Drawing.Color.White;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(23, 283);
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(23, 371);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(120, 40);
             this.button4.TabIndex = 17;
@@ -140,11 +141,11 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.DarkCyan;
+            this.button5.BackColor = System.Drawing.Color.White;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(23, 373);
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(23, 459);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(120, 40);
             this.button5.TabIndex = 18;
@@ -152,12 +153,27 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(23, 275);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 40);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "SWM";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(600, 480);
+            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
@@ -190,5 +206,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button2;
     }
 }

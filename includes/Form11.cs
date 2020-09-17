@@ -12,7 +12,7 @@ namespace WindowsFormsApplication2
         int linux_temp = 0;
 
         public Form11(int linux = 0)
-        {
+        { ///Aici vedem ce partitie vrem sa selectam 
             InitializeComponent();
             linux_temp = linux;
             string[] drivers = new string[10];
@@ -116,12 +116,12 @@ namespace WindowsFormsApplication2
                     {
                         IntegrateOS.set_partition temp_form;
                         if (linux_temp == 1)
-                        {
+                        {///aici facem distinctia dintre Linux si Windows
                             temp_form = new IntegrateOS.set_partition(ga, "EXT4");
                         }
                         else
                         {
-                            temp_form = new IntegrateOS.set_partition(ga);
+                            temp_form = new IntegrateOS.set_partition(ga); ///Fiindca suntem la Windows, ne ducem la acest form
                         }
                         temp_form.Show();
                         this.Hide();
@@ -173,6 +173,8 @@ namespace WindowsFormsApplication2
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+
+            ///Aici calculam spatiul fiecarei partitii si il afisam
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
             string[] drivers = new string[10];

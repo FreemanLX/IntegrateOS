@@ -57,7 +57,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(27, 72);
+            this.metroLabel1.Location = new System.Drawing.Point(23, 72);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(279, 25);
             this.metroLabel1.TabIndex = 7;
@@ -65,7 +65,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(448, 431);
+            this.button1.Location = new System.Drawing.Point(660, 551);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 26);
             this.button1.TabIndex = 8;
@@ -75,7 +75,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(23, 431);
+            this.button2.Location = new System.Drawing.Point(27, 551);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 26);
             this.button2.TabIndex = 9;
@@ -103,7 +103,7 @@
             this.Column3,
             this.Column2});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 118);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 128);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -125,7 +125,7 @@
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(550, 216);
+            this.dataGridView1.Size = new System.Drawing.Size(750, 310);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -156,7 +156,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(27, 350);
+            this.metroButton1.Location = new System.Drawing.Point(27, 444);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(117, 26);
             this.metroButton1.TabIndex = 16;
@@ -169,7 +169,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(600, 480);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
