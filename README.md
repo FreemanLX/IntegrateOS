@@ -1,17 +1,5 @@
 # IntegrateOS
 A method to install every OS on every computer
-The idea: I want to install any OS in every computer (including Raspberry PI) 
- 
-The problem: Windows 7 / 8 / 8.1 doesn’t work on ARM processors, MacOS doesn’t support all x64 / x86 processors, and Android doesn’t run on some computers with UEFI (without a tool). 
- 
-Solution (1 / 3) (until now): 
- 
-First of all we need to discover how to install Windows, Linux and Android. 
-To install Windows without Windows Setup, we need to use AIK tools (imagex and dism), so this program uses dism tool by extracting wim file and installing Windows. (This technique is simple: installing Windows means extracting files from install.wim (or esd) in a selected drive).  
- 
-Details:  It was made using Visual C# language. 
-Right now the program can install Windows, but in the next releases, I will happly implement the other Operating Systems.
-
 
 <b> System Requirements: </b>
 
@@ -38,136 +26,28 @@ What is new:\
 	2. Increased the speed during installation and fixed all kind of bugs as well.\
 	3. Implemented and using DISMAPI Technology to mount and get the list of Windows Edition\
 	4. Implemented and using Wimlib for installation\
-	5. Using C++ to increase the speed during loading the following programs: bcdboot, bootsect and bcdedit.\
+	5. Used C++ to increase the speed to load the following programs: bcdboot, bootsect and bcdedit.\
 	6. Introduced the settings, where you can change the color and the background color as well.\
 	7. Increased the speed in conversion between WIM and ESD (ESD to WIM)\
 	8. Increased the program response during installation.\
 	9. Introduced back the licences, you can find in Settings.\
-	10. Introduced the option to select the ISO or Folder for Linux
+	10. Introduced the option to select the ISO or Folder for Linux.
+	
 
 	
 
 Temporary removed features:\
 	1. Removed the IntegrateOS Program Selector\
-	 
+	
+
+Removed features:\
+        1. Removed the DISM and now using the DISMAPI
+	
 	
 	
 Bugs:\
        1. A problem not showing the progress during the conversion\
        
-       
-
-<b>Update - beta v0.2.7.5c0</b>
-
-
-What is new:\
-	1. Added a new option: IntegrateOS Tools: Contains right now, some Windows tools not very advanced from DISM\
-	2. Changed the first form to an program selector, it depends if is trial or not.\
-	3. Fixed visual bugs and implemented a lot of new visuals such as tiles\
-	4. Added a new option for Windows Installation (SWM filetype)\
-	5. Changed the resolution to 800 x 600.
-
-Temporary removed features:\
-	1. Right now the licenses has been removed, it will be implemented back in the next release.
-
-Bugs:\
-       Not necessary bugs, but it has some features / options not implemented yet.
-
- 
-<b>Update - beta v0.2.3.0c2</b>
-
-
-What is new:\
-    1. New design implemented\
-	2. The code has been optimized
-
-Bugs:\
-    1. It doesn't work well the format drive thanks to Windows, I will fix in the next release.\
-    2. The program doesn't install the linux, because I didn't implemented yet.	
-    
- 
-<b>Update - beta v0.2.3.0c1</b>
-
-What is new:\
-        1. Visual bugs fixed.\
-	2. Added and enabled the linux option button\
-	3. You can download 9 different linux distros depending the architecture. (32 BITS and 64 BITS until now)\
-	4. Implemented a download section to download linux\
-	5. Now you are able to format in EXT4.\
-	6. Implemented the discutils license (you can find in github)\
-	7. Updated and fixed font bugs in the license section
-	
-Bugs:\
-       1. It doesn't work well the format drive thanks to Windows, I will fix in the next release.\
-       2. The program doesn't install the linux, because I didn't implemented yet.
-
-<b>Update - beta v0.2.1.5 VERSION 2</b>
-
-What is new:\
-        1. All bugs except visual fixed.
-
-<b>Update - beta v0.2.1.5</b>
-
-What is new:\
-         1. Imported a new form to select the format type.\
-	 2. Imported a new form to name the boot entry\
-	 3. Fixed bug, now It does create a correctly boot entry.\
-	 4. Fixed almost all visual bugs.\
-	 5. Fixed the problem with esd.
-
-Bugs:\
-         1. During the Windows installation you'll encounter several visual bugs.
-
-
-<b>Update - beta v0.2.0.1</b>
-
-
-
-What is new:\
-	1. Updating the License section form\
-    	2. Introduced a new form "Selection-OS" to make a choice between Windows, Linux or Android (ps: doesn’t work the Linux and Android buttons)\
-	3. Updated a new algorithm to format the selected disk drive (in the next update, you can choice the format type)\
-	4. Introduced WIM API to extract WIM without using DISM (now it is unusuable, until the next update)\
-	5. Now the application and the source code is more structured, and fixed\
-	6. Now you can select every path of wim to install Windows\
-	7. New visuals added.
-
-Fixed bugs:\
-   	1. Fixed the 0.1.8.1 bug (with freeze)\
-    	2. Fixed the format bug by implementing a new algorithm\
-    	3. Fixed minor bugs and visual.
-
-Detected bugs:\
-       1. It doesn't create a corectly boot entry, this will be fixed in the next release.\
-       2. Minor visual bugs, this will be fixed in the next release.\
-       3. If you choose the esd option, the program freezes, this will be fixed in the next release.
-
-
-<b>Update - alpha v0.1.8.1</b>
- 
-What is new: 
-  1) The IntegrateOS license has been updated. 
-  2) Right now, the app doesn't go to full screen.
-  3) New optimization algorithms has been implemented to this app. 
-  4) Introduced another 2 options to install Windows:
-     1) Install by selecting a Windows Folder
-     2) Install by selecting a ISO
-         
-
-Bugs:
- 
- During the Windows Installation the app freezes, but it installs.
-  To complete the installation you have to use the following commands:
-  1) bcdboot {driveletter}:\Windows /s {driveletter} /f all (%works even in UEFI)
-     If doesn't work write the command: "bootsect /NT60 {driveletter}:" and press enter, if is successfully retry the command above.
-  2) bcedit /copy {current} /d "The entry name"; (You ll retrieve a code in parantases {})
-     Copy that code and copy to a text document where you want to save it.
-     Ok let's define entry_code as a pseudoname for that code in parantases so you ll have the following commands:
-       1) bcedit /set {entry_code} device partition = {driveletter}
-       2) bcedit /set {entry_code} path \Windows\system32\winload.exe
-       3) bcedit /set {entry_code} systemroot \Windows
- 
- If the commands successfully worked, you done!
  
  
 <b> Contribuitors </b>\
