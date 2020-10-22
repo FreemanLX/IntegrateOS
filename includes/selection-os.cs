@@ -12,15 +12,23 @@ namespace IntegrateOS
 
         private void selection_os_Load(object sender, EventArgs e)
         {
-            ///
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
+            metroTile1.Style = IntegrateOS.user_settings.color1;
+            metroTile2.Style = IntegrateOS.user_settings.color1;
+            metroTile3.Style = IntegrateOS.user_settings.color1;
+            metroTile5.Style = IntegrateOS.user_settings.color1;
+            if (user_settings.dark == 0)
+            {
+                label1.ForeColor = System.Drawing.Color.Black;
+                label5.ForeColor = System.Drawing.Color.Black;
+            }
+            else
+            {
+                label1.ForeColor = System.Drawing.Color.White;
+                label5.ForeColor = System.Drawing.Color.White;
+            }
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            var x = new IntegrateOS.Menu(WindowsSetup.Variabile.version);
-            x.Show();
-            this.Close();
-        }
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
@@ -31,9 +39,16 @@ namespace IntegrateOS
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            var x = new Linux();
+            var x = new Select_Linux();
             x.Show();
             this.Hide();
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            var x = new IntegrateOS.Menu(WindowsSetup.Variabile.version);
+            x.Show();
+            this.Close();
         }
     }
 }

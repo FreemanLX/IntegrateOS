@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="libiconv_init">
+  <PropertyGroup Label="Debug and static and RuntimeLibraryNull" Condition="( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libiconv.ToLower())' == 'static' And ('$(RuntimeLibrary)' == '')">
+    <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+  </PropertyGroup>
+  <PropertyGroup Label="Release and static and RuntimeLibraryNull" Condition="( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libiconv.ToLower())' == 'static' And ('$(RuntimeLibrary)' == '')">
+    <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+  </PropertyGroup>
+  <PropertyGroup Label="Debug and ltcg and RuntimeLibraryNull" Condition="( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libiconv.ToLower())' == 'ltcg' And ('$(RuntimeLibrary)' == '')">
+    <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+  </PropertyGroup>
+  <PropertyGroup Label="Release and ltcg and RuntimeLibraryNull" Condition="( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libiconv.ToLower())' == 'ltcg' And ('$(RuntimeLibrary)' == '')">
+    <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+  </PropertyGroup>
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-libiconv Condition="'$(Linkage-libiconv)' == ''">dynamic</Linkage-libiconv>
+    <CallingConvention-libiconv Condition="'$(CallingConvention-libiconv)' == ''">cdecl</CallingConvention-libiconv>
+  </PropertyGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\libiconv-propertiesui-b7647d1e-98c2-4d62-ab45-fc77edf20333.xml" />
+  </ItemGroup>
+  <ItemDefinitionGroup Label="static" Condition="'$(Linkage-libiconv.ToLower())' == 'static'">
+    <ClCompile>
+      <PreprocessorDefinitions>USING_STATIC_LIBICONV=true;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="ltcg" Condition="'$(Linkage-libiconv.ToLower())' == 'ltcg'">
+    <ClCompile>
+      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and Win32 and Release and static and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libiconv.ToLower())' == 'static' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\Win32\Release\static\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and Win32 and Release and static and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libiconv.ToLower())' == 'static' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\Win32\Release\static\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and x64 and Release and static and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libiconv.ToLower())' == 'static' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\x64\Release\static\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and x64 and Release and static and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libiconv.ToLower())' == 'static' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\x64\Release\static\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and Win32 and Debug and static and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libiconv.ToLower())' == 'static' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\Win32\Debug\static\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and Win32 and Debug and static and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libiconv.ToLower())' == 'static' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\Win32\Debug\static\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and x64 and Debug and static and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libiconv.ToLower())' == 'static' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\x64\Debug\static\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and x64 and Debug and static and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libiconv.ToLower())' == 'static' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\x64\Debug\static\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and Win32 and Release and ltcg and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libiconv.ToLower())' == 'ltcg' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\Win32\Release\ltcg\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and Win32 and Release and ltcg and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libiconv.ToLower())' == 'ltcg' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\Win32\Release\ltcg\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and x64 and Release and ltcg and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libiconv.ToLower())' == 'ltcg' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\x64\Release\ltcg\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and x64 and Release and ltcg and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libiconv.ToLower())' == 'ltcg' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\x64\Release\ltcg\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and Win32 and Debug and ltcg and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libiconv.ToLower())' == 'ltcg' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\Win32\Debug\ltcg\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and Win32 and Debug and ltcg and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libiconv.ToLower())' == 'ltcg' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\Win32\Debug\ltcg\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and x64 and Debug and ltcg and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libiconv.ToLower())' == 'ltcg' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\x64\Debug\ltcg\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and x64 and Debug and ltcg and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libiconv.ToLower())' == 'ltcg' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\x64\Debug\ltcg\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and Win32 and Release and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libiconv.ToLower())' == 'dynamic' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\Win32\Release\dynamic\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and Win32 and Release and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libiconv.ToLower())' == 'dynamic' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\Win32\Release\dynamic\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and x64 and Release and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libiconv.ToLower())' == 'dynamic' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\x64\Release\dynamic\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and x64 and Release and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libiconv.ToLower())' == 'dynamic' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\x64\Release\dynamic\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and Win32 and Debug and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libiconv.ToLower())' == 'dynamic' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\Win32\Debug\dynamic\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and Win32 and Debug and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libiconv.ToLower())' == 'dynamic' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\Win32\Debug\dynamic\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and x64 and Debug and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libiconv.ToLower())' == 'dynamic' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\x64\Debug\dynamic\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and x64 and Debug and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libiconv.ToLower())' == 'dynamic' And '$(CallingConvention-libiconv.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\x64\Debug\dynamic\cdecl\libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <UsingTask TaskName="libiconv_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+  <Target Name="libiconv_init">
+    <libiconv_Contains Text="Linkage-dynamic" Library="libiconv" Value="dynamic" Condition="'$(Linkage-libiconv)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libiconv" />
+    </libiconv_Contains>
+    <libiconv_Contains Text="Linkage-static" Library="libiconv" Value="static" Condition="'$(Linkage-libiconv)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libiconv" />
+    </libiconv_Contains>
+    <libiconv_Contains Text="Linkage-ltcg" Library="libiconv" Value="ltcg" Condition="'$(Linkage-libiconv)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libiconv" />
+    </libiconv_Contains>
+    <libiconv_Contains Text="Linkage-sxs" Library="libiconv" Value="sxs" Condition="'$(Linkage-libiconv)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libiconv" />
+    </libiconv_Contains>
+    <libiconv_Contains Text="CallingConvention-cdecl" Library="libiconv" Value="cdecl" Condition="'$(CallingConvention-libiconv)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libiconv" />
+    </libiconv_Contains>
+    <libiconv_Contains Text="CallingConvention-stdcall" Library="libiconv" Value="stdcall" Condition="'$(CallingConvention-libiconv)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libiconv" />
+    </libiconv_Contains>
+    <libiconv_Contains Text="CallingConvention-fastcall" Library="libiconv" Value="fastcall" Condition="'$(CallingConvention-libiconv)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libiconv" />
+    </libiconv_Contains>
+    <libiconv_Contains Text="CallingConvention-thiscall" Library="libiconv" Value="thiscall" Condition="'$(CallingConvention-libiconv)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libiconv" />
+    </libiconv_Contains>
+    <libiconv_Contains Text="CallingConvention-clrcall" Library="libiconv" Value="clrcall" Condition="'$(CallingConvention-libiconv)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libiconv" />
+    </libiconv_Contains>
+  </Target>
+</Project>

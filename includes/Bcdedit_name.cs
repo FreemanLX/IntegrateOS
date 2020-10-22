@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace IntegrateOS
 {
@@ -19,7 +11,7 @@ namespace IntegrateOS
 
         private void Bcdedit_name_Load(object sender, EventArgs e)
         {
-
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
         }
 
         string full;
@@ -31,7 +23,13 @@ namespace IntegrateOS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text.Length < 1)
+
+
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length < 1)
             {
                 full = "Windows";
             }
@@ -40,7 +38,6 @@ namespace IntegrateOS
                 full = textBox1.Text;
             }
             this.Close();
-
         }
     }
 }

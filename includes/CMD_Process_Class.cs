@@ -30,6 +30,28 @@ namespace WindowsSetup
             }
             return;
         }
+
+        internal static void Process_program(string program, string line, int e = 0)
+        { ///aceasta functie creaza un proces ce apeleaza aplicatia powershell din windows 
+            Process cmd = new Process();
+            ///cum v am explicat in prezentare fiecare functie din obiectul proces, deci revenim 
+            cmd.StartInfo.FileName = program;
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.Start();
+            cmd.StandardInput.WriteLine(line);
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            cmd.WaitForExit();
+            if (e == 1)
+            {
+                cmd.WaitForExit();
+                Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+            }
+            return;
+        }
         internal static int Process_CMD(string dism, int e = 0)
         {
             try

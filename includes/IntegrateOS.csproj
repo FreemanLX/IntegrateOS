@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IntegrateOS</RootNamespace>
     <AssemblyName>IntegrateOS</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -45,6 +45,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -56,6 +57,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>A7E20B86F76B3B76D406512624619F68BDFD5A6B</ManifestCertificateThumbprint>
@@ -102,9 +104,6 @@
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Dism, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5bba90053b345501, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Dism.2.1.9\lib\net40\Microsoft.Dism.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.Compatibility" />
     <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
@@ -140,12 +139,6 @@
     <Compile Include="Download_Linux.Designer.cs">
       <DependentUpon>Download_Linux.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form11.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,24 +157,6 @@
     <Compile Include="Form13.Designer.cs">
       <DependentUpon>Form13.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form14.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form14.Designer.cs">
-      <DependentUpon>Form14.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form16.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form16.Designer.cs">
-      <DependentUpon>Form16.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form19.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form19.Designer.cs">
-      <DependentUpon>Form19.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form5.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,12 +169,6 @@
     <Compile Include="Form7.Designer.cs">
       <DependentUpon>Form7.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form9.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form9.Designer.cs">
-      <DependentUpon>Form9.cs</DependentUpon>
-    </Compile>
     <Compile Include="format.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,17 +176,19 @@
       <DependentUpon>format.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="IterateCallback.cs" />
+    <Compile Include="license.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="license.Designer.cs">
+      <DependentUpon>license.cs</DependentUpon>
+    </Compile>
     <Compile Include="Linux.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Linux.Designer.cs">
       <DependentUpon>Linux.cs</DependentUpon>
-    </Compile>
-    <Compile Include="loading_converting_final.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="loading_converting_final.Designer.cs">
-      <DependentUpon>loading_converting_final.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -231,6 +202,8 @@
     <Compile Include="Mount_Windows.Designer.cs">
       <DependentUpon>Mount_Windows.cs</DependentUpon>
     </Compile>
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="NativeStructs.cs" />
     <Compile Include="preparing_installing_linux.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,12 +211,19 @@
       <DependentUpon>preparing_installing_linux.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgressCallback.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="selection-os.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="selection-os.Designer.cs">
       <DependentUpon>selection-os.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Select_Linux.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Select_Linux.Designer.cs">
+      <DependentUpon>Select_Linux.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
@@ -257,6 +237,7 @@
     <Compile Include="set_partition.Designer.cs">
       <DependentUpon>set_partition.cs</DependentUpon>
     </Compile>
+    <Compile Include="Themes.cs" />
     <Compile Include="tools.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,7 +247,8 @@
     <Compile Include="tools_location.cs" />
     <Compile Include="user_settings.cs" />
     <Compile Include="Variabile.cs" />
-    <Compile Include="WIM_API.cs" />
+    <Compile Include="WimLibException.cs" />
+    <Compile Include="WimStruct.cs" />
     <EmbeddedResource Include="Bcdedit_name.resx">
       <DependentUpon>Bcdedit_name.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,9 +257,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Download_Linux.resx">
       <DependentUpon>Download_Linux.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form11.resx">
       <DependentUpon>Form11.cs</DependentUpon>
@@ -288,35 +267,20 @@
     <EmbeddedResource Include="Form13.resx">
       <DependentUpon>Form13.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form14.resx">
-      <DependentUpon>Form14.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form16.resx">
-      <DependentUpon>Form16.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form19.resx">
-      <DependentUpon>Form19.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form5.resx">
       <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form7.resx">
       <DependentUpon>Form7.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form9.aa.resx">
-      <DependentUpon>Form9.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form9.resx">
-      <DependentUpon>Form9.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="format.resx">
       <DependentUpon>format.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="license.resx">
+      <DependentUpon>license.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Linux.resx">
       <DependentUpon>Linux.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="loading_converting_final.resx">
-      <DependentUpon>loading_converting_final.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -339,6 +303,9 @@
     </Compile>
     <EmbeddedResource Include="selection-os.resx">
       <DependentUpon>selection-os.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Select_Linux.resx">
+      <DependentUpon>Select_Linux.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
@@ -398,4 +365,11 @@
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
+  <Import Project="..\packages\ManagedWimLib.1.3.0\build\net451\ManagedWimLib.targets" Condition="Exists('..\packages\ManagedWimLib.1.3.0\build\net451\ManagedWimLib.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\ManagedWimLib.1.3.0\build\net451\ManagedWimLib.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ManagedWimLib.1.3.0\build\net451\ManagedWimLib.targets'))" />
+  </Target>
 </Project>

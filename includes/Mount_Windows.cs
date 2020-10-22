@@ -1,29 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Windows.Forms;
-using Microsoft.Dism;
+using System.Runtime.InteropServices;
+
 
 namespace IntegrateOS
 {
     public partial class Mount_Windows : MetroFramework.Forms.MetroForm
     {
         int index1;
+        public Mount_Windows()
+        {
+            InitializeComponent();
+        }
         public Mount_Windows(int index)
         {
             InitializeComponent();
             if (tools_location.type == "WIM")
             {
-                this.Text = "Mounting WIM...";
+                this.Text = "Mount WIM";
             }
             else
             {
-                this.Text = "Mounting ESD...";
+                this.Text = "Mount ESD";
             }
             index1 = index;
 
@@ -31,46 +29,14 @@ namespace IntegrateOS
 
         private void Mount_Windows_Load(object sender, EventArgs e)
         {
-            
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
+            metroTextBox2.Text = tools_location.location1;
+            metroLabel1.Theme = IntegrateOS.user_settings.theme;
+            metroLabel2.Theme = IntegrateOS.user_settings.theme;
+            metroTextBox1.Theme = IntegrateOS.user_settings.theme;
+            metroTextBox2.Theme = IntegrateOS.user_settings.theme;
         }
         bool mounted = false;
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            if (mounted == false)
-            {
-                
-                metroButton1.Enabled = false;
-                //DismApi.MountImage(tools_location.location1, tools_location.location2, index1);
-                try
-                {
-                   DismApi.Initialize(DismLogLevel.LogErrors);
-                   DismApi.MountImage(tools_location.location1, tools_location.location2, index1);
-                    this.Text = "Windows is mounted";
-                    metroButton1.Enabled = true;
-                    metroButton1.Text = "Dismount";
-                    metroButton1.Refresh();
-                    mounted = true;
-                    DismApi.Shutdown();
-
-                }
-                catch
-                {
-                    MessageBox.Show("The following wim file is not successfully mounted!","Error");
-                }
-            }
-            if (mounted == true)
-            {
-                metroButton1.Enabled = false;
-                DismApi.Initialize(DismLogLevel.LogErrors);
-                DismApi.UnmountImage(tools_location.location2, true);
-                this.Text = "Windows is dismounted and saved!";
-                metroButton1.Enabled = true;
-                metroButton1.Text = "Mount";
-                metroButton1.Refresh();
-                mounted = false;
-                DismApi.Shutdown();
-            }
-        }
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
@@ -83,12 +49,130 @@ namespace IntegrateOS
                     tools_location.location2 = fbd.SelectedPath;
                     metroTextBox1.Text = fbd.SelectedPath;
                 }
+                fbd.Dispose();
             }
         }
 
         private void metroTextBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private const string DllFilePath = @"IntegrateOS Base.dll";
+        [DllImport(DllFilePath, SetLastError = true, EntryPoint = "mount_windows", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
+        private static extern int mount_windows(string loc1, string loc2, int index);
+
+
+        [DllImport(DllFilePath, SetLastError = true, EntryPoint = "unmount_image", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
+        private static extern int unmount_image(string loc2, int commint_change);
+
+        private bool unmount(string loc2, int commit_image)
+        {
+            try
+            {
+                int e = unmount_image(loc2, commit_image);
+                if (e == -1)
+                    return false;
+                if (e == 2)
+                {
+                    MessageBox.Show("Unable to unmount error: 0x1");
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+
+                int rc = Marshal.GetLastWin32Error();
+                MessageBox.Show("Unable to unmount error: " + rc.ToString());
+                return false;
+            }
+        }
+
+        private bool mount(string loc1, string loc2, int index)
+        {
+            int e = mount_windows(loc1, loc2, index);
+            try
+            {
+               ///e = mount_windows(loc1, loc2, index);
+                if (e == 1)
+                {
+                    MessageBox.Show("Unable to mount error: 0x1");
+                    return false;
+                }
+                return true;
+            }
+            catch
+            {
+                int rc = Marshal.GetLastWin32Error();
+                MessageBox.Show("Unable to mount error: " + rc.ToString());
+                return false;
+            }
+
+        }
+        int pass;
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            pass = 0;
+            if (mounted == false && pass == 0)
+            {
+                this.Text = "Mounting...";
+                bool s = mount(tools_location.location1, tools_location.location2, index1);
+                if (s == false)
+                {
+
+                }
+                else
+                {
+                    metroButton4.Enabled = false;
+                    this.Text = "Windows is mounted";
+                    metroButton4.Enabled = true;
+                    metroButton4.Text = "Dismount";
+                    metroButton4.Refresh();
+                    mounted = true;
+                    pass = 1;
+                }
+            }
+            if (mounted == true && pass == 0)
+            {
+                this.Text = "Unmounting...";
+                bool t = unmount(tools_location.location2, 0);
+                if (t == false)
+                {
+
+
+                }
+                else
+                {
+                    metroButton4.Enabled = false;
+                    this.Text = "Windows is dismounted";
+                    metroButton4.Enabled = true;
+                    metroButton4.Text = "Mount";
+                    metroButton4.Refresh();
+                    mounted = true;
+                    pass = 1;
+                }
+            }
+        }
+
+        private void metroLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            var x = new WindowsFormsApplication2.Form5(1);
+            x.Show();
+            this.Hide();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            var x = new tools();
+            this.Hide();
+            x.Show();
         }
     }
 }

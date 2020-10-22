@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IntegrateOS
 {
@@ -13,5 +9,6 @@ namespace IntegrateOS
         public static string index;
         public static string type; ///for converting and mount
         public static string conversion_type;
+        public static int conversion_code;
     }
 }

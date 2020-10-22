@@ -58,12 +58,13 @@ namespace WindowsFormsApplication2
                                         drivers[i]  = AvailabeFree; 
                                         i++;                                    
                                 }
+                                dataGridView1.Rows.Add(drivers);
                             }
-                            
+                               
                         }
-
+                        
                     }
-                    dataGridView1.Rows.Add(drivers);
+                    
 
                 }
                 
@@ -141,7 +142,29 @@ namespace WindowsFormsApplication2
 
         private void Form11_Load(object sender, EventArgs e)
         {
-
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
+            
+            if(IntegrateOS.user_settings.dark == 0)
+            {
+                
+                dataGridView1.ForeColor = System.Drawing.Color.Black;
+                dataGridView1.BackColor = System.Drawing.Color.White;
+                dataGridView1.BackgroundColor = System.Drawing.Color.White;
+                dataGridView1.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+                dataGridView1.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.White;
+            }
+            else
+            {
+                dataGridView1.ForeColor = System.Drawing.Color.White;
+                dataGridView1.BackColor = System.Drawing.Color.Black;
+                dataGridView1.BackgroundColor = System.Drawing.Color.Black;
+                dataGridView1.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+                dataGridView1.DefaultCellStyle.BackColor = System.Drawing.Color.Black;
+                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
+                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.Black;
+            }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -220,12 +243,13 @@ namespace WindowsFormsApplication2
                                     drivers[i] = AvailabeFree;
                                     i++;
                                 }
+                                dataGridView1.Rows.Add(drivers);
                             }
 
                         }
 
                     }
-                    dataGridView1.Rows.Add(drivers);
+                    
 
                 }
 

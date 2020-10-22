@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1603033155 source:c:\users\andreas\desktop\integrateos\integrateosbase2\integrateos base2\main.cpp
+	"main.h"
+
+1603298937 c:\users\andreas\desktop\integrateos\integrateosbase2\integrateos base2\main.h
+	<windows.h>
+	<bits/stdc++.h>
+
+1603033155 source:c:\users\andreas\desktop\integrateos\integrateos base2\main.cpp
+	"main.h"
+
+1603367024 c:\users\andreas\desktop\integrateos\integrateos base2\main.h
+	<windows.h>
+	<bits/stdc++.h>
+

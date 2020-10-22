@@ -12,6 +12,10 @@ namespace IntegrateOS
 {
     public partial class set_partition : MetroFramework.Forms.MetroForm
     {
+        public set_partition()
+        {
+            InitializeComponent();
+        }
         public set_partition(string partition, string type = "NTFS")
         {  ///Aici vedem ce tipuri de clustere trebuie selectat (4 KB etc...)
             InitializeComponent();
@@ -38,7 +42,47 @@ namespace IntegrateOS
 
         private void set_partition_Load(object sender, EventArgs e)
         {
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
+            if (user_settings.dark == 0)
+            {
+                label1.ForeColor = System.Drawing.Color.Black;
+                label2.ForeColor = System.Drawing.Color.Black;
+                label3.ForeColor = System.Drawing.Color.Black;
+                label4.ForeColor = System.Drawing.Color.Black;
+                label5.ForeColor = System.Drawing.Color.Black;
+                comboBox1.BackColor = System.Drawing.Color.White;
+                comboBox2.BackColor = System.Drawing.Color.White;
+                comboBox3.BackColor = System.Drawing.Color.White;
+                comboBox4.BackColor = System.Drawing.Color.White;
+                textBox1.BackColor = System.Drawing.Color.White;
 
+
+                comboBox1.ForeColor = System.Drawing.Color.Black;
+                comboBox2.ForeColor = System.Drawing.Color.Black;
+                comboBox3.ForeColor = System.Drawing.Color.Black;
+                comboBox4.ForeColor = System.Drawing.Color.Black;
+                textBox1.ForeColor = System.Drawing.Color.Black;
+            }
+            else
+            {
+                comboBox1.BackColor = System.Drawing.Color.Black;
+                comboBox2.BackColor = System.Drawing.Color.Black;
+                comboBox3.BackColor = System.Drawing.Color.Black;
+                comboBox4.BackColor = System.Drawing.Color.Black;
+                textBox1.BackColor = System.Drawing.Color.Black;
+
+                comboBox1.ForeColor = System.Drawing.Color.White;
+                comboBox2.ForeColor = System.Drawing.Color.White;
+                comboBox3.ForeColor = System.Drawing.Color.White;
+                comboBox4.ForeColor = System.Drawing.Color.White;
+                textBox1.ForeColor = System.Drawing.Color.White;
+
+                label1.ForeColor = System.Drawing.Color.White;
+                label2.ForeColor = System.Drawing.Color.White;
+                label3.ForeColor = System.Drawing.Color.White;
+                label4.ForeColor = System.Drawing.Color.White;
+                label5.ForeColor = System.Drawing.Color.White;
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,13 +90,13 @@ namespace IntegrateOS
 
         }
 
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-        /// <summary>
-        /// Iar aici daca vrei sa instalezi
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+        }
+
+
+        private void metroButton3_Click(object sender, EventArgs e)
         {
             bool quick_format = false;
             string com2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
@@ -73,13 +117,7 @@ namespace IntegrateOS
             this.Hide();
         }
 
-
-        /// <summary>
-        /// Aici daca vrei sa dai back
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
+        private void metroButton4_Click(object sender, EventArgs e)
         {
             var temp = new WindowsFormsApplication2.Form11();
             temp.Show();

@@ -33,6 +33,7 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // textBox1
@@ -46,12 +47,13 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(643, 551);
+            this.metroButton1.Location = new System.Drawing.Point(640, 537);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(117, 26);
+            this.metroButton1.Size = new System.Drawing.Size(120, 40);
             this.metroButton1.TabIndex = 3;
             this.metroButton1.Text = "Next";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Visible = false;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // checkedListBox1
@@ -62,17 +64,29 @@
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(737, 364);
             this.checkedListBox1.TabIndex = 4;
+            this.checkedListBox1.UseTabStops = false;
+            this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_ItemCheck);
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(23, 450);
+            this.metroButton2.Location = new System.Drawing.Point(23, 433);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(117, 26);
+            this.metroButton2.Size = new System.Drawing.Size(120, 33);
             this.metroButton2.TabIndex = 5;
             this.metroButton2.Text = "Refresh";
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
+            // metroButton3
+            // 
+            this.metroButton3.Location = new System.Drawing.Point(23, 537);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(120, 40);
+            this.metroButton3.TabIndex = 6;
+            this.metroButton3.Text = "Back";
+            this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // Form12
             // 
@@ -80,6 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.metroButton1);
@@ -103,5 +118,6 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton metroButton3;
     }
 }

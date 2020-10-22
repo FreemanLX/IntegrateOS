@@ -9,7 +9,7 @@ namespace IntegrateOS
     public partial class format : MetroFramework.Forms.MetroForm
     {
         public WindowsFormsApplication2.Form11 test;
-        public static bool FormatDrive(string driveLetter, string label = "", string fileSystem = "NTFS", bool quickFormat = true,
+        public static bool FormatDrive(string driveLetter="", string label = "", string fileSystem = "NTFS", bool quickFormat = true,
                 int clusterSize = 8192, bool enableCompression = false)
         {
             if (driveLetter.Length != 2 || driveLetter[1] != ':' || !char.IsLetter(driveLetter[0]))
@@ -28,6 +28,10 @@ namespace IntegrateOS
         string format_type_fileSystem, partition_name_type;
         bool format_type_quickformat;
         string format_t;
+        public format()
+        {
+            InitializeComponent();
+        }
         public format(string s, string partition_name, int clusterSize, string fileSystem, bool quickFormat)
         {
            
@@ -47,6 +51,9 @@ namespace IntegrateOS
         }
         private void format_Load(object sender, EventArgs e)
         { ///si asta e un mesaj care iti formateaza partitia, nu o sa intru in detalii ca e deja mult prea complicat
+
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
+            metroLabel1.Theme = IntegrateOS.user_settings.theme;
             temp = new Thread(
                         () =>
                         {

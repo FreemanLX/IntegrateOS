@@ -1,0 +1,6 @@
+﻿  ConsoleApplication1.cpp
+c:\users\andreas\desktop\source\repos\consoleapplication1\consoleapplication1\consoleapplication1.cpp(80): warning C4305: '=': truncation from 'int' to 'char'
+c:\users\andreas\desktop\source\repos\consoleapplication1\consoleapplication1\consoleapplication1.cpp(80): warning C4309: '=': truncation of constant value
+c:\users\andreas\desktop\source\repos\consoleapplication1\consoleapplication1\consoleapplication1.cpp(269): warning C4018: '<': signed/unsigned mismatch
+c:\users\andreas\desktop\source\repos\consoleapplication1\consoleapplication1\consoleapplication1.cpp(299): warning C4101: 'fail': unreferenced local variable
+  ConsoleApplication1.vcxproj -> C:\Users\Andreas\Desktop\source\repos\ConsoleApplication1\Debug\ConsoleApplication1.exe

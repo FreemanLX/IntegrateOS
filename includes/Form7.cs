@@ -80,7 +80,15 @@ namespace WindowsSetup
 
         private void Form7_Load(object sender, EventArgs e)
         {
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
 
+                metroLabel1.Theme = IntegrateOS.user_settings.theme;
+                metroLabel2.Theme = IntegrateOS.user_settings.theme;
+                metroLabel3.Theme = IntegrateOS.user_settings.theme;
+                metroLabel4.Theme = IntegrateOS.user_settings.theme;
+                metroTextBox1.Theme = IntegrateOS.user_settings.theme;
+                metroProgressBar1.Theme = IntegrateOS.user_settings.theme;
+            metroProgressBar1.Style = IntegrateOS.user_settings.color1;
         }
         string esd, wim;
 

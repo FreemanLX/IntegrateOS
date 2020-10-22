@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="libxml2_init">
+  <PropertyGroup Label="Debug and static and RuntimeLibraryNull" Condition="( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2.ToLower())' == 'static' And ('$(RuntimeLibrary)' == '')">
+    <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+  </PropertyGroup>
+  <PropertyGroup Label="Release and static and RuntimeLibraryNull" Condition="( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2.ToLower())' == 'static' And ('$(RuntimeLibrary)' == '')">
+    <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+  </PropertyGroup>
+  <PropertyGroup Label="Debug and ltcg and RuntimeLibraryNull" Condition="( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2.ToLower())' == 'ltcg' And ('$(RuntimeLibrary)' == '')">
+    <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+  </PropertyGroup>
+  <PropertyGroup Label="Release and ltcg and RuntimeLibraryNull" Condition="( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2.ToLower())' == 'ltcg' And ('$(RuntimeLibrary)' == '')">
+    <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+  </PropertyGroup>
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-libxml2 Condition="'$(Linkage-libxml2)' == ''">dynamic</Linkage-libxml2>
+    <CallingConvention-libxml2 Condition="'$(CallingConvention-libxml2)' == ''">cdecl</CallingConvention-libxml2>
+  </PropertyGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\libxml2-propertiesui-bdb9ba75-f27d-4351-bee8-70745026a45e.xml" />
+  </ItemGroup>
+  <ItemDefinitionGroup Label="static or ltcg" Condition="'$(Linkage-libxml2.ToLower())' == 'static' Or '$(Linkage-libxml2.ToLower())' == 'ltcg'">
+    <ClCompile>
+      <PreprocessorDefinitions>LIBXML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="static" Condition="'$(Linkage-libxml2.ToLower())' == 'static'">
+    <ClCompile>
+      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="ltcg" Condition="'$(Linkage-libxml2.ToLower())' == 'ltcg'">
+    <ClCompile>
+      <RuntimeLibrary>$(RuntimeLibrary)</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and Win32 and Release and static and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2.ToLower())' == 'static' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\Win32\Release\static\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and Win32 and Release and static and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2.ToLower())' == 'static' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\Win32\Release\static\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and x64 and Release and static and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2.ToLower())' == 'static' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\x64\Release\static\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and x64 and Release and static and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2.ToLower())' == 'static' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\x64\Release\static\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and Win32 and Debug and static and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2.ToLower())' == 'static' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\Win32\Debug\static\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and Win32 and Debug and static and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2.ToLower())' == 'static' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\Win32\Debug\static\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and x64 and Debug and static and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2.ToLower())' == 'static' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\x64\Debug\static\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and x64 and Debug and static and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2.ToLower())' == 'static' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\x64\Debug\static\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and Win32 and Release and ltcg and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2.ToLower())' == 'ltcg' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\Win32\Release\ltcg\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and Win32 and Release and ltcg and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2.ToLower())' == 'ltcg' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\Win32\Release\ltcg\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and x64 and Release and ltcg and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2.ToLower())' == 'ltcg' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\x64\Release\ltcg\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and x64 and Release and ltcg and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2.ToLower())' == 'ltcg' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\x64\Release\ltcg\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and Win32 and Debug and ltcg and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2.ToLower())' == 'ltcg' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\Win32\Debug\ltcg\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and Win32 and Debug and ltcg and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2.ToLower())' == 'ltcg' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\Win32\Debug\ltcg\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and x64 and Debug and ltcg and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2.ToLower())' == 'ltcg' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\x64\Debug\ltcg\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and x64 and Debug and ltcg and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2.ToLower())' == 'ltcg' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\x64\Debug\ltcg\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and Win32 and Release and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\Win32\Release\dynamic\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and Win32 and Release and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\Win32\Release\dynamic\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and x64 and Release and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\x64\Release\dynamic\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and x64 and Release and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\x64\Release\dynamic\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and Win32 and Debug and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\Win32\Debug\dynamic\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and Win32 and Debug and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\Win32\Debug\dynamic\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v100 and x64 and Debug and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v100\x64\Debug\dynamic\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v110 and x64 and Debug and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2.ToLower())' == 'cdecl'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/v110\x64\Debug\dynamic\cdecl\libxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <UsingTask TaskName="libxml2_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+  <Target Name="libxml2_init">
+    <libxml2_Contains Text="Linkage-dynamic" Library="libxml2" Value="dynamic" Condition="'$(Linkage-libxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libxml2" />
+    </libxml2_Contains>
+    <libxml2_Contains Text="Linkage-static" Library="libxml2" Value="static" Condition="'$(Linkage-libxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libxml2" />
+    </libxml2_Contains>
+    <libxml2_Contains Text="Linkage-ltcg" Library="libxml2" Value="ltcg" Condition="'$(Linkage-libxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libxml2" />
+    </libxml2_Contains>
+    <libxml2_Contains Text="Linkage-sxs" Library="libxml2" Value="sxs" Condition="'$(Linkage-libxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libxml2" />
+    </libxml2_Contains>
+    <libxml2_Contains Text="CallingConvention-cdecl" Library="libxml2" Value="cdecl" Condition="'$(CallingConvention-libxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libxml2" />
+    </libxml2_Contains>
+    <libxml2_Contains Text="CallingConvention-stdcall" Library="libxml2" Value="stdcall" Condition="'$(CallingConvention-libxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libxml2" />
+    </libxml2_Contains>
+    <libxml2_Contains Text="CallingConvention-fastcall" Library="libxml2" Value="fastcall" Condition="'$(CallingConvention-libxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libxml2" />
+    </libxml2_Contains>
+    <libxml2_Contains Text="CallingConvention-thiscall" Library="libxml2" Value="thiscall" Condition="'$(CallingConvention-libxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libxml2" />
+    </libxml2_Contains>
+    <libxml2_Contains Text="CallingConvention-clrcall" Library="libxml2" Value="clrcall" Condition="'$(CallingConvention-libxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libxml2" />
+    </libxml2_Contains>
+  </Target>
+</Project>

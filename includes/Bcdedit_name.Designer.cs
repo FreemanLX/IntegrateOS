@@ -29,30 +29,27 @@
         private void InitializeComponent()
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(23, 97);
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(23, 87);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(533, 25);
+            this.textBox1.Size = new System.Drawing.Size(533, 29);
             this.textBox1.TabIndex = 0;
             // 
-            // button1
+            // metroButton2
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkCyan;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(238, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.metroButton2.Location = new System.Drawing.Point(223, 150);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(120, 40);
+            this.metroButton2.TabIndex = 25;
+            this.metroButton2.Text = "OK";
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // Bcdedit_name
             // 
@@ -61,7 +58,7 @@
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(579, 213);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.textBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -79,6 +76,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private MetroFramework.Controls.MetroButton metroButton2;
     }
 }

@@ -15,9 +15,7 @@ namespace WindowsFormsApplication2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new IntegrateOS.Menu("IntegrateOS Full Version: v0.2.7.5_betaC2"));
         }
-
-        
     }
 }

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>IntegrateOSBase</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>
+      </AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="IntegrateOS Base.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\lib\v110\Win32\Release\static\cdecl\libxml2.lib" />
+    <Library Include="..\..\..\..\Desktop\IntegrateOS\packages\pthreads.2.9.1.4\build\native\lib\v110\Win32\Release\static\cdecl\libpthread-static.lib" />
+    <Library Include="..\..\..\..\Desktop\IntegrateOS\packages\pthreads.2.9.1.4\build\native\lib\v110\Win32\Release\static\stdcall\libpthread-static-stdcall.lib" />
+    <Library Include="Lib\libwim.lib" />
+    <Library Include="Lib\x86\dismapi.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\c14n.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\catalog.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\chvalid.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\debugXML.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\dict.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\DOCBparser.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\encoding.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\entities.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\globals.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\hash.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\HTMLparser.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\HTMLtree.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\list.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\nanoftp.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\nanohttp.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\parser.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\parserInternals.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\pattern.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\relaxng.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\SAX.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\SAX2.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\schemasInternals.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\schematron.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\threads.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\tree.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\uri.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\valid.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xinclude.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xlink.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlautomata.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlerror.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlexports.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlIO.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlmemory.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlmodule.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlreader.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlregexp.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlsave.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlschemas.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlschemastypes.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlstring.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlunicode.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlversion.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlwin32version.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xmlwriter.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xpath.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xpathInternals.h" />
+    <ClInclude Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\include\libxml\xpointer.h" />
+    <ClInclude Include="Include\dismapi.h" />
+    <ClInclude Include="Include\wimlib.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\configurations.autopkg" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\..\Desktop\IntegrateOS\packages\pthreads.redist.2.9.1.4\build\native\pthreads.redist.targets" Condition="Exists('..\..\..\..\Desktop\IntegrateOS\packages\pthreads.redist.2.9.1.4\build\native\pthreads.redist.targets')" />
+    <Import Project="..\..\..\..\Desktop\IntegrateOS\packages\pthreads.2.9.1.4\build\native\pthreads.targets" Condition="Exists('..\..\..\..\Desktop\IntegrateOS\packages\pthreads.2.9.1.4\build\native\pthreads.targets')" />
+    <Import Project="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.redist.2.7.8.7\build\native\libxml2.redist.targets" Condition="Exists('..\..\..\..\Desktop\IntegrateOS\packages\libxml2.redist.2.7.8.7\build\native\libxml2.redist.targets')" />
+    <Import Project="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\libxml2.targets" Condition="Exists('..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\libxml2.targets')" />
+    <Import Project="..\..\..\..\Desktop\IntegrateOS\packages\libiconv.redist.1.14.0.11\build\native\libiconv.redist.targets" Condition="Exists('..\..\..\..\Desktop\IntegrateOS\packages\libiconv.redist.1.14.0.11\build\native\libiconv.redist.targets')" />
+    <Import Project="..\..\..\..\Desktop\IntegrateOS\packages\libiconv.1.14.0.11\build\native\libiconv.targets" Condition="Exists('..\..\..\..\Desktop\IntegrateOS\packages\libiconv.1.14.0.11\build\native\libiconv.targets')" />
+    <Import Project="..\..\..\..\Desktop\IntegrateOS\packages\7z.Libs.19.0.2\build\native\7z.Libs.targets" Condition="Exists('..\..\..\..\Desktop\IntegrateOS\packages\7z.Libs.19.0.2\build\native\7z.Libs.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\..\Desktop\IntegrateOS\packages\pthreads.redist.2.9.1.4\build\native\pthreads.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\Desktop\IntegrateOS\packages\pthreads.redist.2.9.1.4\build\native\pthreads.redist.targets'))" />
+    <Error Condition="!Exists('..\..\..\..\Desktop\IntegrateOS\packages\pthreads.2.9.1.4\build\native\pthreads.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\Desktop\IntegrateOS\packages\pthreads.2.9.1.4\build\native\pthreads.targets'))" />
+    <Error Condition="!Exists('..\..\..\..\Desktop\IntegrateOS\packages\libxml2.redist.2.7.8.7\build\native\libxml2.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\Desktop\IntegrateOS\packages\libxml2.redist.2.7.8.7\build\native\libxml2.redist.targets'))" />
+    <Error Condition="!Exists('..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\libxml2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\libxml2.targets'))" />
+    <Error Condition="!Exists('..\..\..\..\Desktop\IntegrateOS\packages\libiconv.redist.1.14.0.11\build\native\libiconv.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\Desktop\IntegrateOS\packages\libiconv.redist.1.14.0.11\build\native\libiconv.redist.targets'))" />
+    <Error Condition="!Exists('..\..\..\..\Desktop\IntegrateOS\packages\libiconv.1.14.0.11\build\native\libiconv.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\Desktop\IntegrateOS\packages\libiconv.1.14.0.11\build\native\libiconv.targets'))" />
+    <Error Condition="!Exists('..\..\..\..\Desktop\IntegrateOS\packages\7z.Libs.19.0.2\build\native\7z.Libs.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\Desktop\IntegrateOS\packages\7z.Libs.19.0.2\build\native\7z.Libs.targets'))" />
+  </Target>
+</Project>

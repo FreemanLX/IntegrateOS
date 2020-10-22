@@ -30,8 +30,8 @@
         {
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.button1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkedListBox1
@@ -61,43 +61,41 @@
             this.metroComboBox1.Items.AddRange(new object[] {
             "32 BITS",
             "64 BITS"});
-            this.metroComboBox1.Location = new System.Drawing.Point(23, 473);
+            this.metroComboBox1.Location = new System.Drawing.Point(24, 457);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(173, 29);
-            this.metroComboBox1.TabIndex = 2;
+            this.metroComboBox1.PromptText = "32 BITS";
+            this.metroComboBox1.Size = new System.Drawing.Size(120, 29);
+            this.metroComboBox1.TabIndex = 3;
             this.metroComboBox1.UseSelectable = true;
+            this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
             // 
-            // button1
+            // button2
             // 
-            this.button1.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.button1.Location = new System.Drawing.Point(656, 541);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 36);
-            this.button1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Next";
-            this.button1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.button1.UseCustomBackColor = true;
-            this.button1.UseCustomForeColor = true;
-            this.button1.UseSelectable = true;
-            this.button1.UseStyleColors = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(24, 537);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 40);
+            this.button2.TabIndex = 33;
+            this.button2.Text = "Back";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // metroButton1
+            // button3
             // 
-            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.metroButton1.Location = new System.Drawing.Point(23, 541);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(97, 36);
-            this.metroButton1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroButton1.TabIndex = 8;
-            this.metroButton1.Text = "Back";
-            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroButton1.UseCustomBackColor = true;
-            this.metroButton1.UseCustomForeColor = true;
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.UseStyleColors = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(645, 541);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(120, 40);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "Next";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Linux
             // 
@@ -105,8 +103,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(800, 600);
-            this.Controls.Add(this.metroButton1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.checkedListBox1);
             this.MaximizeBox = false;
@@ -124,7 +122,7 @@
 
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroButton button1;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

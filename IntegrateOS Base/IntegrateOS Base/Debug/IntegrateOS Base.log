@@ -1,0 +1,3 @@
+﻿  IntegrateOS Base.cpp
+c:\users\andreas\source\repos\integrateos base\integrateos base\integrateos base.cpp(53): warning C4715: 'windowsinfo': not all control paths return a value
+  IntegrateOS Base.vcxproj -> C:\Users\Andreas\source\repos\IntegrateOS Base\Debug\IntegrateOS Base.dll

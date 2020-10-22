@@ -28,31 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile5 = new MetroFramework.Controls.MetroTile();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.metroScrollBar1 = new MetroFramework.Controls.MetroScrollBar();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.metroButton1.Location = new System.Drawing.Point(344, 537);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(120, 40);
-            this.metroButton1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroButton1.TabIndex = 14;
-            this.metroButton1.Text = "Back";
-            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroButton1.UseCustomBackColor = true;
-            this.metroButton1.UseCustomForeColor = true;
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.UseStyleColors = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroTile1
             // 
@@ -116,22 +99,15 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "2) Open Source Operating Systems";
             // 
-            // metroScrollBar1
+            // metroButton2
             // 
-            this.metroScrollBar1.HighlightOnWheel = true;
-            this.metroScrollBar1.LargeChange = 10;
-            this.metroScrollBar1.Location = new System.Drawing.Point(789, 73);
-            this.metroScrollBar1.Maximum = 100;
-            this.metroScrollBar1.Minimum = 0;
-            this.metroScrollBar1.MouseWheelBarPartitions = 10;
-            this.metroScrollBar1.Name = "metroScrollBar1";
-            this.metroScrollBar1.Orientation = MetroFramework.Controls.MetroScrollOrientation.Vertical;
-            this.metroScrollBar1.ScrollbarSize = 10;
-            this.metroScrollBar1.Size = new System.Drawing.Size(10, 390);
-            this.metroScrollBar1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroScrollBar1.TabIndex = 2;
-            this.metroScrollBar1.UseBarColor = true;
-            this.metroScrollBar1.UseSelectable = true;
+            this.metroButton2.Location = new System.Drawing.Point(345, 537);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(120, 40);
+            this.metroButton2.TabIndex = 23;
+            this.metroButton2.Text = "Back";
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // selection_os
             // 
@@ -139,20 +115,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(800, 600);
-            this.Controls.Add(this.metroScrollBar1);
+            this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.metroTile5);
             this.Controls.Add(this.metroTile3);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
-            this.Controls.Add(this.metroButton1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "selection_os";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
-            this.Text = "Select OS to Install (Full Version)";
+            this.Text = "Select OS to Install";
             this.Load += new System.EventHandler(this.selection_os_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -160,13 +135,12 @@
         }
 
         #endregion
-        private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private MetroFramework.Controls.MetroScrollBar metroScrollBar1;
+        private MetroFramework.Controls.MetroButton metroButton2;
     }
 }

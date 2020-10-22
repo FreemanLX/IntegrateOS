@@ -138,3 +138,42 @@ C:\Users\andre\Desktop\OLD DATA\Eu\IntegrateOS\includes\obj\x86\Release\Integrat
 C:\Users\andre\Desktop\OLD DATA\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.application
 C:\Users\andre\Desktop\OLD DATA\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.csproj.CopyComplete
 C:\Users\andre\Desktop\OLD DATA\Eu\IntegrateOS\includes\obj\x86\Release\IntegrateOS.Settings.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\bin\Release\IntegrateOS.exe.config
+C:\Users\Andreas\Desktop\IntegrateOS\includes\bin\Release\IntegrateOS.exe.manifest
+C:\Users\Andreas\Desktop\IntegrateOS\includes\bin\Release\IntegrateOS.application
+C:\Users\Andreas\Desktop\IntegrateOS\includes\bin\Release\IntegrateOS.exe
+C:\Users\Andreas\Desktop\IntegrateOS\includes\bin\Release\DiscUtils.Common.dll
+C:\Users\Andreas\Desktop\IntegrateOS\includes\bin\Release\DiscUtils.dll
+C:\Users\Andreas\Desktop\IntegrateOS\includes\bin\Release\MetroFramework.Design.dll
+C:\Users\Andreas\Desktop\IntegrateOS\includes\bin\Release\MetroFramework.dll
+C:\Users\Andreas\Desktop\IntegrateOS\includes\bin\Release\MetroFramework.Fonts.dll
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.Bcdedit_name.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.convert_wim_esd.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.Download_Linux.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\WindowsFormsApplication2.Form11.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\WindowsFormsApplication2.Form12.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\WindowsFormsApplication2.Form13.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\WindowsFormsApplication2.Form5.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\WindowsSetup.Form7.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.format.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.Linux.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.Menu.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.Mount_Windows.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.preparing_installing_linux.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.Properties.Resources.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.selection_os.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.Settings.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.set_partition.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.tools.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.csproj.GenerateResource.cache
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.csproj.CoreCompileInputs.cache
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.TrustInfo.xml
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.exe.manifest
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.application
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.csproj.CopyComplete
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.exe
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.Select_Linux.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.license.resources
+C:\Users\Andreas\Desktop\IntegrateOS\includes\bin\Release\x86\libwim-15.dll
+C:\Users\Andreas\Desktop\IntegrateOS\includes\bin\Release\x64\libwim-15.dll
+C:\Users\Andreas\Desktop\IntegrateOS\includes\obj\x86\Release\IntegrateOS.csprojAssemblyReference.cache

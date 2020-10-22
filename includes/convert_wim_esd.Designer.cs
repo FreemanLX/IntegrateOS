@@ -39,6 +39,8 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPath
@@ -103,7 +105,7 @@
             this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.metroTextBox1.Lines = new string[] {
         "Click save to save the following file"};
-            this.metroTextBox1.Location = new System.Drawing.Point(23, 203);
+            this.metroTextBox1.Location = new System.Drawing.Point(23, 207);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -123,7 +125,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(643, 203);
+            this.metroButton1.Location = new System.Drawing.Point(643, 207);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(117, 33);
             this.metroButton1.TabIndex = 16;
@@ -145,7 +147,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 175);
+            this.label1.Location = new System.Drawing.Point(18, 179);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 25);
             this.label1.TabIndex = 20;
@@ -157,7 +159,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(23, 355);
+            this.button4.Location = new System.Drawing.Point(23, 537);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(120, 40);
             this.button4.TabIndex = 21;
@@ -171,11 +173,11 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(643, 355);
+            this.button5.Location = new System.Drawing.Point(657, 537);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(120, 40);
             this.button5.TabIndex = 22;
-            this.button5.Text = "Next";
+            this.button5.Text = "Convert";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -189,9 +191,9 @@
             "Fast",
             "Max",
             "Recovery"});
-            this.comboBox3.Location = new System.Drawing.Point(629, 261);
+            this.comboBox3.Location = new System.Drawing.Point(168, 249);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(135, 33);
+            this.comboBox3.Size = new System.Drawing.Size(142, 33);
             this.comboBox3.TabIndex = 23;
             this.comboBox3.Text = "None";
             // 
@@ -199,7 +201,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(467, 264);
+            this.label2.Location = new System.Drawing.Point(18, 252);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 25);
             this.label2.TabIndex = 24;
@@ -212,20 +214,43 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(23, 313);
+            this.label3.Location = new System.Drawing.Point(18, 306);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(620, 25);
+            this.label3.Size = new System.Drawing.Size(696, 25);
             this.label3.TabIndex = 25;
-            this.label3.Text = "Detected a low computer with less than 2 cores or less than 2 GB free RAM";
+            this.label3.Text = "Warning: Detected a low computer with less than 2 cores or less than 2 GB free RA" +
+    "M";
             this.label3.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.progressBar1.Location = new System.Drawing.Point(28, 444);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(740, 34);
+            this.progressBar1.TabIndex = 27;
+            this.progressBar1.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(256, 411);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(239, 30);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Converting... Please wait";
+            this.label4.Visible = false;
             // 
             // convert_wim_esd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(786, 418);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox3);
@@ -261,5 +286,7 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label4;
     }
 }

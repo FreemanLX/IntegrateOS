@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            this.button1 = new MetroFramework.Controls.MetroButton();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
@@ -39,6 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroTile1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.metroTile2.SuspendLayout();
@@ -47,22 +47,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.button1.Location = new System.Drawing.Point(357, 537);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 40);
-            this.button1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Exit";
-            this.button1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.button1.UseCustomBackColor = true;
-            this.button1.UseCustomForeColor = true;
-            this.button1.UseSelectable = true;
-            this.button1.UseStyleColors = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // metroTile1
             // 
             this.metroTile1.ActiveControl = null;
@@ -70,7 +54,6 @@
             this.metroTile1.Location = new System.Drawing.Point(23, 90);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(203, 127);
-            this.metroTile1.Style = MetroFramework.MetroColorStyle.White;
             this.metroTile1.TabIndex = 11;
             this.metroTile1.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTile1.UseSelectable = true;
@@ -97,7 +80,6 @@
             this.metroTile2.Location = new System.Drawing.Point(23, 223);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(203, 127);
-            this.metroTile2.Style = MetroFramework.MetroColorStyle.White;
             this.metroTile2.TabIndex = 12;
             this.metroTile2.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTile2.UseSelectable = true;
@@ -121,7 +103,6 @@
             this.metroTile3.Location = new System.Drawing.Point(23, 356);
             this.metroTile3.Name = "metroTile3";
             this.metroTile3.Size = new System.Drawing.Size(203, 127);
-            this.metroTile3.Style = MetroFramework.MetroColorStyle.White;
             this.metroTile3.TabIndex = 13;
             this.metroTile3.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTile3.UseSelectable = true;
@@ -170,6 +151,16 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "IntegrateOS Settings";
             // 
+            // metroButton2
+            // 
+            this.metroButton2.Location = new System.Drawing.Point(342, 537);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(120, 40);
+            this.metroButton2.TabIndex = 24;
+            this.metroButton2.Text = "Exit";
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,13 +168,13 @@
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.metroTile3);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
-            this.Controls.Add(this.button1);
             this.MaximizeBox = false;
             this.Name = "Menu";
             this.Resizable = false;
@@ -202,7 +193,6 @@
         }
 
         #endregion
-        private MetroFramework.Controls.MetroButton button1;
         private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile metroTile3;
@@ -212,5 +202,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private MetroFramework.Controls.MetroButton metroButton2;
     }
 }

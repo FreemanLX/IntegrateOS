@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="libxml2_redist_init;libxml2_redist_init_2">
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-libxml2_redist Condition="'$(Linkage-libxml2_redist)' == ''">dynamic</Linkage-libxml2_redist>
+    <CallingConvention-libxml2_redist Condition="'$(CallingConvention-libxml2_redist)' == ''">cdecl</CallingConvention-libxml2_redist>
+  </PropertyGroup>
+  <Target Name="libxml2_redist_init">
+    <libxml2_redist_Contains Text="Linkage-dynamic" Library="libxml2_redist" Value="dynamic" Condition="'$(Linkage-libxml2_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libxml2_redist" />
+    </libxml2_redist_Contains>
+    <libxml2_redist_Contains Text="Linkage-static" Library="libxml2_redist" Value="static" Condition="'$(Linkage-libxml2_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libxml2_redist" />
+    </libxml2_redist_Contains>
+    <libxml2_redist_Contains Text="Linkage-ltcg" Library="libxml2_redist" Value="ltcg" Condition="'$(Linkage-libxml2_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libxml2_redist" />
+    </libxml2_redist_Contains>
+    <libxml2_redist_Contains Text="Linkage-sxs" Library="libxml2_redist" Value="sxs" Condition="'$(Linkage-libxml2_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libxml2_redist" />
+    </libxml2_redist_Contains>
+    <libxml2_redist_Contains Text="CallingConvention-cdecl" Library="libxml2_redist" Value="cdecl" Condition="'$(CallingConvention-libxml2_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libxml2_redist" />
+    </libxml2_redist_Contains>
+    <libxml2_redist_Contains Text="CallingConvention-stdcall" Library="libxml2_redist" Value="stdcall" Condition="'$(CallingConvention-libxml2_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libxml2_redist" />
+    </libxml2_redist_Contains>
+    <libxml2_redist_Contains Text="CallingConvention-fastcall" Library="libxml2_redist" Value="fastcall" Condition="'$(CallingConvention-libxml2_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libxml2_redist" />
+    </libxml2_redist_Contains>
+    <libxml2_redist_Contains Text="CallingConvention-thiscall" Library="libxml2_redist" Value="thiscall" Condition="'$(CallingConvention-libxml2_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libxml2_redist" />
+    </libxml2_redist_Contains>
+    <libxml2_redist_Contains Text="CallingConvention-clrcall" Library="libxml2_redist" Value="clrcall" Condition="'$(CallingConvention-libxml2_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libxml2_redist" />
+    </libxml2_redist_Contains>
+  </Target>
+  <Target Name="libxml2_redist_init_2">
+    <SetEnv Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\Win32\Release\dynamic\cdecl">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\Win32\Release\dynamic\cdecl">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\x64\Release\dynamic\cdecl">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\x64\Release\dynamic\cdecl">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\Win32\Debug\dynamic\cdecl">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\Win32\Debug\dynamic\cdecl">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\x64\Debug\dynamic\cdecl">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\x64\Debug\dynamic\cdecl">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+  </Target>
+  <ItemGroup Label="v100 and Win32 and Release and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\Win32\Release\dynamic\cdecl\libxml2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="v110 and Win32 and Release and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\Win32\Release\dynamic\cdecl\libxml2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="v100 and x64 and Release and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\x64\Release\dynamic\cdecl\libxml2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="v110 and x64 and Release and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\x64\Release\dynamic\cdecl\libxml2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="v100 and Win32 and Debug and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\Win32\Debug\dynamic\cdecl\libxml2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="v110 and Win32 and Debug and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\Win32\Debug\dynamic\cdecl\libxml2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="v100 and x64 and Debug and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\x64\Debug\dynamic\cdecl\libxml2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="v110 and x64 and Debug and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\x64\Debug\dynamic\cdecl\libxml2.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <Target Name="libxml2_redist_AfterBuild" AfterTargets="AfterBuild" />
+  <Target Name="libxml2_redist_AfterBuild_v100_and_Win32_and_Release_and_dynamic_and_cdecl" Label="v100 and Win32 and Release and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" AfterTargets="libxml2_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\Win32\Release\dynamic\cdecl\libxml2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="libxml2_redist_AfterBuild_v110_and_Win32_and_Release_and_dynamic_and_cdecl" Label="v110 and Win32 and Release and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" AfterTargets="libxml2_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\Win32\Release\dynamic\cdecl\libxml2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="libxml2_redist_AfterBuild_v100_and_x64_and_Release_and_dynamic_and_cdecl" Label="v100 and x64 and Release and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" AfterTargets="libxml2_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\x64\Release\dynamic\cdecl\libxml2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="libxml2_redist_AfterBuild_v110_and_x64_and_Release_and_dynamic_and_cdecl" Label="v110 and x64 and Release and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" AfterTargets="libxml2_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\x64\Release\dynamic\cdecl\libxml2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="libxml2_redist_AfterBuild_v100_and_Win32_and_Debug_and_dynamic_and_cdecl" Label="v100 and Win32 and Debug and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" AfterTargets="libxml2_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\Win32\Debug\dynamic\cdecl\libxml2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="libxml2_redist_AfterBuild_v110_and_Win32_and_Debug_and_dynamic_and_cdecl" Label="v110 and Win32 and Debug and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" AfterTargets="libxml2_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\Win32\Debug\dynamic\cdecl\libxml2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="libxml2_redist_AfterBuild_v100_and_x64_and_Debug_and_dynamic_and_cdecl" Label="v100 and x64 and Debug and dynamic and cdecl" Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" AfterTargets="libxml2_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\x64\Debug\dynamic\cdecl\libxml2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="libxml2_redist_AfterBuild_v110_and_x64_and_Debug_and_dynamic_and_cdecl" Label="v110 and x64 and Debug and dynamic and cdecl" Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-libxml2_redist.ToLower())' == 'dynamic' And '$(CallingConvention-libxml2_redist.ToLower())' == 'cdecl'" AfterTargets="libxml2_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\x64\Debug\dynamic\cdecl\libxml2.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <UsingTask TaskName="libxml2_redist_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+</Project>
