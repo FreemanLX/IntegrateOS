@@ -37,7 +37,9 @@ What is new:\
 	
 
 Temporary removed features:\
-	1. Removed the IntegrateOS Program Selector\
+	1. Removed the IntegrateOS Program Selector
+	
+	
 	
 
 Removed features:\
@@ -46,9 +48,5 @@ Removed features:\
 	
 	
 Bugs:\
-       1. A problem not showing the progress during the conversion\
+       1. A problem not showing the progress during the conversion
        
- 
- 
-<b> Contribuitors </b>\
--> Andreas Mihalea (FreemanLX)\
