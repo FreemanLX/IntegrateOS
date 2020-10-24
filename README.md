@@ -48,5 +48,10 @@ Removed features:\
 	
 	
 Bugs:\
-       1. A problem not showing the progress during the conversion
+       1. A problem not showing the progress during the conversion.\BE
+       2. After you leave the Settings page, when you enter again the theme will no change.\
+       3. After you click X, on the program, the program will not quit completly.\
+       4. No message appears if you want to click X.
+       
+       
        
