@@ -14,7 +14,6 @@ namespace WindowsFormsApplication2
         public Form5(int i = 0)
         {
             j = i;
-            g.Clear();
             InitializeComponent();
             if(i == 1)
             {
@@ -22,24 +21,29 @@ namespace WindowsFormsApplication2
             }
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e) {Environment.Exit(0);}
-
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            try
+            {
+                var dialog = MetroFramework.MetroMessageBox.Show(this, "Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, IntegrateOS.IntegrateOS_var.color_t);
+                if (dialog == DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                }
+                if (dialog == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            catch { }
+        }
         private void Form5_Load(object sender, EventArgs e) {
-            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
-            metroTile1.Style = IntegrateOS.user_settings.color1;
-            metroTile2.Style = IntegrateOS.user_settings.color1;
-            metroTile3.Style = IntegrateOS.user_settings.color1;
-            metroTile4.Style = IntegrateOS.user_settings.color1;
-            metroTile5.Style = IntegrateOS.user_settings.color1;
-            if (IntegrateOS.user_settings.dark == 0)
-            {
-                this.components.SetTheme(this, IntegrateOS.user_settings.theme);
-            }
-            else
-            {
-
-                this.components.SetTheme(this, IntegrateOS.user_settings.theme);
-            }
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
+            metroTile1.Style = IntegrateOS.IntegrateOS_var.color1;
+            metroTile2.Style = IntegrateOS.IntegrateOS_var.color1;
+            metroTile3.Style = IntegrateOS.IntegrateOS_var.color1;
+            metroTile4.Style = IntegrateOS.IntegrateOS_var.color1;
+            metroTile5.Style = IntegrateOS.IntegrateOS_var.color1;
 
         }
         string which_t;
@@ -74,6 +78,8 @@ namespace WindowsFormsApplication2
             button3.Visible = true;
             which_t = metroTile4.Text;
             button3.Text = "Browse " + which_t;
+            txtPath.Text = "Click browse to select an " + which_t + " file";
+
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
@@ -82,6 +88,7 @@ namespace WindowsFormsApplication2
             button3.Visible = true;
             which_t = metroTile1.Text;
             button3.Text = "Browse " + which_t;
+            txtPath.Text = "Click browse to select a " + which_t + " file";
         }
 
         private void metroTile2_Click(object sender, EventArgs e)
@@ -90,6 +97,7 @@ namespace WindowsFormsApplication2
             button3.Visible = true;
             which_t = metroTile2.Text;
             button3.Text = "Browse " + which_t;
+            txtPath.Text = "Click browse to select an " + which_t + " file";
         }
 
         private void metroTile3_Click(object sender, EventArgs e)
@@ -98,6 +106,7 @@ namespace WindowsFormsApplication2
             button3.Visible = true;
             which_t = metroTile3.Text;
             button3.Text = "Browse " + which_t;
+            txtPath.Text = "Click browse to select a " + which_t + " file";
         }
 
         private void metroTile5_Click(object sender, EventArgs e)
@@ -106,6 +115,7 @@ namespace WindowsFormsApplication2
             button3.Visible = true;
             which_t = metroTile5.Text;
             button3.Text = "Browse " + which_t;
+            txtPath.Text = "Click browse to select a folder";
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -133,12 +143,10 @@ namespace WindowsFormsApplication2
                 if (which_t == "ISO") ofd.Filter = "*.iso|*.iso";
                 if (which_t == "ESD") ofd.Filter = "*.esd|*.esd";
                 if (which_t == "SWM") ofd.Filter = "*.swm|*.swm";
-                if (ofd.ShowDialog() == DialogResult.OK) ////ofd este un obiect de tip OfenFileDialog, si ShowDialog() verifica daca fisierul 
-                                                         ///respectiv a fost citit sau nu (cu 1 sau cu 0)
+                if (ofd.ShowDialog() == DialogResult.OK) 
                 {
-                    ///DialogResult.OK e un define, si e atribuit cu 1
-                    txtPath.Text = ofd.FileName; ////Aici il ducem la textbox (il afisam)
-                    WindowsSetup.Variabile.locatie = txtPath.Text; ///aici luam locatia si l procesam
+                    txtPath.Text = ofd.FileName; 
+                    WindowsSetup.Variabile.locatie = txtPath.Text; 
                 }
             }
             else

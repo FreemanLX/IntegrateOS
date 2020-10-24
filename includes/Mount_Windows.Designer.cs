@@ -150,7 +150,7 @@
             // 
             // metroButton4
             // 
-            this.metroButton4.Location = new System.Drawing.Point(657, 537);
+            this.metroButton4.Location = new System.Drawing.Point(651, 540);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(120, 40);
             this.metroButton4.TabIndex = 22;
@@ -160,7 +160,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(23, 537);
+            this.metroButton1.Location = new System.Drawing.Point(29, 540);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(120, 40);
             this.metroButton1.TabIndex = 23;
@@ -185,7 +185,6 @@
             this.MinimizeBox = false;
             this.Name = "Mount_Windows";
             this.Resizable = false;
-            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Text = "Mount_Windows";
             this.Load += new System.EventHandler(this.Mount_Windows_Load);
             this.ResumeLayout(false);

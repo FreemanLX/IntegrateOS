@@ -55,7 +55,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 173);
+            this.label5.Location = new System.Drawing.Point(23, 174);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(457, 25);
             this.label5.TabIndex = 12;
@@ -156,6 +156,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.Label label7;
-        public MetroFramework.Controls.MetroProgressBar progressBar1;
+        private MetroFramework.Controls.MetroProgressBar progressBar1;
     }
 }

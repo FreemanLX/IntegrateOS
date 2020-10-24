@@ -11,7 +11,7 @@ namespace IntegrateOS
 
         private void Bcdedit_name_Load(object sender, EventArgs e)
         {
-            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
         }
 
         string full;

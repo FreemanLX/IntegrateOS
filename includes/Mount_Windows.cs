@@ -29,12 +29,12 @@ namespace IntegrateOS
 
         private void Mount_Windows_Load(object sender, EventArgs e)
         {
-            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
             metroTextBox2.Text = tools_location.location1;
-            metroLabel1.Theme = IntegrateOS.user_settings.theme;
-            metroLabel2.Theme = IntegrateOS.user_settings.theme;
-            metroTextBox1.Theme = IntegrateOS.user_settings.theme;
-            metroTextBox2.Theme = IntegrateOS.user_settings.theme;
+            metroLabel1.Theme = IntegrateOS.IntegrateOS_var.theme;
+            metroLabel2.Theme = IntegrateOS.IntegrateOS_var.theme;
+            metroTextBox1.Theme = IntegrateOS.IntegrateOS_var.theme;
+            metroTextBox2.Theme = IntegrateOS.IntegrateOS_var.theme;
         }
         bool mounted = false;
 
@@ -59,11 +59,11 @@ namespace IntegrateOS
         }
 
         private const string DllFilePath = @"IntegrateOS Base.dll";
-        [DllImport(DllFilePath, SetLastError = true, EntryPoint = "mount_windows", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(DllFilePath, SetLastError = true, EntryPoint = "mount_windows", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
         private static extern int mount_windows(string loc1, string loc2, int index);
 
 
-        [DllImport(DllFilePath, SetLastError = true, EntryPoint = "unmount_image", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(DllFilePath, SetLastError = true, EntryPoint = "unmount_image", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
         private static extern int unmount_image(string loc2, int commint_change);
 
         private bool unmount(string loc2, int commit_image)
@@ -91,10 +91,11 @@ namespace IntegrateOS
 
         private bool mount(string loc1, string loc2, int index)
         {
+            MessageBox.Show(index.ToString());
             int e = mount_windows(loc1, loc2, index);
+
             try
             {
-               ///e = mount_windows(loc1, loc2, index);
                 if (e == 1)
                 {
                     MessageBox.Show("Unable to mount error: 0x1");

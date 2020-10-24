@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Collections.Generic;
+using System.Text;
 
 
 namespace WindowsFormsApplication2
@@ -8,7 +10,7 @@ namespace WindowsFormsApplication2
     public partial class Form12 : MetroFramework.Forms.MetroForm
     {
         int j = 0;
-        public Form12(int i = 0) ///1 - convert, 0 - installation
+        public Form12(int i = 0) 
         {
             j = i;
             InitializeComponent();
@@ -21,20 +23,22 @@ namespace WindowsFormsApplication2
                 checkedListBox1.Items.Add(pointer);
             }
         }
+
+
         private const string DllFilePath = @"IntegrateOS Base.dll";
-        [DllImport(DllFilePath, SetLastError = true, EntryPoint = "windowsinfo", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
-        private static extern IntPtr Windowsinfo(System.Text.StringBuilder path);
+
+       
+        [DllImport(DllFilePath, SetLastError = true, EntryPoint = "windowsinfo", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
+        private static extern IntPtr  Windowsinfo(System.Text.StringBuilder path);
         public static string[] Test(string path)
         {
             string s = "";
                 System.Text.StringBuilder text = new System.Text.StringBuilder(path);
-                s = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(Windowsinfo(text));
+            s = Marshal.PtrToStringUni(Windowsinfo(text));
             string[] lines = s.Split(';');
             string[] lines3 = new string[lines.Length - 1];
-            for (int i = 0; i < lines.Length - 1; i++)
-            {
-                lines3[i] = lines[i];
-            }
+            for (int i = 0; i < lines.Length - 1; i++) lines3[i] = lines[i];
+            
             return lines3;
 
         }
@@ -42,33 +46,40 @@ namespace WindowsFormsApplication2
         WindowsSetup.Variabile g = new WindowsSetup.Variabile();
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            g.Clear();
             try
             {
-                System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(@"Packages\Temp\");
-                foreach (System.IO.FileInfo file in directory.GetFiles())
-                    file.Delete();
-                foreach (System.IO.DirectoryInfo subDirectory in directory.GetDirectories())
-                    subDirectory.Delete(true);
+                var dialog = MetroFramework.MetroMessageBox.Show(this, "Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, IntegrateOS.IntegrateOS_var.color_t);
+                if(dialog == DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
             catch { }
-            Environment.Exit(0);
         }
+
+
+
 
         string[] pointers;
         private void Form12_Load(object sender, EventArgs e)
         {
-            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
-            if (IntegrateOS.user_settings.dark == 0)
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
+            if (IntegrateOS.IntegrateOS_var.dark == 0)
             {
                 checkedListBox1.ForeColor = System.Drawing.Color.Black;
                 checkedListBox1.BackColor = System.Drawing.Color.White;
+                
             }
             else
             {
                 checkedListBox1.ForeColor = System.Drawing.Color.White;
-                checkedListBox1.BackColor = System.Drawing.Color.Black;
+                checkedListBox1.BackColor = MetroFramework.Drawing.MetroPaint.BackColor.Form(MetroFramework.MetroThemeStyle.Dark);
             }
+            
         }
 
 
@@ -82,7 +93,7 @@ namespace WindowsFormsApplication2
         private void metroButton1_Click(object sender, EventArgs e)
         {
             int ok = 0;
-          for (int index =0; index < checkedListBox1.Items.Count; ++index)
+          for (int index = 0; index < checkedListBox1.Items.Count; ++index)
             if (checkedListBox1.GetItemChecked(index) == true)
             {
                     ok = 1;
@@ -107,20 +118,21 @@ namespace WindowsFormsApplication2
                 }
                 if (j == 2)
                 {
-                    var x = new IntegrateOS.Mount_Windows(Int32.Parse(checkedListBox1.SelectedIndex + 1.ToString()));
+                    MessageBox.Show((checkedListBox1.SelectedIndex + 1).ToString());
+                    var x = new IntegrateOS.Mount_Windows(checkedListBox1.SelectedIndex + 1);
                     x.Show();
                     this.Hide();
                 }
             }
             else
             {
-                MetroFramework.MetroMessageBox.Show(this, "You must check an option to select an Edition", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroFramework.MetroMessageBox.Show(this, "You must check an option to select an Edition", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, IntegrateOS.IntegrateOS_var.color_t);
             }
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+           
 
         }
 

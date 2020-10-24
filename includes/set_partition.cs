@@ -39,11 +39,26 @@ namespace IntegrateOS
             }
         }
 
-
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            try
+            {
+                var dialog = MetroFramework.MetroMessageBox.Show(this, "Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, IntegrateOS.IntegrateOS_var.color_t);
+                if (dialog == DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                }
+                if (dialog == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            catch { }
+        }
         private void set_partition_Load(object sender, EventArgs e)
         {
-            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
-            if (user_settings.dark == 0)
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
+            if (IntegrateOS_var.dark == 0)
             {
                 label1.ForeColor = System.Drawing.Color.Black;
                 label2.ForeColor = System.Drawing.Color.Black;

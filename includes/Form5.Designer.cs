@@ -114,7 +114,7 @@
             this.txtPath.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtPath.Lines = new string[] {
         "Click browse to select"};
-            this.txtPath.Location = new System.Drawing.Point(40, 442);
+            this.txtPath.Location = new System.Drawing.Point(39, 437);
             this.txtPath.MaxLength = 32767;
             this.txtPath.Name = "txtPath";
             this.txtPath.PasswordChar = '\0';
@@ -141,7 +141,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(651, 537);
+            this.button4.Location = new System.Drawing.Point(651, 540);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(120, 40);
             this.button4.TabIndex = 27;
@@ -156,7 +156,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(39, 537);
+            this.button2.Location = new System.Drawing.Point(29, 540);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 40);
             this.button2.TabIndex = 28;
@@ -170,7 +170,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(651, 442);
+            this.button3.Location = new System.Drawing.Point(651, 437);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 33);
             this.button3.TabIndex = 29;

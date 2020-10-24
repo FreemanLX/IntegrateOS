@@ -27,8 +27,9 @@
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
+    <MapFileExtensions>false</MapFileExtensions>
     <MinimumRequiredVersion>2.2.1.0</MinimumRequiredVersion>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>2.2.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
@@ -66,7 +67,7 @@
     <ManifestKeyFile>IntegrateOS.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -87,37 +88,16 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DiscUtils.Common, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Discutils.0.11.0.2\lib\net40\DiscUtils.Common.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MetroFramework">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MetroFramework.Design">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MetroFramework.Fonts">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.VisualBasic.Compatibility" />
-    <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Management.Instrumentation" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bcdedit_name.cs">
@@ -126,18 +106,11 @@
     <Compile Include="Bcdedit_name.Designer.cs">
       <DependentUpon>Bcdedit_name.cs</DependentUpon>
     </Compile>
-    <Compile Include="CMD_Process_Class.cs" />
     <Compile Include="convert_wim_esd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="convert_wim_esd.Designer.cs">
       <DependentUpon>convert_wim_esd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Download_Linux.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Download_Linux.Designer.cs">
-      <DependentUpon>Download_Linux.cs</DependentUpon>
     </Compile>
     <Compile Include="Form11.cs">
       <SubType>Form</SubType>
@@ -177,18 +150,11 @@
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Helper.cs" />
-    <Compile Include="IterateCallback.cs" />
     <Compile Include="license.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="license.Designer.cs">
       <DependentUpon>license.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Linux.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Linux.Designer.cs">
-      <DependentUpon>Linux.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -237,26 +203,19 @@
     <Compile Include="set_partition.Designer.cs">
       <DependentUpon>set_partition.cs</DependentUpon>
     </Compile>
-    <Compile Include="Themes.cs" />
     <Compile Include="tools.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="tools.Designer.cs">
       <DependentUpon>tools.cs</DependentUpon>
     </Compile>
-    <Compile Include="tools_location.cs" />
-    <Compile Include="user_settings.cs" />
-    <Compile Include="Variabile.cs" />
-    <Compile Include="WimLibException.cs" />
+    <Compile Include="IntegrateOS_var.cs" />
     <Compile Include="WimStruct.cs" />
     <EmbeddedResource Include="Bcdedit_name.resx">
       <DependentUpon>Bcdedit_name.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="convert_wim_esd.resx">
       <DependentUpon>convert_wim_esd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Download_Linux.resx">
-      <DependentUpon>Download_Linux.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form11.resx">
       <DependentUpon>Form11.cs</DependentUpon>
@@ -278,9 +237,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="license.resx">
       <DependentUpon>license.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Linux.resx">
-      <DependentUpon>Linux.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -349,9 +305,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\kisspng-computer-icons-windows-8-computer-software-windows-5b166de0f1be93.5688602715281965769902.jpg" />
-    <None Include="Resources\kisspng-computer-icons-windows-8-computer-software-windows-5b166de0f1be93.56886027152819657699021.jpg" />
     <Content Include="windows_update.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\MetroFramework\MetroFramework\MetroFramework.csproj">
+      <Project>{bb41ac8b-cbed-4387-a7e0-4567edb3f57f}</Project>
+      <Name>MetroFramework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

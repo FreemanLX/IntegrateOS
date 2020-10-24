@@ -75,20 +75,36 @@ namespace WindowsSetup
             }
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            try
+            {
+                var dialog = MetroFramework.MetroMessageBox.Show(this, "Do you want to abort extracting ISO?", "Abort", MessageBoxButtons.YesNo, MessageBoxIcon.Question, IntegrateOS.IntegrateOS_var.color_t);
+                if (dialog == DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                }
+                if (dialog == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            catch { }
+        }
 
 
 
         private void Form7_Load(object sender, EventArgs e)
         {
-            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
 
-                metroLabel1.Theme = IntegrateOS.user_settings.theme;
-                metroLabel2.Theme = IntegrateOS.user_settings.theme;
-                metroLabel3.Theme = IntegrateOS.user_settings.theme;
-                metroLabel4.Theme = IntegrateOS.user_settings.theme;
-                metroTextBox1.Theme = IntegrateOS.user_settings.theme;
-                metroProgressBar1.Theme = IntegrateOS.user_settings.theme;
-            metroProgressBar1.Style = IntegrateOS.user_settings.color1;
+                metroLabel1.Theme = IntegrateOS.IntegrateOS_var.theme;
+                metroLabel2.Theme = IntegrateOS.IntegrateOS_var.theme;
+                metroLabel3.Theme = IntegrateOS.IntegrateOS_var.theme;
+                metroLabel4.Theme = IntegrateOS.IntegrateOS_var.theme;
+                metroTextBox1.Theme = IntegrateOS.IntegrateOS_var.theme;
+                metroProgressBar1.Theme = IntegrateOS.IntegrateOS_var.theme;
+            metroProgressBar1.Style = IntegrateOS.IntegrateOS_var.color1;
         }
         string esd, wim;
 

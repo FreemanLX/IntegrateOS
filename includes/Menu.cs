@@ -28,9 +28,12 @@ namespace IntegrateOS
             }
         }
 
+   
+
         private void Menu_Load(object sender, EventArgs e)
         {
-
+            
+            pictureBox3.BackColor = Generate_Colors.Generate(IntegrateOS_var.color_t);
             if(!this.IsElevated)
             {
                 var exeName = Process.GetCurrentProcess().MainModule.FileName;
@@ -40,11 +43,11 @@ namespace IntegrateOS
                 Process.Start(startInfo);
                 Application.Exit();
             }
-            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
-            metroTile1.Style = IntegrateOS.user_settings.color1;
-            metroTile2.Style = IntegrateOS.user_settings.color1;
-            metroTile3.Style = IntegrateOS.user_settings.color1;
-            if (user_settings.dark == 0)
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
+            metroTile1.Style = IntegrateOS.IntegrateOS_var.color1;
+            metroTile2.Style = IntegrateOS.IntegrateOS_var.color1;
+            metroTile3.Style = IntegrateOS.IntegrateOS_var.color1;
+            if (IntegrateOS_var.dark == 0)
             {
                 label1.ForeColor = System.Drawing.Color.Black;
                 label2.ForeColor = System.Drawing.Color.Black;
@@ -105,7 +108,24 @@ namespace IntegrateOS
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            var eps = MetroFramework.MetroMessageBox.Show(this, "Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, IntegrateOS_var.color_t);
+            if(eps == DialogResult.Yes)
+              Environment.Exit(0);
+
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            var x = new tools();
+            this.Hide();
+            x.Show();
+        }
+
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+            var x = new selection_os();
+            x.Show();
+            this.Hide();
         }
     }
 }

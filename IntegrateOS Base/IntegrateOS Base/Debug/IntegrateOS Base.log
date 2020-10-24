@@ -1,3 +1,1 @@
-﻿  IntegrateOS Base.cpp
-c:\users\andreas\source\repos\integrateos base\integrateos base\integrateos base.cpp(53): warning C4715: 'windowsinfo': not all control paths return a value
-  IntegrateOS Base.vcxproj -> C:\Users\Andreas\source\repos\IntegrateOS Base\Debug\IntegrateOS Base.dll
+﻿C:\Users\Andreas\Desktop\New\IntegrateOS\IntegrateOS Base\IntegrateOS Base\IntegrateOS Base.vcxproj(239,5): error : This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is ..\..\..\..\Desktop\IntegrateOS\packages\pthreads.redist.2.9.1.4\build\native\pthreads.redist.targets.

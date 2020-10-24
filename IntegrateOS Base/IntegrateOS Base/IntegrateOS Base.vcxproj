@@ -73,6 +73,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <TargetExt>.dll</TargetExt>
+    <Linkage-pthreads>ltcg</Linkage-pthreads>
+    <CallingConvention-pthreads>stdcall</CallingConvention-pthreads>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -160,10 +162,6 @@
     <ClCompile Include="IntegrateOS Base.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\lib\v110\Win32\Release\static\cdecl\libxml2.lib" />
-    <Library Include="..\..\..\..\Desktop\IntegrateOS\packages\pthreads.2.9.1.4\build\native\lib\v110\Win32\Release\static\cdecl\libpthread-static.lib" />
-    <Library Include="..\..\..\..\Desktop\IntegrateOS\packages\pthreads.2.9.1.4\build\native\lib\v110\Win32\Release\static\stdcall\libpthread-static-stdcall.lib" />
-    <Library Include="Lib\libwim.lib" />
     <Library Include="Lib\x86\dismapi.lib" />
   </ItemGroup>
   <ItemGroup>
@@ -231,6 +229,8 @@
     <Import Project="..\..\..\..\Desktop\IntegrateOS\packages\libiconv.redist.1.14.0.11\build\native\libiconv.redist.targets" Condition="Exists('..\..\..\..\Desktop\IntegrateOS\packages\libiconv.redist.1.14.0.11\build\native\libiconv.redist.targets')" />
     <Import Project="..\..\..\..\Desktop\IntegrateOS\packages\libiconv.1.14.0.11\build\native\libiconv.targets" Condition="Exists('..\..\..\..\Desktop\IntegrateOS\packages\libiconv.1.14.0.11\build\native\libiconv.targets')" />
     <Import Project="..\..\..\..\Desktop\IntegrateOS\packages\7z.Libs.19.0.2\build\native\7z.Libs.targets" Condition="Exists('..\..\..\..\Desktop\IntegrateOS\packages\7z.Libs.19.0.2\build\native\7z.Libs.targets')" />
+    <Import Project="..\..\packages\pthreads.redist.2.9.1.4\build\native\pthreads.redist.targets" Condition="Exists('..\..\packages\pthreads.redist.2.9.1.4\build\native\pthreads.redist.targets')" />
+    <Import Project="..\..\packages\pthreads.2.9.1.4\build\native\pthreads.targets" Condition="Exists('..\..\packages\pthreads.2.9.1.4\build\native\pthreads.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -243,5 +243,7 @@
     <Error Condition="!Exists('..\..\..\..\Desktop\IntegrateOS\packages\libiconv.redist.1.14.0.11\build\native\libiconv.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\Desktop\IntegrateOS\packages\libiconv.redist.1.14.0.11\build\native\libiconv.redist.targets'))" />
     <Error Condition="!Exists('..\..\..\..\Desktop\IntegrateOS\packages\libiconv.1.14.0.11\build\native\libiconv.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\Desktop\IntegrateOS\packages\libiconv.1.14.0.11\build\native\libiconv.targets'))" />
     <Error Condition="!Exists('..\..\..\..\Desktop\IntegrateOS\packages\7z.Libs.19.0.2\build\native\7z.Libs.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\Desktop\IntegrateOS\packages\7z.Libs.19.0.2\build\native\7z.Libs.targets'))" />
+    <Error Condition="!Exists('..\..\packages\pthreads.redist.2.9.1.4\build\native\pthreads.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\pthreads.redist.2.9.1.4\build\native\pthreads.redist.targets'))" />
+    <Error Condition="!Exists('..\..\packages\pthreads.2.9.1.4\build\native\pthreads.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\pthreads.2.9.1.4\build\native\pthreads.targets'))" />
   </Target>
 </Project>

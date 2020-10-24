@@ -30,7 +30,6 @@
         {
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.txtPath = new MetroFramework.Controls.MetroTextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -61,18 +60,6 @@
             this.metroTile2.UseTileImage = true;
             this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
-            // metroTile3
-            // 
-            this.metroTile3.ActiveControl = null;
-            this.metroTile3.Location = new System.Drawing.Point(423, 79);
-            this.metroTile3.Name = "metroTile3";
-            this.metroTile3.Size = new System.Drawing.Size(194, 136);
-            this.metroTile3.TabIndex = 23;
-            this.metroTile3.Text = "Download";
-            this.metroTile3.UseSelectable = true;
-            this.metroTile3.UseTileImage = true;
-            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
-            // 
             // txtPath
             // 
             this.txtPath.BackColor = System.Drawing.Color.White;
@@ -91,7 +78,7 @@
             this.txtPath.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtPath.Lines = new string[] {
         "Click browse to select"};
-            this.txtPath.Location = new System.Drawing.Point(40, 442);
+            this.txtPath.Location = new System.Drawing.Point(24, 396);
             this.txtPath.MaxLength = 32767;
             this.txtPath.Name = "txtPath";
             this.txtPath.PasswordChar = '\0';
@@ -117,7 +104,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(657, 442);
+            this.button3.Location = new System.Drawing.Point(651, 396);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 33);
             this.button3.TabIndex = 30;
@@ -132,7 +119,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(39, 537);
+            this.button2.Location = new System.Drawing.Point(29, 540);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 40);
             this.button2.TabIndex = 31;
@@ -146,7 +133,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(651, 537);
+            this.button1.Location = new System.Drawing.Point(651, 540);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 40);
             this.button1.TabIndex = 32;
@@ -165,9 +152,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.txtPath);
-            this.Controls.Add(this.metroTile3);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
+            this.MaximizeBox = false;
             this.Name = "Select_Linux";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
@@ -181,7 +168,6 @@
 
         private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroTile metroTile2;
-        private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTextBox txtPath;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;

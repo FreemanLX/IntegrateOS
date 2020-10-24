@@ -30,10 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
             this.metroRadioButton2 = new MetroFramework.Controls.MetroRadioButton();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -46,6 +44,7 @@
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,16 +57,6 @@
             this.metroLabel1.Size = new System.Drawing.Size(71, 25);
             this.metroLabel1.TabIndex = 10;
             this.metroLabel1.Text = "Themes";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.Location = new System.Drawing.Point(47, 224);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(58, 25);
-            this.metroLabel2.TabIndex = 11;
-            this.metroLabel2.Text = "About";
             // 
             // comboBox3
             // 
@@ -87,7 +76,7 @@
             "Red",
             "Teal",
             "Yellow"});
-            this.comboBox3.Location = new System.Drawing.Point(281, 119);
+            this.comboBox3.Location = new System.Drawing.Point(548, 271);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(130, 33);
             this.comboBox3.Sorted = true;
@@ -105,17 +94,6 @@
             this.metroLabel4.Size = new System.Drawing.Size(53, 25);
             this.metroLabel4.TabIndex = 14;
             this.metroLabel4.Text = "Color";
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel7.Location = new System.Drawing.Point(73, 260);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(251, 50);
-            this.metroLabel7.TabIndex = 20;
-            this.metroLabel7.Text = "IntegrateOS Beta v0.2.7.5c2 \r\nCopyright (C) IntegrateOS Team";
-            this.metroLabel7.Click += new System.EventHandler(this.metroLabel7_Click);
             // 
             // metroRadioButton1
             // 
@@ -159,7 +137,7 @@
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel5.Location = new System.Drawing.Point(47, 338);
+            this.metroLabel5.Location = new System.Drawing.Point(47, 250);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(74, 25);
             this.metroLabel5.TabIndex = 25;
@@ -169,7 +147,7 @@
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel6.Location = new System.Drawing.Point(73, 379);
+            this.metroLabel6.Location = new System.Drawing.Point(73, 280);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(172, 25);
             this.metroLabel6.TabIndex = 26;
@@ -180,7 +158,7 @@
             // 
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel8.Location = new System.Drawing.Point(73, 404);
+            this.metroLabel8.Location = new System.Drawing.Point(73, 305);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(210, 25);
             this.metroLabel8.TabIndex = 27;
@@ -191,7 +169,7 @@
             // 
             this.metroLabel9.AutoSize = true;
             this.metroLabel9.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel9.Location = new System.Drawing.Point(73, 429);
+            this.metroLabel9.Location = new System.Drawing.Point(73, 330);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(145, 25);
             this.metroLabel9.TabIndex = 28;
@@ -202,7 +180,7 @@
             // 
             this.metroLabel10.AutoSize = true;
             this.metroLabel10.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel10.Location = new System.Drawing.Point(73, 454);
+            this.metroLabel10.Location = new System.Drawing.Point(73, 355);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(189, 25);
             this.metroLabel10.TabIndex = 29;
@@ -213,7 +191,7 @@
             // 
             this.metroLabel11.AutoSize = true;
             this.metroLabel11.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel11.Location = new System.Drawing.Point(73, 479);
+            this.metroLabel11.Location = new System.Drawing.Point(73, 380);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(119, 25);
             this.metroLabel11.TabIndex = 30;
@@ -222,11 +200,11 @@
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(336, 537);
+            this.metroButton2.Location = new System.Drawing.Point(29, 540);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(120, 40);
             this.metroButton2.TabIndex = 31;
-            this.metroButton2.Text = "Exit";
+            this.metroButton2.Text = "Back";
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
@@ -234,13 +212,23 @@
             // 
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(132, 119);
+            this.metroComboBox1.Location = new System.Drawing.Point(130, 119);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.PromptText = "Blue";
             this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
             this.metroComboBox1.TabIndex = 32;
             this.metroComboBox1.UseSelectable = true;
             this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel12.Location = new System.Drawing.Point(47, 236);
+            this.metroLabel12.Name = "metroLabel2";
+            this.metroLabel12.Size = new System.Drawing.Size(58, 25);
+            this.metroLabel12.TabIndex = 11;
+            this.metroLabel12.Text = "About";
             // 
             // Settings
             // 
@@ -259,14 +247,11 @@
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroRadioButton2);
             this.Controls.Add(this.metroRadioButton1);
-            this.Controls.Add(this.metroLabel7);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.MaximizeBox = false;
             this.Name = "Settings";
-            this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Text = "IntegrateOS - Settings";
             this.Load += new System.EventHandler(this.Settings_Load);
@@ -279,10 +264,8 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.ComboBox comboBox3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroRadioButton metroRadioButton1;
         private MetroFramework.Controls.MetroRadioButton metroRadioButton2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
@@ -295,5 +278,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel10;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
     }
 }

@@ -52,8 +52,8 @@ namespace IntegrateOS
         private void format_Load(object sender, EventArgs e)
         { ///si asta e un mesaj care iti formateaza partitia, nu o sa intru in detalii ca e deja mult prea complicat
 
-            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
-            metroLabel1.Theme = IntegrateOS.user_settings.theme;
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
+            metroLabel1.Theme = IntegrateOS.IntegrateOS_var.theme;
             temp = new Thread(
                         () =>
                         {

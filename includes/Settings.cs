@@ -10,12 +10,28 @@ namespace IntegrateOS
         {
             InitializeComponent();
             ///metroStyleManager1 = Themes.generate(user_settings.color1, user_settings.theme);
-            if (user_settings.dark == 0)
+            if (IntegrateOS_var.dark == 0)
             {
                 temp = false;
             }
             else temp = true;
            
+        }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            try
+            {
+                var dialog = MetroFramework.MetroMessageBox.Show(this, "Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, IntegrateOS.IntegrateOS_var.color_t);
+                if (dialog == DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                }
+                if(dialog == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            catch { }
         }
 
         private void Settings_Load(object sender, EventArgs e)
@@ -36,7 +52,7 @@ namespace IntegrateOS
                 metroRadioButton2.Checked = false;
                 metroRadioButton1.Checked = true;
             }
-            comboBox3.Text = user_settings.color;
+            metroComboBox1.Text = IntegrateOS_var.color;
         }
 
         private void metroLabel7_Click(object sender, EventArgs e)
@@ -57,8 +73,8 @@ namespace IntegrateOS
             metroStyleManager1.Theme = MetroThemeStyle.Dark;
             comboBox3.ForeColor = System.Drawing.Color.White;
             comboBox3.BackColor = System.Drawing.Color.Black;
-            user_settings.theme = metroStyleManager1.Theme;
-            user_settings.dark = 1;
+            IntegrateOS_var.theme = metroStyleManager1.Theme;
+            IntegrateOS_var.dark = 1;
         }
 
         private void metroRadioButton2_CheckedChanged(object sender, EventArgs e)
@@ -67,8 +83,8 @@ namespace IntegrateOS
             comboBox3.BackColor = System.Drawing.Color.White;
             temp = false;
             metroStyleManager1.Theme = MetroThemeStyle.Light;
-            user_settings.theme = metroStyleManager1.Theme;
-            user_settings.dark = 0;
+            IntegrateOS_var.theme = metroStyleManager1.Theme;
+            IntegrateOS_var.dark = 0;
         }
 
         private void metroLabel6_Click(object sender, EventArgs e)
@@ -108,7 +124,10 @@ namespace IntegrateOS
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-
+            string[] complete = new string[2];
+            complete[0] = IntegrateOS_var.dark.ToString();
+            complete[1] = IntegrateOS_var.color_t.ToString();
+            System.IO.File.WriteAllLines("Settings\\user.dat", complete);
             x = new Menu(WindowsSetup.Variabile.version);
             x.Show();
             this.Hide();
@@ -116,53 +135,53 @@ namespace IntegrateOS
 
         private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            user_settings.color = this.comboBox3.GetItemText(this.metroComboBox1.SelectedItem);
-            if (user_settings.color == "Blue")
+            IntegrateOS_var.color = this.comboBox3.GetItemText(this.metroComboBox1.SelectedItem);
+            if (IntegrateOS_var.color == "Blue")
             {
                 metroStyleManager1.Style = MetroFramework.MetroColorStyle.Blue;
             }
-            if (user_settings.color == "Green")
+            if (IntegrateOS_var.color == "Green")
             {
                 metroStyleManager1.Style = MetroFramework.MetroColorStyle.Green;
             }
-            if (user_settings.color == "Lime")
+            if (IntegrateOS_var.color == "Lime")
             {
                 metroStyleManager1.Style = MetroFramework.MetroColorStyle.Lime;
             }
-            if (user_settings.color == "Teal")
+            if (IntegrateOS_var.color == "Teal")
             {
                 metroStyleManager1.Style = MetroFramework.MetroColorStyle.Teal;
             }
-            if (user_settings.color == "Orange")
+            if (IntegrateOS_var.color == "Orange")
             {
                 metroStyleManager1.Style = MetroFramework.MetroColorStyle.Orange;
             }
-            if (user_settings.color == "Brown")
+            if (IntegrateOS_var.color == "Brown")
             {
                 metroStyleManager1.Style = MetroFramework.MetroColorStyle.Brown;
             }
-            if (user_settings.color == "Pink")
+            if (IntegrateOS_var.color == "Pink")
             {
                 metroStyleManager1.Style = MetroFramework.MetroColorStyle.Pink;
             }
-            if (user_settings.color == "Magenta")
+            if (IntegrateOS_var.color == "Magenta")
             {
                 metroStyleManager1.Style = MetroFramework.MetroColorStyle.Magenta;
             }
-            if (user_settings.color == "Purple")
+            if (IntegrateOS_var.color == "Purple")
             {
                 metroStyleManager1.Style = MetroFramework.MetroColorStyle.Purple;
             }
-            if (user_settings.color == "Red")
+            if (IntegrateOS_var.color == "Red")
             {
                 metroStyleManager1.Style = MetroFramework.MetroColorStyle.Red;
             }
-            if (user_settings.color == "Yellow")
+            if (IntegrateOS_var.color == "Yellow")
             {
                 metroStyleManager1.Style = MetroFramework.MetroColorStyle.Yellow;
             }
-
-            user_settings.color1 = metroStyleManager1.Style;
+            IntegrateOS_var.color_t = metroComboBox1.SelectedIndex + 1;
+            IntegrateOS_var.color1 = metroStyleManager1.Style;
         }
     }
 }

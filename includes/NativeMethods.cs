@@ -467,6 +467,7 @@ namespace ManagedWimLib
 
         #region WimLib Function Pointer
         [SuppressMessage("ReSharper", "MemberHidesStaticFromOuterClass")]
+
         internal static class Utf16
         {
             internal const UnmanagedType StrType = UnmanagedType.LPWStr;
@@ -652,17 +653,6 @@ namespace ManagedWimLib
             internal static wimlib_open_wim_with_progress OpenWimWithProgress;
             #endregion
 
-            #region Mount - MountImage (Linux Only)
-            [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate ErrorCode wimlib_mount_image(
-                IntPtr wim,
-                int image,
-                [MarshalAs(StrType)] string dir,
-                MountFlags mount_flags,
-                [MarshalAs(StrType)] string staging_dir);
-            internal static wimlib_mount_image MountImage;
-            #endregion
-
             #region Reference - ReferenceResourceFiles
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate ErrorCode wimlib_reference_resource_files(
@@ -723,22 +713,6 @@ namespace ManagedWimLib
                 ulong part_size,
                 WriteFlags write_flags);
             internal static wimlib_split Split;
-            #endregion
-
-            #region Unmount - UnmountImage, UnmountImageWithProgress (Linux Only)
-            [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate ErrorCode wimlib_unmount_image(
-                [MarshalAs(StrType)] string dir,
-                UnmountFlags unmount_flags);
-            internal static wimlib_unmount_image UnmountImage;
-
-            [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate ErrorCode wimlib_unmount_image_with_progress(
-                [MarshalAs(StrType)] string dir,
-                UnmountFlags unmount_flags,
-                [MarshalAs(UnmanagedType.FunctionPtr)] NativeProgressFunc progfunc,
-                IntPtr progctx);
-            internal static wimlib_unmount_image_with_progress UnmountImageWithProgress;
             #endregion
 
             #region Write - Write
@@ -1003,16 +977,7 @@ namespace ManagedWimLib
             internal static wimlib_open_wim_with_progress OpenWimWithProgress;
             #endregion
 
-            #region Mount - MountImage (Linux Only)
-            [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate ErrorCode wimlib_mount_image(
-                IntPtr wim,
-                int image,
-                [MarshalAs(StrType)] string dir,
-                MountFlags mount_flags,
-                [MarshalAs(StrType)] string staging_dir);
-            internal static wimlib_mount_image MountImage;
-            #endregion
+            
 
             #region Reference - ReferenceResourceFiles
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
@@ -1076,21 +1041,7 @@ namespace ManagedWimLib
             internal static wimlib_split Split;
             #endregion
 
-            #region Unmount - UnmountImage, UnmountImageWithProgress (Linux Only)
-            [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate ErrorCode wimlib_unmount_image(
-                [MarshalAs(StrType)] string dir,
-                UnmountFlags unmount_flags);
-            internal static wimlib_unmount_image UnmountImage;
-
-            [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate ErrorCode wimlib_unmount_image_with_progress(
-                [MarshalAs(StrType)] string dir,
-                UnmountFlags unmount_flags,
-                [MarshalAs(UnmanagedType.FunctionPtr)] NativeProgressFunc progfunc,
-                IntPtr progctx);
-            internal static wimlib_unmount_image_with_progress UnmountImageWithProgress;
-            #endregion
+           
 
             #region Write - Write
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]

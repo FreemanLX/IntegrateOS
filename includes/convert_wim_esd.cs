@@ -21,13 +21,11 @@ namespace IntegrateOS
             InitializeComponent();
             if (convert_t == 1)
             {
-                label4.Visible = true;
-                progressBar1.Visible = true;
                 button4.Visible = false;
                 button5.Visible = false;
-                metroButton1.Enabled = false;
                 button1.Enabled = false;
-                comboBox3.Enabled = false;
+                button2.Enabled = false;
+                metroComboBox1.Enabled = false;
                 txtPath.Text = tools_location.location1;
                 metroTextBox1.Text = tools_location.location2;
                 x = new System.Threading.Thread(() =>
@@ -42,38 +40,51 @@ namespace IntegrateOS
             }
             convert_l = convert_t;
             this.Text = "Convert " + convert + " - " + to_convert;
-            this.label6.Text = convert;
+            this.label6.Text = "Select " + convert;
             convert_final = convert;
             to_convert_final = to_convert;
             label6.Refresh();
-            this.label1.Text = to_convert;
+            this.label1.Text = "Convert to " + to_convert;
             label1.Refresh();
             IntegrateOS.tools_location.type = convert;
             IntegrateOS.tools_location.conversion_type = to_convert;
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            try
+            {
+                var dialog = MetroFramework.MetroMessageBox.Show(this, "Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, IntegrateOS.IntegrateOS_var.color_t);
+                if (dialog == DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                }
+                if (dialog == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            catch { }
+        }
+
         private void convert_wim_esd_Load(object sender, EventArgs e)
         {
             
-            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
-            txtPath.Theme = IntegrateOS.user_settings.theme;
-            metroTextBox1.Theme = IntegrateOS.user_settings.theme;
-            if(user_settings.dark == 0)
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
+            txtPath.Theme = IntegrateOS.IntegrateOS_var.theme;
+            metroTextBox1.Theme = IntegrateOS.IntegrateOS_var.theme;
+            metroComboBox1.Theme = IntegrateOS.IntegrateOS_var.theme;
+            metroComboBox1.Style = IntegrateOS_var.color1;
+            if(IntegrateOS_var.dark == 0)
             {
                 label1.ForeColor = System.Drawing.Color.Black;
-                label4.ForeColor = System.Drawing.Color.Black;
                 label6.ForeColor = System.Drawing.Color.Black;
-                comboBox3.BackColor = System.Drawing.Color.White;
-                comboBox3.ForeColor = System.Drawing.Color.Black;
                 label2.ForeColor = System.Drawing.Color.Black;
             }
             else
             {
                 label1.ForeColor = System.Drawing.Color.White;
-                label4.ForeColor = System.Drawing.Color.White;
                 label6.ForeColor = System.Drawing.Color.White;
-                comboBox3.BackColor = System.Drawing.Color.Black;
-                comboBox3.ForeColor = System.Drawing.Color.White;
                 label2.ForeColor = System.Drawing.Color.White;
             }
             if (Environment.ProcessorCount <= 2)
@@ -88,8 +99,8 @@ namespace IntegrateOS
                 {
                     label3.Visible = true;
                     label3.Refresh();
-                    this.comboBox3.Items.Remove("Recovery");
-                    this.comboBox3.Items.Remove("Max");
+                    this.metroComboBox1.Items.Remove("Recovery");
+                    this.metroComboBox1.Items.Remove("Max");
                 }
                 else
                 {
@@ -98,19 +109,13 @@ namespace IntegrateOS
                         label3.Text = "Warning: Your free ram has less space than 4GB.";
                         label3.Visible = true;
                         label3.Refresh();
-                        this.comboBox3.Items.Remove("Recovery");
+                        this.metroComboBox1.Items.Remove("Recovery");
                     }
                 }
                 if(convert_l == 1)
                 {
-                    progressBar1.Value = 30;
                     x.Start();
                     while (x.IsAlive) { Application.DoEvents(); }
-                    progressBar1.Value = 100;
-                    
-                }
-                if(progressBar1.Value == 100)
-                {
                     System.Threading.Thread.Sleep(1000);
                     MessageBox.Show("The conversion is complete", "Converted", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     try
@@ -124,18 +129,8 @@ namespace IntegrateOS
 
                     }
                 }
-            }
-        }
-
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog ofd = new SaveFileDialog();
-            if (to_convert_final == "WIM") ofd.Filter = "*.wim|*.wim";
-            if (to_convert_final == "ESD") ofd.Filter = "*.esd|*.esd";
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                metroTextBox1.Text = ofd.FileName;
+                    
+                
             }
         }
 
@@ -187,7 +182,7 @@ namespace IntegrateOS
                 {
                     tools_location.location1 = txtPath.Text;
                     tools_location.location2 = metroTextBox1.Text;
-                    tools_location.conversion_code = this.comboBox3.SelectedIndex;
+                    tools_location.conversion_code = this.metroComboBox1.SelectedIndex;
                     var x = new WindowsFormsApplication2.Form12(1);
                     this.Hide();
                     x.Show(); 
@@ -220,7 +215,23 @@ namespace IntegrateOS
         {
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog ofd = new SaveFileDialog();
+            if (to_convert_final == "WIM") ofd.Filter = "*.wim|*.wim";
+            if (to_convert_final == "ESD") ofd.Filter = "*.esd|*.esd";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                metroTextBox1.Text = ofd.FileName;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             if (convert_final == "WIM") ofd.Filter = "*.wim|*.wim";
@@ -230,5 +241,6 @@ namespace IntegrateOS
                 txtPath.Text = ofd.FileName;
             }
         }
+
     }
 }

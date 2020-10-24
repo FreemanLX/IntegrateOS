@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("IntegrateOS")]
-[assembly: AssemblyDescription("Installs Windows on USB or makes a dual boot")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("IntegrateOS Team")]
 [assembly: AssemblyProduct("IntegrateOS")]
-[assembly: AssemblyCopyright("Copyright ©  2020 Andreas Mihalea")]
+[assembly: AssemblyCopyright("Copyright ©  IntegrateOS Team")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.2.0.1")]
-[assembly: AssemblyFileVersion("0.2.0.1")]
+[assembly: AssemblyVersion("0.2.7.5")]
+[assembly: AssemblyFileVersion("0.2.7.5")]

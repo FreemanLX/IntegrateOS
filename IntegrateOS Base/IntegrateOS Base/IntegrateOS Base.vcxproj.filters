@@ -21,10 +21,6 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\x86\dismapi.lib" />
-    <Library Include="Lib\libwim.lib" />
-    <Library Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\native\lib\v110\Win32\Release\static\cdecl\libxml2.lib" />
-    <Library Include="..\..\..\..\Desktop\IntegrateOS\packages\pthreads.2.9.1.4\build\native\lib\v110\Win32\Release\static\stdcall\libpthread-static-stdcall.lib" />
-    <Library Include="..\..\..\..\Desktop\IntegrateOS\packages\pthreads.2.9.1.4\build\native\lib\v110\Win32\Release\static\cdecl\libpthread-static.lib" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\dismapi.h">
@@ -179,7 +175,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="..\..\..\..\Desktop\IntegrateOS\packages\libxml2.2.7.8.7\build\configurations.autopkg" />
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

@@ -19,7 +19,7 @@ namespace IntegrateOS
         string[] s;
         private void license_Load(object sender, EventArgs e)
         {
-            this.StyleManager = Themes.generate(user_settings.color1, user_settings.theme);
+            this.StyleManager = Themes.generate(IntegrateOS_var.color1, IntegrateOS_var.theme);
             if (which == "metro")
             {
                 s = File.ReadAllLines("Licenses\\metroframework.txt");

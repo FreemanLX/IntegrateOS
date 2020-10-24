@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
-using WindowsSetup;
 using MetroFramework;
 using System.Runtime.InteropServices;
 
@@ -11,9 +10,29 @@ namespace WindowsFormsApplication2
     public partial class Form13 : MetroFramework.Forms.MetroForm
     {
         public Form13(){InitializeComponent();}
+
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            try
+            {
+                var dialog = MetroFramework.MetroMessageBox.Show(this, "Do you want to abort the Installation?", "Abort", MessageBoxButtons.YesNo, MessageBoxIcon.Question, IntegrateOS.IntegrateOS_var.color_t);
+                if (dialog == DialogResult.Yes)
+                {
+
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            catch { }
+        }
+
         private void Form13_Load(object sender, EventArgs e){
-            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.user_settings.color1, IntegrateOS.user_settings.theme);
-            if(IntegrateOS.user_settings.dark == 0)
+            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
+            if(IntegrateOS.IntegrateOS_var.dark == 0)
             {
                 label1.ForeColor = System.Drawing.Color.Black;
                 label5.ForeColor = System.Drawing.Color.Black;
@@ -27,12 +46,12 @@ namespace WindowsFormsApplication2
                 label7.ForeColor = System.Drawing.Color.White;
                 label10.ForeColor = System.Drawing.Color.White;
             }
-            progressBar1.Theme = IntegrateOS.user_settings.theme;
-            progressBar1.Style = IntegrateOS.user_settings.color1;
+            progressBar1.Theme = IntegrateOS.IntegrateOS_var.theme;
+            progressBar1.Style = IntegrateOS.IntegrateOS_var.color1;
         }
 
-        private const string DllFilePath = @"IntegrateOS Base2.dll";
-        [DllImport(DllFilePath, SetLastError = true, EntryPoint = "complete", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
+        private const string DllFilePath = @"IntegrateOS Base.dll";
+        [DllImport(DllFilePath, SetLastError = true, EntryPoint = "complete", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         private static extern int complete(System.Text.StringBuilder format, System.Text.StringBuilder nickname, int uefi);
 
 
@@ -74,11 +93,7 @@ namespace WindowsFormsApplication2
         }
 
         WindowsSetup.Variabile g = new WindowsSetup.Variabile();
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            g.Clear();
-            Environment.Exit(0);
-        }
+        
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -126,10 +141,10 @@ namespace WindowsFormsApplication2
                 {
                     timer1.Enabled = false;
                     progressBar1.Enabled = false;
-                    var result = MetroMessageBox.Show(this, "Do you want to restart the Windows to complete the installation?", "Succes", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+                    var result = MetroMessageBox.Show(this, "Do you want to restart the Windows to complete the installation?", "Succes", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information, IntegrateOS.IntegrateOS_var.color_t);
                     if (result == DialogResult.Yes)
                     {
-                        CMD_Process_Class.Process_CMD("shutdown -r -t 0");
+                        IntegrateOS.CMD_Process_Class.Process_CMD("shutdown -r -t 0");
                     }
                     else
                     {

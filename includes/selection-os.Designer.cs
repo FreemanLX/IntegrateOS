@@ -83,7 +83,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 73);
+            this.label5.Location = new System.Drawing.Point(18, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(379, 25);
             this.label5.TabIndex = 21;
@@ -101,7 +101,7 @@
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(345, 537);
+            this.metroButton2.Location = new System.Drawing.Point(29, 540);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(120, 40);
             this.metroButton2.TabIndex = 23;
@@ -123,7 +123,6 @@
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "selection_os";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;

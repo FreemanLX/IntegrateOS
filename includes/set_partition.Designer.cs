@@ -46,7 +46,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(54, 96);
+            this.label1.Location = new System.Drawing.Point(31, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 21);
             this.label1.TabIndex = 4;
@@ -56,7 +56,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(54, 304);
+            this.label3.Location = new System.Drawing.Point(31, 304);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 21);
             this.label3.TabIndex = 6;
@@ -66,7 +66,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(54, 235);
+            this.label4.Location = new System.Drawing.Point(31, 235);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 21);
             this.label4.TabIndex = 7;
@@ -76,7 +76,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(54, 164);
+            this.label5.Location = new System.Drawing.Point(31, 164);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 21);
             this.label5.TabIndex = 8;
@@ -131,7 +131,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(54, 369);
+            this.label2.Location = new System.Drawing.Point(31, 369);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 21);
             this.label2.TabIndex = 14;
@@ -148,21 +148,21 @@
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(271, 537);
+            this.metroButton3.Location = new System.Drawing.Point(651, 540);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(120, 40);
             this.metroButton3.TabIndex = 25;
-            this.metroButton3.Text = "OK";
+            this.metroButton3.Text = "Format and Install";
             this.metroButton3.UseSelectable = true;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // metroButton4
             // 
-            this.metroButton4.Location = new System.Drawing.Point(413, 537);
+            this.metroButton4.Location = new System.Drawing.Point(29, 540);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(120, 40);
             this.metroButton4.TabIndex = 26;
-            this.metroButton4.Text = "Cancel";
+            this.metroButton4.Text = "Back";
             this.metroButton4.UseSelectable = true;
             this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
             // 
