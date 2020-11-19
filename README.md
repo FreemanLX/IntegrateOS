@@ -12,7 +12,22 @@ If you don't have Powershell 5+ you have the link below to download:\
  
  PS: You need Windows 7+ to work 
  
- <b>Update - beta v0.2.7.5c2</b>
+ <b>Update - beta v0.2.7.5C3</b>
+ 
+Fixed bugs:\
+       1. Fixed the bug, when converting from C++ string appears unknown letters.\
+       2. Fixed the bug, about the program will not quit completly. Right now it appears a messagebox that if you want to exit or not.\
+       3. Fixed and improved in the themes and styles section.
+
+What is new:\
+       1. Right now every messagebox has the same style as the program.\
+       2. Right now the program is lighter and more optimised.\
+       3. Right now if you change the settings, it will be automatically saved.\
+       
+Bugs:\
+      1. A problem not showing the progress during the conversion. 
+ 
+ <b>Update - beta v0.2.7.5C2</b>
 
 Fixed bugs:\
         1. Fixed the problem with mounting. (Supports all kind of Windows files)\
