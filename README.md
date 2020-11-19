@@ -12,6 +12,25 @@ If you don't have Powershell 5+ you have the link below to download:\
  
  PS: You need Windows 7+ to work 
  
+ <b>Update - bet v0.2.8.0C1</b>
+ 
+ Fixed bugs:\
+      1. Now the program works on computers without Microsoft ADK.\
+      2. Fixed the problem with the conversion from IntegrateOS Tools.\
+      3. Fixed the problem with the mount / unmount from IntegrateOS Tools.\
+      4. Increased the program responsive, making lighter.\
+      5. The program right now doesn't need the Windows Powershell 5, so it works well on Windows 7+
+      
+     
+ Removed features:\
+      1. Removed the option to download linux. 
+      
+      
+ Bugs:\
+     1. Some features are not implemented yet.
+     
+    
+ 
  <b>Update - beta v0.2.7.5C3</b>
  
 Fixed bugs:\
