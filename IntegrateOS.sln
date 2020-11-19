@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrateOS", "includes\Int
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrateOS Edition Selector", "IntegrateOS Edition Selector\IntegrateOS Edition Selector.csproj", "{5429DBD9-C5C0-4986-A686-C82313E03758}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IntegrateOS Base", "..\..\IntegrateOS\IntegrateOS Base\IntegrateOS Base\IntegrateOS Base.vcxproj", "{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroFramework", "..\..\MetroFramework\MetroFramework\MetroFramework.csproj", "{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}"
 EndProject
 Global
@@ -51,20 +49,6 @@ Global
 		{5429DBD9-C5C0-4986-A686-C82313E03758}.Release|x64.Build.0 = Release|Any CPU
 		{5429DBD9-C5C0-4986-A686-C82313E03758}.Release|x86.ActiveCfg = Release|Any CPU
 		{5429DBD9-C5C0-4986-A686-C82313E03758}.Release|x86.Build.0 = Release|Any CPU
-		{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
-		{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}.Debug|Mixed Platforms.Build.0 = Debug|Win32
-		{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}.Debug|x64.ActiveCfg = Debug|x64
-		{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}.Debug|x64.Build.0 = Debug|x64
-		{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}.Debug|x86.ActiveCfg = Debug|Win32
-		{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}.Debug|x86.Build.0 = Debug|Win32
-		{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}.Release|Any CPU.ActiveCfg = Release|Win32
-		{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}.Release|Mixed Platforms.ActiveCfg = Release|Win32
-		{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}.Release|Mixed Platforms.Build.0 = Release|Win32
-		{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}.Release|x64.ActiveCfg = Release|x64
-		{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}.Release|x64.Build.0 = Release|x64
-		{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}.Release|x86.ActiveCfg = Release|Win32
-		{168ACE4F-20CC-45EA-80C3-838C0B2E89AB}.Release|x86.Build.0 = Release|Win32
 		{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86

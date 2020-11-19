@@ -28,11 +28,14 @@ namespace IntegrateOS
         string format_type_fileSystem, partition_name_type;
         bool format_type_quickformat;
         string format_t;
-        public format()
-        {
+
+        System.Drawing.Point punct;
+        public format(System.Drawing.Point punct1)
+        { 
             InitializeComponent();
+            punct = punct1;
         }
-        public format(string s, string partition_name, int clusterSize, string fileSystem, bool quickFormat)
+        public format(System.Drawing.Point punct1, string s, string partition_name, int clusterSize, string fileSystem, bool quickFormat)
         {
            
             InitializeComponent();
@@ -41,6 +44,7 @@ namespace IntegrateOS
             format_type_quickformat = quickFormat;
             partition_name_type = partition_name;
             format_t = s;
+            punct = punct1;
         }
 
         Thread temp;
@@ -64,7 +68,7 @@ namespace IntegrateOS
 
                                     ///Form13 este formul in care vrem sa instalam Windows ul (extractam SWM, WIM etc)
                                     maximum = true;
-                                    var form2 = new Form13();
+                                    var form2 = new Form13(punct);
                                     this.Hide();
                                     form2.Show();
                                     temp.Abort();

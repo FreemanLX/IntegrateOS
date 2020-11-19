@@ -2,9 +2,9 @@
 using System.IO;
 using System.Windows.Forms;
 using DiscUtils;
-using System.Diagnostics;
 using DiscUtils.Udf;
-
+using System.Collections.Generic;
+using System.Linq;
 
 namespace WindowsSetup
 {
@@ -13,9 +13,10 @@ namespace WindowsSetup
 
     public partial class Form7 : MetroFramework.Forms.MetroForm
     {
-        public Form7()
+        public Form7(System.Drawing.Point punct)
         {
             InitializeComponent();
+            Location = punct;
         }
 
         private void ExtractISO(string ISOName, string ExtractionPath)
@@ -39,18 +40,17 @@ namespace WindowsSetup
             {
                 ExtractDirectory(dinfo, RootPath, PathinISO);
             }
-            foreach (DiscFileInfo finfo in Dinfo.GetFiles())
+            var test = Dinfo.GetFiles();
+            foreach (DiscFileInfo finfo in test)
             {
                 
                 using (Stream FileStr = finfo.OpenRead())
                 {
                     using (FileStream Fs = File.Create(RootPath + "\\" + finfo.Name)) 
                     {
-                        metroProgressBar1.Increment(1);
+                        metroProgressBar1.Increment(1 / test.Length);
                         metroLabel2.Text = metroProgressBar1.Value.ToString() + " %";
                         metroLabel2.Refresh();
-                        metroTextBox1.Text = finfo.Name.ToString();
-                        metroTextBox1.Refresh();
                         FileStr.CopyTo(Fs, 8 * 1024); 
                     }
                 }
@@ -97,20 +97,22 @@ namespace WindowsSetup
         private void Form7_Load(object sender, EventArgs e)
         {
             this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
-
-                metroLabel1.Theme = IntegrateOS.IntegrateOS_var.theme;
+            this.Location = IntegrateOS.Generate_location.data_l;
+            metroLabel1.Theme = IntegrateOS.IntegrateOS_var.theme;
                 metroLabel2.Theme = IntegrateOS.IntegrateOS_var.theme;
-                metroLabel3.Theme = IntegrateOS.IntegrateOS_var.theme;
                 metroLabel4.Theme = IntegrateOS.IntegrateOS_var.theme;
-                metroTextBox1.Theme = IntegrateOS.IntegrateOS_var.theme;
                 metroProgressBar1.Theme = IntegrateOS.IntegrateOS_var.theme;
             metroProgressBar1.Style = IntegrateOS.IntegrateOS_var.color1;
         }
-        string esd, wim;
 
         private void metroLabel3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form7_LocationChanged(object sender, EventArgs e)
+        {
+            IntegrateOS.Generate_location.data_l = this.Location;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -136,43 +138,31 @@ namespace WindowsSetup
                 metroLabel2.Text = metroProgressBar1.Value.ToString() + " %";
                 metroLabel2.Refresh();
                 timer1.Stop();
-                
-                esd = "Windows_TEMP\\sources\\install.esd";
-                wim = "Windows_TEMP\\sources\\install.wim";
+       
+
+                  
                
             }
-            if (metroProgressBar1.Value == 100) { 
+            if (metroProgressBar1.Value == 100) {
 
-                if (!File.Exists(esd))
+                var extensions = new List<string> { ".swm", ".wim", ".esd" };
+                string[] files = Directory.GetFiles(extractTo, "*.*", SearchOption.AllDirectories)
+                    .Where(f => extensions.IndexOf(Path.GetExtension(f)) >= 0).ToArray();
+                if (files.Length == 0)
                 {
-                    if (!File.Exists(wim))
-                    {
-                        MessageBox.Show("It isn't an official Windows iso!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        var form = new WindowsFormsApplication2.Form5();
-                        timer1.Enabled = false;
-                        timer1.Stop();
-                        this.Hide();
-                        form.Show();
-                    }
-                    else
-                    {
+                    MessageBox.Show("It isn't an official Windows iso!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    var form = new WindowsFormsApplication2.Form5(Location);
+                    timer1.Enabled = false;
+                    timer1.Stop();
+                    this.Hide();
+                    form.Show();
 
-                        WindowsSetup.Variabile.locatie = wim;
-                        WindowsSetup.Variabile.var = "wim";
-                        
-                        var y = new WindowsFormsApplication2.Form12();
-                        this.Hide();
-                        y.Show();
-                    }
                 }
                 else
                 {
-
-                    WindowsSetup.Variabile.locatie = esd;
-                    WindowsSetup.Variabile.var = "esd";
-                    var y = new WindowsFormsApplication2.Form12();
+                    var x = new IntegrateOS.Select_Image_File(files, Location);
+                    x.Show();
                     this.Hide();
-                    y.Show();
                 }
                 
             }

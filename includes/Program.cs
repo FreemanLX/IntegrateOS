@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using System.IO;
 
@@ -8,9 +6,6 @@ namespace WindowsFormsApplication2
 {
     static class Variabile
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -25,7 +20,8 @@ namespace WindowsFormsApplication2
                 IntegrateOS.IntegrateOS_var.color1 = IntegrateOS.Generate_Colors.Generate_Metro(Int32.Parse(s[1]));
                 IntegrateOS.IntegrateOS_var.color = IntegrateOS.Generate_Colors.Generate_String(Int32.Parse(s[1]));
             }
-            Application.Run(new IntegrateOS.Menu("IntegrateOS Full Version: v0.2.7.5_betaC3"));
+            Application.Run(new IntegrateOS.Menu("IntegrateOS Full Version: v0.2.8.0_betaC1", IntegrateOS.Generate_location.default_location()));
+            
         }
     }
 }

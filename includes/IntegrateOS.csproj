@@ -185,6 +185,12 @@
     <Compile Include="selection-os.Designer.cs">
       <DependentUpon>selection-os.cs</DependentUpon>
     </Compile>
+    <Compile Include="Select_Image_File.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Select_Image_File.Designer.cs">
+      <DependentUpon>Select_Image_File.cs</DependentUpon>
+    </Compile>
     <Compile Include="Select_Linux.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </Compile>
     <EmbeddedResource Include="selection-os.resx">
       <DependentUpon>selection-os.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Select_Image_File.resx">
+      <DependentUpon>Select_Image_File.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Select_Linux.resx">
       <DependentUpon>Select_Linux.cs</DependentUpon>

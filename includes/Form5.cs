@@ -9,12 +9,12 @@ namespace WindowsFormsApplication2
    
     public partial class Form5 : MetroFramework.Forms.MetroForm
     {
-        WindowsSetup.Variabile g = new WindowsSetup.Variabile();
         int j;
-        public Form5(int i = 0)
+        public Form5(System.Drawing.Point punct, int i = 0)
         {
             j = i;
             InitializeComponent();
+            Location = punct;
             if(i == 1)
             {
                 this.Text = "Mount Windows - Select the file type for mounting";
@@ -38,6 +38,7 @@ namespace WindowsFormsApplication2
             catch { }
         }
         private void Form5_Load(object sender, EventArgs e) {
+            this.Location = IntegrateOS.Generate_location.data_l;
             this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
             metroTile1.Style = IntegrateOS.IntegrateOS_var.color1;
             metroTile2.Style = IntegrateOS.IntegrateOS_var.color1;
@@ -122,13 +123,13 @@ namespace WindowsFormsApplication2
         {
             if (j == 0)
             {
-                var t = new IntegrateOS.selection_os();
+                var t = new IntegrateOS.selection_os(this.Location);
                 t.Show();
                 this.Hide();
             }
             else
             {
-                var t = new IntegrateOS.tools();
+                var t = new IntegrateOS.tools(this.Location);
                 t.Show();
                 this.Hide();
             }
@@ -206,13 +207,13 @@ namespace WindowsFormsApplication2
                     if (which_t == "WIM") WindowsSetup.Variabile.var = "wim";
                     if (which_t == "ESD") WindowsSetup.Variabile.var = "esd";
                     if (which_t == "SWM") WindowsSetup.Variabile.var = "swm";
-                    var form15 = new Form12();
+                    var form15 = new Form12(Location);
                     this.Hide();
                     form15.Show();
                 }
                 if (which_t == "ISO")
                 {
-                    var form15 = new WindowsSetup.Form7();
+                    var form15 = new WindowsSetup.Form7(Location);
                     this.Hide();
                     form15.Show();
                 }
@@ -221,7 +222,7 @@ namespace WindowsFormsApplication2
             {
                 IntegrateOS.tools_location.type = which_t;
                 IntegrateOS.tools_location.location1 = txtPath.Text;
-                var form15 = new Form12(2);
+                var form15 = new Form12(Location, 2);
                 this.Hide();
                 form15.Show();
             }
@@ -230,6 +231,11 @@ namespace WindowsFormsApplication2
         private void txtPath_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form5_LocationChanged(object sender, EventArgs e)
+        {
+            IntegrateOS.Generate_location.data_l = this.Location;
         }
     }
 }

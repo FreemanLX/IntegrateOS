@@ -185,8 +185,10 @@
             this.MinimizeBox = false;
             this.Name = "Mount_Windows";
             this.Resizable = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Mount_Windows";
             this.Load += new System.EventHandler(this.Mount_Windows_Load);
+            this.LocationChanged += new System.EventHandler(this.Mount_Windows_LocationChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

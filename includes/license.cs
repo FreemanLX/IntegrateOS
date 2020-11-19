@@ -10,10 +10,11 @@ namespace IntegrateOS
     public partial class license : MetroForm
     {
         string which;
-        public license(string name, string filename)
+        public license(System.Drawing.Point pct, string name, string filename)
         {
             InitializeComponent();
             this.Text = filename;
+            Location = pct;
             which = name;
         }
         string[] s;
@@ -47,7 +48,7 @@ namespace IntegrateOS
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            var x = new Settings();
+            var x = new Settings(this.Location);
             x.Show();
             this.Hide();
         }

@@ -9,10 +9,11 @@ namespace WindowsFormsApplication2
     {
         int linux_temp = 0;
 
-        public Form11(int linux = 0)
+        public Form11(System.Drawing.Point punct, int linux = 0)
         { 
             InitializeComponent();
             linux_temp = linux;
+            Location = punct;
             partitions(linux);
         }
 
@@ -72,10 +73,6 @@ namespace WindowsFormsApplication2
             }
         }
 
-        WindowsSetup.Variabile g = new WindowsSetup.Variabile();
-
-        
-
         
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -106,8 +103,8 @@ namespace WindowsFormsApplication2
                     if (result == DialogResult.Yes)
                     {
                         IntegrateOS.set_partition temp_form;
-                        if (linux_temp == 1) temp_form = new IntegrateOS.set_partition(ga, "EXT4");
-                        else temp_form = new IntegrateOS.set_partition(ga);
+                        if (linux_temp == 1) temp_form = new IntegrateOS.set_partition(Location, ga, "EXT4");
+                        else temp_form = new IntegrateOS.set_partition(Location, ga);
                         temp_form.Show();
                         this.Hide();
                     }
@@ -127,7 +124,7 @@ namespace WindowsFormsApplication2
         private void Form11_Load(object sender, EventArgs e)
         {
             this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
-
+            this.Location = IntegrateOS.Generate_location.data_l;
             dataGridView1.DefaultCellStyle.SelectionBackColor = IntegrateOS.Generate_Colors.Generate(IntegrateOS.IntegrateOS_var.color_t);
 
             if (IntegrateOS.IntegrateOS_var.dark == 0)
@@ -156,7 +153,7 @@ namespace WindowsFormsApplication2
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            var form3 = new Form5();
+            var form3 = new Form5(Location);
             form3.Show();
         }
 
@@ -186,6 +183,11 @@ namespace WindowsFormsApplication2
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
             partitions(linux_temp);
+        }
+
+        private void Form11_LocationChanged(object sender, EventArgs e)
+        {
+            IntegrateOS.Generate_location.data_l = this.Location;
         }
     }
 }

@@ -6,9 +6,10 @@ namespace IntegrateOS
 {
     public partial class Settings : MetroFramework.Forms.MetroForm
     {
-        public Settings()
+        public Settings(System.Drawing.Point punct)
         {
             InitializeComponent();
+            this.Location = punct;
             ///metroStyleManager1 = Themes.generate(user_settings.color1, user_settings.theme);
             if (IntegrateOS_var.dark == 0)
             {
@@ -89,35 +90,35 @@ namespace IntegrateOS
 
         private void metroLabel6_Click(object sender, EventArgs e)
         {
-            var x = new license("ios", metroLabel6.Text);
+            var x = new license(Location, "ios", metroLabel6.Text);
             x.Show();
             this.Hide();
         }
 
         private void metroLabel8_Click(object sender, EventArgs e)
         {
-            var x = new license("metro", metroLabel8.Text);
+            var x = new license(Location, "metro", metroLabel8.Text);
             x.Show();
             this.Hide();
         }
 
         private void metroLabel9_Click(object sender, EventArgs e)
         {
-            var x = new license("disc", metroLabel9.Text);
+            var x = new license(Location, "disc", metroLabel9.Text);
             x.Show();
             this.Hide();
         }
 
         private void metroLabel10_Click(object sender, EventArgs e)
         {
-            var x = new license("microsoft", metroLabel10.Text);
+            var x = new license(Location, "microsoft", metroLabel10.Text);
             x.Show();
             this.Hide();
         }
 
         private void metroLabel11_Click(object sender, EventArgs e)
         {
-            var x = new license("linux", metroLabel11.Text);
+            var x = new license(Location, "linux", metroLabel11.Text);
             x.Show();
             this.Hide();
         }
@@ -127,8 +128,25 @@ namespace IntegrateOS
             string[] complete = new string[2];
             complete[0] = IntegrateOS_var.dark.ToString();
             complete[1] = IntegrateOS_var.color_t.ToString();
-            System.IO.File.WriteAllLines("Settings\\user.dat", complete);
-            x = new Menu(WindowsSetup.Variabile.version);
+                if (System.IO.File.Exists("Settings\\user.dat"))
+                {
+                    System.IO.File.WriteAllLines("Settings\\user.dat", complete);
+                }
+                else
+                {
+                    if (!System.IO.Directory.Exists("Settings"))
+                    {
+                        System.IO.Directory.CreateDirectory("Settings");
+                    }
+                    using (System.IO.StreamWriter sw = System.IO.File.CreateText("Settings\\user.dat"))
+                    {
+                        sw.WriteLine(complete[0]);
+                        sw.WriteLine(complete[1]);
+                    }
+                }
+            
+         
+            x = new Menu(WindowsSetup.Variabile.version, this.Location);
             x.Show();
             this.Hide();
         }

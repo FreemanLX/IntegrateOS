@@ -39,6 +39,7 @@
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPath
@@ -177,7 +178,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(35, 458);
+            this.label3.Location = new System.Drawing.Point(46, 475);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(700, 25);
             this.label3.TabIndex = 25;
@@ -229,12 +230,26 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Lime;
+            this.label4.Location = new System.Drawing.Point(287, 439);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(209, 25);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Converting... Please wait";
+            this.label4.Visible = false;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // convert_wim_esd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.metroComboBox1);
@@ -250,8 +265,10 @@
             this.Name = "convert_wim_esd";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Convert %convert% - %finish%";
             this.Load += new System.EventHandler(this.convert_wim_esd_Load);
+            this.LocationChanged += new System.EventHandler(this.convert_wim_esd_LocationChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,5 +287,6 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label4;
     }
 }

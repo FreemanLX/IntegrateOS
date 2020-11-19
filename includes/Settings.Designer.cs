@@ -253,6 +253,7 @@
             this.MaximizeBox = false;
             this.Name = "Settings";
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "IntegrateOS - Settings";
             this.Load += new System.EventHandler(this.Settings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();

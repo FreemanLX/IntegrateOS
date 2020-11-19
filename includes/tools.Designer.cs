@@ -104,6 +104,7 @@
             this.Name = "tools";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "IntegrateOS Tools";
             this.Load += new System.EventHandler(this.tools_Load);
             this.ResumeLayout(false);

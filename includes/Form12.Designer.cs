@@ -105,8 +105,10 @@
             this.Name = "Form12";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Select Windows Editions";
             this.Load += new System.EventHandler(this.Form12_Load);
+            this.LocationChanged += new System.EventHandler(this.Form12_LocationChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

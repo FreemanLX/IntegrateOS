@@ -190,8 +190,10 @@
             this.Name = "Form11";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Select an available partition to install";
             this.Load += new System.EventHandler(this.Form11_Load);
+            this.LocationChanged += new System.EventHandler(this.Form11_LocationChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

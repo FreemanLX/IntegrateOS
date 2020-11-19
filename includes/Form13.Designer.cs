@@ -141,6 +141,7 @@
             this.Name = "Form13";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Installing Windows";
             this.Load += new System.EventHandler(this.Form13_Load);
             this.ResumeLayout(false);

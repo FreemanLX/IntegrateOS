@@ -200,8 +200,10 @@
             this.Name = "Form5";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Select the file type - Windows";
             this.Load += new System.EventHandler(this.Form5_Load);
+            this.LocationChanged += new System.EventHandler(this.Form5_LocationChanged);
             this.ResumeLayout(false);
 
         }

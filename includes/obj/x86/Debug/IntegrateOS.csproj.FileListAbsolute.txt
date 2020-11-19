@@ -78,3 +78,4 @@ C:\Users\Andreas\Desktop\New\IntegrateOS\includes\obj\x86\Debug\IntegrateOS.cspr
 C:\Users\Andreas\Desktop\New\IntegrateOS\includes\obj\x86\Debug\IntegrateOS.csproj.CopyComplete
 C:\Users\Andreas\Desktop\New\IntegrateOS\includes\obj\x86\Debug\IntegrateOS.exe
 C:\Users\Andreas\Desktop\New\IntegrateOS\includes\obj\x86\Debug\IntegrateOS.pdb
+C:\Users\Andreas\Desktop\New\IntegrateOS\includes\obj\x86\Debug\IntegrateOS.Select_Image_File.resources

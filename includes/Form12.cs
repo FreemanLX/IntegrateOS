@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using System.Collections.Generic;
-using System.Text;
-
 
 namespace WindowsFormsApplication2
 {
     public partial class Form12 : MetroFramework.Forms.MetroForm
     {
         int j = 0;
-        public Form12(int i = 0) 
+        public Form12(System.Drawing.Point punct, int i = 0) 
         {
             j = i;
             InitializeComponent();
+            Location = punct;
             if (i == 1)
                 pointers = Test(IntegrateOS.tools_location.location1);
             else
@@ -24,26 +21,17 @@ namespace WindowsFormsApplication2
             }
         }
 
-
-        private const string DllFilePath = @"IntegrateOS Base.dll";
-
-       
-        [DllImport(DllFilePath, SetLastError = true, EntryPoint = "windowsinfo", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
-        private static extern IntPtr  Windowsinfo(System.Text.StringBuilder path);
         public static string[] Test(string path)
         {
-            string s = "";
-                System.Text.StringBuilder text = new System.Text.StringBuilder(path);
-            s = Marshal.PtrToStringUni(Windowsinfo(text));
-            string[] lines = s.Split(';');
-            string[] lines3 = new string[lines.Length - 1];
-            for (int i = 0; i < lines.Length - 1; i++) lines3[i] = lines[i];
-            
-            return lines3;
-
+                ManagedWimLib.Wim.GlobalInit("libwim-15.dll");
+                ManagedWimLib.Wim wim = ManagedWimLib.Wim.OpenWim(path, ManagedWimLib.OpenFlags.DEFAULT);
+                ManagedWimLib.WimInfo info = wim.GetWimInfo();
+                string[] index = new string[info.ImageCount];
+                for(int i = 0; i<info.ImageCount; i++) index[i] = wim.GetImageDescription(i+1);
+                ManagedWimLib.Wim.GlobalCleanup();
+                return index;
         }
 
-        WindowsSetup.Variabile g = new WindowsSetup.Variabile();
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             try
@@ -67,6 +55,7 @@ namespace WindowsFormsApplication2
         string[] pointers;
         private void Form12_Load(object sender, EventArgs e)
         {
+            this.Location = IntegrateOS.Generate_location.data_l;
             this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
             if (IntegrateOS.IntegrateOS_var.dark == 0)
             {
@@ -105,7 +94,7 @@ namespace WindowsFormsApplication2
                 {
                     ///Ne ducem la form11
                     WindowsSetup.Variabile.fix = (checkedListBox1.SelectedIndex + 1).ToString();
-                    var form = new Form11();
+                    var form = new Form11(Location);
                     this.Hide();
                     form.Show();
                 }
@@ -113,13 +102,13 @@ namespace WindowsFormsApplication2
                 {
                     IntegrateOS.tools_location.index = (checkedListBox1.SelectedIndex + 1).ToString();
                     this.Hide();
-                    var x = new IntegrateOS.convert_wim_esd(IntegrateOS.tools_location.type, IntegrateOS.tools_location.conversion_type, 1);
+                    var x = new IntegrateOS.convert_wim_esd(IntegrateOS.tools_location.type, IntegrateOS.tools_location.conversion_type, Location, 1);
                     x.Show();
                 }
                 if (j == 2)
                 {
                     MessageBox.Show((checkedListBox1.SelectedIndex + 1).ToString());
-                    var x = new IntegrateOS.Mount_Windows(checkedListBox1.SelectedIndex + 1);
+                    var x = new IntegrateOS.Mount_Windows(Location, checkedListBox1.SelectedIndex + 1);
                     x.Show();
                     this.Hide();
                 }
@@ -160,9 +149,14 @@ namespace WindowsFormsApplication2
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            var x = new IntegrateOS.selection_os();
+            var x = new IntegrateOS.selection_os(this.Location);
             x.Show();
             this.Hide();
+        }
+
+        private void Form12_LocationChanged(object sender, EventArgs e)
+        {
+            IntegrateOS.Generate_location.data_l = this.Location;
         }
     }
 }

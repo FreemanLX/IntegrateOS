@@ -12,13 +12,15 @@ namespace IntegrateOS
 {
     public partial class set_partition : MetroFramework.Forms.MetroForm
     {
-        public set_partition()
+        public set_partition(System.Drawing.Point punct)
         {
             InitializeComponent();
+            Location = punct;
         }
-        public set_partition(string partition, string type = "NTFS")
+        public set_partition(System.Drawing.Point punct, string partition, string type = "NTFS")
         {  ///Aici vedem ce tipuri de clustere trebuie selectat (4 KB etc...)
             InitializeComponent();
+            Location = punct;
             comboBox3.Text = type;
             comboBox1.Text = partition;
 
@@ -127,14 +129,14 @@ namespace IntegrateOS
             if (textBox1.Text.Length < 0) textBox1.Text = "Local Disk";
 
             ///Evident aici este un alt form care imi formateaza o partitie. 
-            var temp = new format(com1, textBox1.Text, t, com3, quick_format);
+            var temp = new format(Location, com1, textBox1.Text, t, com3, quick_format);
             temp.Show();
             this.Hide();
         }
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
-            var temp = new WindowsFormsApplication2.Form11();
+            var temp = new WindowsFormsApplication2.Form11(Location);
             temp.Show();
             this.Hide();
         }

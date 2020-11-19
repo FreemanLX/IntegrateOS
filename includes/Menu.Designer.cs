@@ -169,6 +169,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ControlBox = false;
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.label2);
@@ -181,8 +182,10 @@
             this.Name = "Menu";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "IntegrateOS Menu (Full Version)";
             this.Load += new System.EventHandler(this.Menu_Load);
+            this.LocationChanged += new System.EventHandler(this.Menu_LocationChanged);
             this.metroTile2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.metroTile3.ResumeLayout(false);

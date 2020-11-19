@@ -9,18 +9,22 @@ namespace IntegrateOS
     {
 
         string convert_final, to_convert_final;
-        public convert_wim_esd(int convert = 1)
+        public convert_wim_esd(System.Drawing.Point punct, int convert = 1)
         {
             InitializeComponent();
-
+            this.Location = punct;
         }
         System.Threading.Thread x;
         int convert_l;
-        public convert_wim_esd(string convert, string to_convert, int convert_t = 0)
+        public convert_wim_esd(string convert, string to_convert, System.Drawing.Point punct, int convert_t = 0)
         {
             InitializeComponent();
+            label4.Hide();
+            this.Location = punct;
             if (convert_t == 1)
             {
+                Activate();
+                label4.Show();
                 button4.Visible = false;
                 button5.Visible = false;
                 button1.Enabled = false;
@@ -69,7 +73,7 @@ namespace IntegrateOS
 
         private void convert_wim_esd_Load(object sender, EventArgs e)
         {
-            
+           
             this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
             txtPath.Theme = IntegrateOS.IntegrateOS_var.theme;
             metroTextBox1.Theme = IntegrateOS.IntegrateOS_var.theme;
@@ -114,24 +118,29 @@ namespace IntegrateOS
                 }
                 if(convert_l == 1)
                 {
-                    x.Start();
-                    while (x.IsAlive) { Application.DoEvents(); }
-                    System.Threading.Thread.Sleep(1000);
-                    MessageBox.Show("The conversion is complete", "Converted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    try
-                    {
-                        var x = new tools();
-                        x.Show();
-                        this.Close();
-                    }
-                    catch
-                    {
-
-                    }
+                    Activate();
+                    this.Shown += new System.EventHandler(this.xShown);
                 }
                     
                 
             }
+        }
+
+        private void xShown(object sender, EventArgs e)
+        {
+            x.Start();
+            while (x.IsAlive) { Application.DoEvents(); }
+            if(x.IsAlive == false)
+            {
+               var dialog = MetroFramework.MetroMessageBox.Show(this, "Conversion completed!", "Conversion complete", MessageBoxButtons.OK, MessageBoxIcon.Information, IntegrateOS_var.color_t);
+               if(dialog == DialogResult.OK)
+                {
+                    var x = new tools(Location);
+                    this.Hide();
+                    x.Show();
+                }
+            }
+
         }
 
         private void metroTextBox1_Click(object sender, EventArgs e)
@@ -183,7 +192,7 @@ namespace IntegrateOS
                     tools_location.location1 = txtPath.Text;
                     tools_location.location2 = metroTextBox1.Text;
                     tools_location.conversion_code = this.metroComboBox1.SelectedIndex;
-                    var x = new WindowsFormsApplication2.Form12(1);
+                    var x = new WindowsFormsApplication2.Form12(Location, 1);
                     this.Hide();
                     x.Show(); 
                 }
@@ -201,7 +210,7 @@ namespace IntegrateOS
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var x = new tools();
+            var x = new tools(this.Location);
             this.Hide();
             x.Show();
         }
@@ -229,6 +238,16 @@ namespace IntegrateOS
             {
                 metroTextBox1.Text = ofd.FileName;
             }
+        }
+
+        private void convert_wim_esd_LocationChanged(object sender, EventArgs e)
+        {
+            IntegrateOS.Generate_location.data_l = this.Location;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button2_Click(object sender, EventArgs e)

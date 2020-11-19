@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 
 namespace IntegrateOS
 {
+
     public partial class Mount_Windows : MetroFramework.Forms.MetroForm
     {
         int index1;
@@ -12,23 +13,18 @@ namespace IntegrateOS
         {
             InitializeComponent();
         }
-        public Mount_Windows(int index)
+        public Mount_Windows(System.Drawing.Point punct, int index)
         {
             InitializeComponent();
-            if (tools_location.type == "WIM")
-            {
-                this.Text = "Mount WIM";
-            }
-            else
-            {
-                this.Text = "Mount ESD";
-            }
+            Location = punct;
+            this.Text = "Mount " + tools_location.type + " Status: Alpha";
             index1 = index;
-
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
         }
 
         private void Mount_Windows_Load(object sender, EventArgs e)
         {
+            this.Location = IntegrateOS.Generate_location.data_l;
             this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
             metroTextBox2.Text = tools_location.location1;
             metroLabel1.Theme = IntegrateOS.IntegrateOS_var.theme;
@@ -40,7 +36,7 @@ namespace IntegrateOS
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            
+
             using (var fbd = new FolderBrowserDialog())
             {
                 DialogResult result = fbd.ShowDialog();
@@ -58,103 +54,63 @@ namespace IntegrateOS
 
         }
 
-        private const string DllFilePath = @"IntegrateOS Base.dll";
-        [DllImport(DllFilePath, SetLastError = true, EntryPoint = "mount_windows", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
-        private static extern int mount_windows(string loc1, string loc2, int index);
 
 
-        [DllImport(DllFilePath, SetLastError = true, EntryPoint = "unmount_image", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
-        private static extern int unmount_image(string loc2, int commint_change);
 
-        private bool unmount(string loc2, int commit_image)
-        {
-            try
-            {
-                int e = unmount_image(loc2, commit_image);
-                if (e == -1)
-                    return false;
-                if (e == 2)
-                {
-                    MessageBox.Show("Unable to unmount error: 0x1");
-                    return false;
-                }
-                return true;
-            }
-            catch
-            {
 
-                int rc = Marshal.GetLastWin32Error();
-                MessageBox.Show("Unable to unmount error: " + rc.ToString());
-                return false;
-            }
-        }
-
-        private bool mount(string loc1, string loc2, int index)
-        {
-            MessageBox.Show(index.ToString());
-            int e = mount_windows(loc1, loc2, index);
-
-            try
-            {
-                if (e == 1)
-                {
-                    MessageBox.Show("Unable to mount error: 0x1");
-                    return false;
-                }
-                return true;
-            }
-            catch
-            {
-                int rc = Marshal.GetLastWin32Error();
-                MessageBox.Show("Unable to mount error: " + rc.ToString());
-                return false;
-            }
-
-        }
         int pass;
 
-        private void metroButton4_Click(object sender, EventArgs e)
+        private async void metroButton4_Click(object sender, EventArgs e)
         {
             pass = 0;
             if (mounted == false && pass == 0)
             {
-                this.Text = "Mounting...";
-                bool s = mount(tools_location.location1, tools_location.location2, index1);
+                this.Text = "Preparing to mount. Please Wait";
+                metroButton1.Visible = false;
+                metroButton4.Visible = false;
+                this.Text = "Mount the " + tools_location.type + ". Please Wait";
+                bool s = await IntegrateOS.DISMAPI.DismMountImage(tools_location.location1, tools_location.location2, (uint)index1, true);
                 if (s == false)
                 {
-
+                    var dialog = MetroFramework.MetroMessageBox.Show(this, "Error mounting.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, IntegrateOS.IntegrateOS_var.color_t);
+                    metroButton1.Visible = true;
+                    metroButton4.Visible = true;
                 }
                 else
                 {
-                    metroButton4.Enabled = false;
-                    this.Text = "Windows is mounted";
-                    metroButton4.Enabled = true;
-                    metroButton4.Text = "Dismount";
+                    this.Text = "Mounted the selected " + tools_location.type;
+                    metroButton4.Visible = true;
+                    metroButton4.Text = "Unmount";
                     metroButton4.Refresh();
                     mounted = true;
                     pass = 1;
                 }
-            }
+            
+        }
             if (mounted == true && pass == 0)
             {
-                this.Text = "Unmounting...";
-                bool t = unmount(tools_location.location2, 0);
+                this.Text = "Unmounting..." + "  Status: Alpha";
+                bool t = await IntegrateOS.DISMAPI.DismUnmountImage(tools_location.location2, false);
                 if (t == false)
                 {
-
-
-                }
+                    var dialog = MetroFramework.MetroMessageBox.Show(this, "Error unmounting.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, IntegrateOS.IntegrateOS_var.color_t);
+    }
                 else
                 {
-                    metroButton4.Enabled = false;
-                    this.Text = "Windows is dismounted";
+                    metroButton4.Visible = false;
+                    System.Threading.Thread.Sleep(500);
+
+
+                    this.Text = "Unmounted the selected " + tools_location.type + " Status: Alpha";
                     metroButton4.Enabled = true;
                     metroButton4.Text = "Mount";
                     metroButton4.Refresh();
+                    metroButton4.Visible = true;
+                    metroButton1.Visible = true;
                     mounted = true;
                     pass = 1;
                 }
-            }
+}
         }
 
         private void metroLabel2_Click(object sender, EventArgs e)
@@ -164,16 +120,44 @@ namespace IntegrateOS
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            var x = new WindowsFormsApplication2.Form5(1);
+            var x = new WindowsFormsApplication2.Form5(Location, 1);
             x.Show();
             this.Hide();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            var x = new tools();
+            var x = new tools(this.Location);
             this.Hide();
             x.Show();
         }
+
+        private void Mount_Windows_LocationChanged(object sender, EventArgs e)
+        {
+            IntegrateOS.Generate_location.data_l = this.Location;
+        }
+
+
+        protected override async void OnFormClosing(FormClosingEventArgs e)
+        {
+            try
+            {
+                var dialog = MetroFramework.MetroMessageBox.Show(this, "Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, IntegrateOS.IntegrateOS_var.color_t);
+                if (dialog == DialogResult.Yes)
+                {
+                    if(mounted == true)
+                    {
+                        bool t = await IntegrateOS.DISMAPI.DismUnmountImage(tools_location.location2, false);
+                    }
+                    Environment.Exit(0);
+                }
+                if (dialog == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            catch { }
+        }
+
     }
 }

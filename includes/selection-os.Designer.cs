@@ -126,8 +126,10 @@
             this.Name = "selection_os";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Select OS to Install";
             this.Load += new System.EventHandler(this.selection_os_Load);
+            this.LocationChanged += new System.EventHandler(this.selection_os_LocationChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -5,8 +5,9 @@ namespace IntegrateOS
 {
     public partial class tools : MetroFramework.Forms.MetroForm
     {
-        public tools()
+        public tools(System.Drawing.Point punct)
         {
+            this.Location = punct;
             InitializeComponent();
         }
 
@@ -40,28 +41,28 @@ namespace IntegrateOS
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var x = new IntegrateOS.Menu(WindowsSetup.Variabile.version);
+            var x = new IntegrateOS.Menu(WindowsSetup.Variabile.version, this.Location);
             x.Show();
         }
 
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            var x = new convert_wim_esd("WIM", "ESD");
+            var x = new convert_wim_esd("WIM", "ESD", Location);
             this.Hide();
             x.Show();
         }
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            var x = new convert_wim_esd("ESD", "WIM");
+            var x = new convert_wim_esd("ESD", "WIM", Location);
             this.Hide();
             x.Show();
         }
 
         private void metroTile4_Click(object sender, EventArgs e)
         {
-            var x = new WindowsFormsApplication2.Form5(1);
+            var x = new WindowsFormsApplication2.Form5(Location, 1);
             this.Hide();
             x.Show();
         }
@@ -74,7 +75,7 @@ namespace IntegrateOS
         private void metroButton2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var x = new IntegrateOS.Menu(WindowsSetup.Variabile.version);
+            var x = new IntegrateOS.Menu(WindowsSetup.Variabile.version, this.Location);
             x.Show();
         }
     }

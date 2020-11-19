@@ -63,6 +63,7 @@
             this.Name = "license";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "License";
             this.Load += new System.EventHandler(this.license_Load);
             this.ResumeLayout(false);

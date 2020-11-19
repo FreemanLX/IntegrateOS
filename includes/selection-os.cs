@@ -5,8 +5,9 @@ namespace IntegrateOS
 {
     public partial class selection_os : MetroFramework.Forms.MetroForm
     {
-        public selection_os()
+        public selection_os(System.Drawing.Point punct)
         {
+            this.Location = punct;
             InitializeComponent();
         }
 
@@ -49,23 +50,28 @@ namespace IntegrateOS
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            var t = new WindowsFormsApplication2.Form5();
+            var t = new WindowsFormsApplication2.Form5(Location);
             t.Show();
             this.Hide();
         }
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            var x = new Select_Linux();
+            var x = new Select_Linux(Location);
             x.Show();
             this.Hide();
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            var x = new IntegrateOS.Menu(WindowsSetup.Variabile.version);
+            var x = new IntegrateOS.Menu(WindowsSetup.Variabile.version, this.Location);
             x.Show();
             this.Hide();
+        }
+
+        private void selection_os_LocationChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -190,6 +190,7 @@
             this.Name = "set_partition";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Set partition";
             this.Load += new System.EventHandler(this.set_partition_Load);
             this.ResumeLayout(false);

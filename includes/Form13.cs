@@ -9,7 +9,11 @@ namespace WindowsFormsApplication2
 {
     public partial class Form13 : MetroFramework.Forms.MetroForm
     {
-        public Form13(){InitializeComponent();}
+        public Form13(System.Drawing.Point punct){
+            InitializeComponent();
+            this.Location = punct;
+
+        }
 
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -32,7 +36,8 @@ namespace WindowsFormsApplication2
 
         private void Form13_Load(object sender, EventArgs e){
             this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
-            if(IntegrateOS.IntegrateOS_var.dark == 0)
+            this.Location = IntegrateOS.Generate_location.data_l;
+            if (IntegrateOS.IntegrateOS_var.dark == 0)
             {
                 label1.ForeColor = System.Drawing.Color.Black;
                 label5.ForeColor = System.Drawing.Color.Black;
@@ -50,7 +55,7 @@ namespace WindowsFormsApplication2
             progressBar1.Style = IntegrateOS.IntegrateOS_var.color1;
         }
 
-        private const string DllFilePath = @"IntegrateOS Base.dll";
+        private const string DllFilePath = @"IntegrateOS Core.dll";
         [DllImport(DllFilePath, SetLastError = true, EntryPoint = "complete", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         private static extern int complete(System.Text.StringBuilder format, System.Text.StringBuilder nickname, int uefi);
 
@@ -92,7 +97,6 @@ namespace WindowsFormsApplication2
             }
         }
 
-        WindowsSetup.Variabile g = new WindowsSetup.Variabile();
         
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -100,8 +104,6 @@ namespace WindowsFormsApplication2
 
             progressBar1.Minimum = 0;
             progressBar1.Maximum = 100;
-            label7.Enabled = true;
-            label7.Visible = true;
             string ss = WindowsSetup.Variabile.locatie;
             label7.Text = string.Format("{0} %", progressBar1.Value);
             label7.Refresh();
@@ -187,3 +189,8 @@ namespace WindowsFormsApplication2
         }
     }
 }
+
+
+
+
+

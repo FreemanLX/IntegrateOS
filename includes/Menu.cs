@@ -12,11 +12,12 @@ namespace IntegrateOS
         {
             InitializeComponent();
         }
-        public Menu(string s)
+        public Menu(string s, System.Drawing.Point punct)
         {
             InitializeComponent();
             this.Text = s;
             WindowsSetup.Variabile.version = s;
+            this.Location = punct;
 
         }
 
@@ -32,7 +33,6 @@ namespace IntegrateOS
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            
             pictureBox3.BackColor = Generate_Colors.Generate(IntegrateOS_var.color_t);
             if(!this.IsElevated)
             {
@@ -63,14 +63,14 @@ namespace IntegrateOS
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            var x = new selection_os();
+            var x = new selection_os(this.Location);
             this.Hide();
             x.Show();
         }
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            var x = new tools();
+            var x = new tools(this.Location);
             this.Hide();
             x.Show();
         }
@@ -87,21 +87,21 @@ namespace IntegrateOS
 
         private void metroTile3_Click_1(object sender, EventArgs e)
         {
-            var x = new Settings();
+            var x = new Settings(this.Location);
             x.Show();
             this.Hide();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            var x = new Settings();
+            var x = new Settings(this.Location);
             x.Show();
             this.Hide();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            var x = new selection_os();
+            var x = new selection_os(this.Location);
             this.Hide();
             x.Show();
         }
@@ -116,16 +116,20 @@ namespace IntegrateOS
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
-            var x = new tools();
+            var x = new tools(this.Location);
             this.Hide();
             x.Show();
         }
 
         private void pictureBox3_Click_1(object sender, EventArgs e)
         {
-            var x = new selection_os();
+            var x = new selection_os(this.Location);
             x.Show();
             this.Hide();
+        }
+
+        private void Menu_LocationChanged(object sender, EventArgs e)
+        {
         }
     }
 }

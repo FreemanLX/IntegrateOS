@@ -36,7 +36,7 @@ namespace IntegrateOS
 
         private void preparing_installing_linux_Load(object sender, EventArgs e)
         {
-
+            this.Location = IntegrateOS.Generate_location.data_l;
         }
     }
 }

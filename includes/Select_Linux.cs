@@ -6,9 +6,10 @@ namespace IntegrateOS
 {
     public partial class Select_Linux : MetroFramework.Forms.MetroForm
     {
-        public Select_Linux()
+        public Select_Linux(System.Drawing.Point punct)
         {
             InitializeComponent();
+            Location = punct;
         }
 
         private void txtPath_SizeChanged(object sender, EventArgs e)
@@ -62,7 +63,7 @@ namespace IntegrateOS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var t = new IntegrateOS.selection_os();
+            var t = new IntegrateOS.selection_os(this.Location);
             t.Show();
             this.Hide();
         }
@@ -118,7 +119,7 @@ namespace IntegrateOS
         {
             if (which_t == "ISO")
             {
-                var form15 = new WindowsSetup.Form7();
+                var form15 = new WindowsSetup.Form7(Location);
                 this.Hide();
                 form15.Show();
             }

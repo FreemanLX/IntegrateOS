@@ -158,6 +158,7 @@
             this.Name = "Select_Linux";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Select the installation type - Linux";
             this.Load += new System.EventHandler(this.Select_Linux_Load);
             this.ResumeLayout(false);
