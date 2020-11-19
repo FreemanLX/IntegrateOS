@@ -12,7 +12,7 @@ If you don't have Powershell 5+ you have the link below to download:\
  
  PS: You need Windows 7+ to work 
  
- <b>Update - bet v0.2.8.0C1</b>
+ <b>Update - beta v0.2.8.0C1</b>
  
  Fixed bugs:\
       1. Now the program works on computers without Microsoft ADK.\
