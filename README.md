@@ -1,6 +1,10 @@
 # IntegrateOS
 A method to install every OS on every computer
 
+Thanks to Euromedics, to make me use this programs on their computers.\
+Website: www.euromedics.ro
+
+
 <b> System Requirements: </b>
 
  	Windows 10 / 8.1 / 8 / 7 (not tested) with Microsoft Net 4.5
