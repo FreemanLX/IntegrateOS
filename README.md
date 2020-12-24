@@ -1,7 +1,7 @@
 # IntegrateOS
 A method to install every OS on every computer
 
-Thanks to Euromedics, to make me use this programs on their computers.\
+Thanks to Euromedics, to make me use this program on their computers.\
 Website: www.euromedics.ro
 
 
