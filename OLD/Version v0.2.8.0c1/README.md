@@ -1,16 +1,36 @@
 # IntegrateOS
 A method to install every OS on every computer
 
+Thanks to Euromedics, to make me use this program on their computers.\
+Website: www.euromedics.ro
+
+
 <b> System Requirements: </b>
 
- 	Windows 10 / 8.1 / 8 / 7 (not tested) with powershell 5+ and Microsoft Net 4.5
+ 	Windows 10 / 8.1 / 8 / 7 (not tested) with Microsoft Net 4.5
  	At least 1 GB RAM (32 BITS) and 2 GB RAM (64 BITS)
  	At least 100 MB space for both.
         
-If you don't have Powershell 5+ you have the link below to download:\
- https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7
- 
  PS: You need Windows 7+ to work 
+ 
+ <b>Update - beta v0.2.8.0C1</b>
+ 
+ Fixed bugs:\
+      1. Now the program works on computers without Microsoft ADK.\
+      2. Fixed the problem with the conversion from IntegrateOS Tools.\
+      3. Fixed the problem with the mount / unmount from IntegrateOS Tools.\
+      4. Increased the program responsive, making lighter.\
+      5. The program right now doesn't need the Windows Powershell 5, so it works well on Windows 7+
+      
+     
+ Removed features:\
+      1. Removed the option to download linux. 
+      
+      
+ Bugs:\
+     1. Some features are not implemented yet.
+     
+    
  
  <b>Update - beta v0.2.7.5C3</b>
  
