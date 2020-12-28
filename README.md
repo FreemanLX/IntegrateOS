@@ -6,9 +6,9 @@ A method to install every OS on every computer
 
 1) Administrative
 
--> The code is now cleaned, all junks had beed removed.\
--> Some forms had been renamed, and the variables too.\
--> All icons had been moved on a new resource.\
+        -> The code is now cleaned, all junks had beed removed.\
+        -> Some forms had been renamed, and the variables too.\
+        -> All icons had been moved on a new resource.
 
 
 
