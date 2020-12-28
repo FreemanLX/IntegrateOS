@@ -1,10 +1,10 @@
 C:\Users\Andreas\Desktop\New\IntegrateOS\IntegrateOS Edition Selector\bin\Debug\IntegrateOS Edition Selector.exe.config
 C:\Users\Andreas\Desktop\New\IntegrateOS\IntegrateOS Edition Selector\bin\Debug\IntegrateOS Edition Selector.exe
 C:\Users\Andreas\Desktop\New\IntegrateOS\IntegrateOS Edition Selector\bin\Debug\IntegrateOS Edition Selector.pdb
-C:\Users\Andreas\Desktop\New\IntegrateOS\IntegrateOS Edition Selector\obj\Debug\IntegrateOS Edition Selector.csprojAssemblyReference.cache
 C:\Users\Andreas\Desktop\New\IntegrateOS\IntegrateOS Edition Selector\obj\Debug\IntegrateOS_Edition_Selector.Form1.resources
 C:\Users\Andreas\Desktop\New\IntegrateOS\IntegrateOS Edition Selector\obj\Debug\IntegrateOS_Edition_Selector.Properties.Resources.resources
 C:\Users\Andreas\Desktop\New\IntegrateOS\IntegrateOS Edition Selector\obj\Debug\IntegrateOS Edition Selector.csproj.GenerateResource.cache
 C:\Users\Andreas\Desktop\New\IntegrateOS\IntegrateOS Edition Selector\obj\Debug\IntegrateOS Edition Selector.csproj.CoreCompileInputs.cache
 C:\Users\Andreas\Desktop\New\IntegrateOS\IntegrateOS Edition Selector\obj\Debug\IntegrateOS Edition Selector.exe
 C:\Users\Andreas\Desktop\New\IntegrateOS\IntegrateOS Edition Selector\obj\Debug\IntegrateOS Edition Selector.pdb
+C:\Users\Andreas\Desktop\New\IntegrateOS\IntegrateOS Edition Selector\obj\Debug\IntegrateOS Edition Selector.csprojAssemblyReference.cache

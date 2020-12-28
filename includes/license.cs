@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using MetroFramework.Forms;
 using System.IO;
 
@@ -18,39 +15,23 @@ namespace IntegrateOS
             which = name;
         }
         string[] s;
-        private void license_Load(object sender, EventArgs e)
+        private void License_Load(object sender, EventArgs e)
         {
-            this.StyleManager = Themes.generate(IntegrateOS_var.color1, IntegrateOS_var.theme);
-            if (which == "metro")
+            this.StyleManager = Themes.Generate(IntegrateOS_var.color, IntegrateOS_var.theme);
+            switch (which)
             {
-                s = File.ReadAllLines("Licenses\\metroframework.txt");
+                case "metro": s = File.ReadAllLines("Licenses\\metroframework.txt");  break;
+                case "microsoft": s = File.ReadAllLines("Licenses\\microsoftadk.txt"); break;
+                case "linux": s = File.ReadAllLines("Licenses\\linux.txt"); break;
+                case "ios": s = File.ReadAllLines("Licenses\\IntegrateOS.txt"); break;
+                case "disc": s = File.ReadAllLines("Licenses\\discutils.txt"); break;
             }
-            if(which == "microsoft")
-            {
-                s = File.ReadAllLines("Licenses\\microsoftadk.txt");
-            }
-            if (which == "linux")
-            {
-                s = File.ReadAllLines("Licenses\\linux.txt");
-            }
-            if (which == "ios")
-            {
-                s = File.ReadAllLines("Licenses\\IntegrateOS.txt");
-            }
-            if (which == "disc")
-            {
-                s = File.ReadAllLines("Licenses\\discutils.txt");
-            }
-
-
             richTextBox1.Lines = s;
         }
 
-        private void metroButton2_Click(object sender, EventArgs e)
+        private void Back_Click(object sender, EventArgs e)
         {
-            var x = new Settings(this.Location);
-            x.Show();
-            this.Hide();
+            Moving.Form(this, new Licenses(this.Location));
         }
     }
 }

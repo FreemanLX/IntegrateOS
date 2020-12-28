@@ -1012,7 +1012,7 @@ namespace ManagedWimLib
         public ulong Depth => DepthVal.ToUInt64();
         private UIntPtr DepthVal; // size_t
         /// <summary>
-        /// Pointer to the security descriptor for this file, in Windows SECURITY_DESCRIPTOR_RELATIVE format,
+        /// Pointer to the security descriptor for this file, in Windows SECURITY_DESCRIPTOR_RELATIVE Format,
         /// or null if this file has no security descriptor.
         /// </summary>
         public byte[] SecurityDescriptor
@@ -1149,7 +1149,7 @@ namespace ManagedWimLib
         /// </summary>
         public ulong Depth;
         /// <summary>
-        /// A security descriptor for this file, in Windows SECURITY_DESCRIPTOR_RELATIVE format,
+        /// A security descriptor for this file, in Windows SECURITY_DESCRIPTOR_RELATIVE Format,
         /// or null if this file has no security descriptor.
         /// </summary>
         public byte[] SecurityDescriptor;
@@ -1347,12 +1347,6 @@ namespace ManagedWimLib
         public uint PartNumber;
         public uint ReferenceCount;
         private uint _bitFlag;
-        public bool IsCompressed => NativeMethods.GetBitField(_bitFlag, 0);
-        public bool IsMetadata => NativeMethods.GetBitField(_bitFlag, 1);
-        public bool IsFree => NativeMethods.GetBitField(_bitFlag, 2);
-        public bool IsSpanned => NativeMethods.GetBitField(_bitFlag, 3);
-        public bool IsMissing => NativeMethods.GetBitField(_bitFlag, 4);
-        public bool Packed => NativeMethods.GetBitField(_bitFlag, 5);
         public ulong RawResourceOffsetInWim;
         public ulong RawResourceCompressedSize;
         public ulong RawResourceUncompressedSize;

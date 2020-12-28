@@ -1,82 +1,74 @@
 ﻿using System;
 using System.Windows.Forms;
+using MetroFramework;
 
 namespace IntegrateOS
 {
-    public partial class tools : MetroFramework.Forms.MetroForm
+    public partial class Basic_tools : MetroFramework.Forms.MetroForm
     {
-        public tools(System.Drawing.Point punct)
+        int os_t;
+        public Basic_tools(System.Drawing.Point punct, int os = 0)
         {
             this.Location = punct;
             InitializeComponent();
-        }
-
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            try
+            switch (os)
             {
-                var dialog = MetroFramework.MetroMessageBox.Show(this, "Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, IntegrateOS.IntegrateOS_var.color_t);
-                if (dialog == DialogResult.Yes)
-                {
-                    Environment.Exit(0);
-                }
-                if (dialog == DialogResult.No)
-                {
-                    e.Cancel = true;
-                }
+                case 0:
+                    this.Text = "Basic tools - Windows";
+                    break;
+                case 1:
+                    this.Text = "Basic tools - Linux";
+                    break;
+                case 2:
+                    this.Text = "Basic tools - Android";
+                    break;
+                case 3:
+                    this.Text = "Basic tools - Windows Phone";
+                    break;
+                default:
+                    break;
             }
-            catch { }
+            os_t = os;
         }
 
-        private void tools_Load(object sender, EventArgs e)
+        public void Wcommandmode_Click(object sender, EventArgs e)
         {
-            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
-            metroTile1.Style = IntegrateOS.IntegrateOS_var.color1;
-            metroTile2.Style = IntegrateOS.IntegrateOS_var.color1;
-            metroTile4.Style = IntegrateOS.IntegrateOS_var.color1;
-            metroTile5.Style = IntegrateOS.IntegrateOS_var.color1;
+            Moving.Form(this, new Command_Prompt(Location));
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Tools_Load(object sender, EventArgs e)
         {
-            this.Hide();
-            var x = new IntegrateOS.Menu(WindowsSetup.Variabile.version, this.Location);
-            x.Show();
+            Wcommandmode.StyleManager = Wadvmode.StyleManager = StyleManager = IntegrateOS.Themes.Generate(IntegrateOS.IntegrateOS_var.color, IntegrateOS.IntegrateOS_var.theme);
+            metroButton2.BackgroundImage = IntegrateOS_var.theme == MetroThemeStyle.Light ? Resources.white_left_arrow : Resources.black_left_arrow;
+            metroButton2.BackgroundImageLayout = ImageLayout.Center;
+            metroButton2.Refresh();
+            Convert_Windows_Installation.Style = Mount_Windows.Style = IntegrateOS_var.color;
         }
 
 
-        private void metroTile1_Click(object sender, EventArgs e)
+        private void Convert_Windows_Click(object sender, EventArgs e)
         {
-            var x = new convert_wim_esd("WIM", "ESD", Location);
-            this.Hide();
-            x.Show();
+            Moving.Form(this, new IntegrateOS.Select_installation(Location, 2));
         }
 
-        private void metroTile2_Click(object sender, EventArgs e)
+        private void Mount_Windows_Click(object sender, EventArgs e)
         {
-            var x = new convert_wim_esd("ESD", "WIM", Location);
-            this.Hide();
-            x.Show();
+            Moving.Form(this, new IntegrateOS.Select_installation(Location, 1));
         }
 
-        private void metroTile4_Click(object sender, EventArgs e)
+        private void Back_Click(object sender, EventArgs e)
         {
-            var x = new WindowsFormsApplication2.Form5(Location, 1);
-            this.Hide();
-            x.Show();
+            Moving.Form(this, new Select_tools_type(Location, os_t));
         }
 
-        private void metroTile5_Click(object sender, EventArgs e)
+        private void Wadvmode_Click_1(object sender, EventArgs e)
         {
-            ///Edit Windows
+            DialogResult waudit_go = MetroFramework.MetroMessageBox.Show(this, "Are you sure you want to see the Advanced options of Windows ?", "Booting to the Advanced options of Windows", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, IntegrateOS.IntegrateOS_var.color_t);
+            if (waudit_go == DialogResult.Yes)
+            {
+                CMD_Process_Class.Process_CMD("shutdown.exe -r -o -t 0", "cmd.exe");
+            }
         }
 
-        private void metroButton2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var x = new IntegrateOS.Menu(WindowsSetup.Variabile.version, this.Location);
-            x.Show();
-        }
     }
 }

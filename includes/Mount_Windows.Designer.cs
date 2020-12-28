@@ -71,38 +71,36 @@
             this.metroTextBox1.UseSelectable = true;
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox1.Click += new System.EventHandler(this.metroTextBox1_Click);
             // 
-            // metroButton2
+            // Back
             // 
             this.metroButton2.Location = new System.Drawing.Point(671, 310);
-            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Name = "Back";
             this.metroButton2.Size = new System.Drawing.Size(106, 33);
             this.metroButton2.TabIndex = 17;
             this.metroButton2.Text = "Browse";
             this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.metroButton2.Click += new System.EventHandler(this.Browse_Click);
             // 
-            // metroLabel1
+            // Progress_Message
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.Location = new System.Drawing.Point(23, 246);
-            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Name = "Progress_Message";
             this.metroLabel1.Size = new System.Drawing.Size(130, 25);
             this.metroLabel1.TabIndex = 18;
             this.metroLabel1.Text = "Mounted folder";
             // 
-            // metroLabel2
+            // Progress_Number
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.Location = new System.Drawing.Point(23, 89);
-            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Name = "Progress_Number";
             this.metroLabel2.Size = new System.Drawing.Size(183, 25);
             this.metroLabel2.TabIndex = 19;
             this.metroLabel2.Text = "Selected file for mount";
-            this.metroLabel2.Click += new System.EventHandler(this.metroLabel2_Click);
             // 
             // metroTextBox2
             // 
@@ -146,7 +144,7 @@
             this.metroButton3.TabIndex = 21;
             this.metroButton3.Text = "Change";
             this.metroButton3.UseSelectable = true;
-            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
+            this.metroButton3.Click += new System.EventHandler(this.Select_installation_Click);
             // 
             // metroButton4
             // 
@@ -156,7 +154,7 @@
             this.metroButton4.TabIndex = 22;
             this.metroButton4.Text = "Mount";
             this.metroButton4.UseSelectable = true;
-            this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
+            this.metroButton4.Click += new System.EventHandler(this.Mount_Click);
             // 
             // metroButton1
             // 
@@ -166,7 +164,7 @@
             this.metroButton1.TabIndex = 23;
             this.metroButton1.Text = "Back";
             this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.metroButton1.Click += new System.EventHandler(this.Tools_Click);
             // 
             // Mount_Windows
             // 
@@ -188,7 +186,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Mount_Windows";
             this.Load += new System.EventHandler(this.Mount_Windows_Load);
-            this.LocationChanged += new System.EventHandler(this.Mount_Windows_LocationChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

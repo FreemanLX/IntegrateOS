@@ -77,10 +77,32 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>windows_update.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DiscUtils, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -100,11 +122,23 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bcdedit_name.cs">
+    <Compile Include="Advanced_Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bcdedit_name.Designer.cs">
-      <DependentUpon>Bcdedit_name.cs</DependentUpon>
+    <Compile Include="Advanced_Settings.Designer.cs">
+      <DependentUpon>Advanced_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Advanced_tools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Advanced_tools.Designer.cs">
+      <DependentUpon>Advanced_tools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command_Prompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command_Prompt.Designer.cs">
+      <DependentUpon>Command_Prompt.cs</DependentUpon>
     </Compile>
     <Compile Include="convert_wim_esd.cs">
       <SubType>Form</SubType>
@@ -112,41 +146,70 @@
     <Compile Include="convert_wim_esd.Designer.cs">
       <DependentUpon>convert_wim_esd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form11.cs">
+    <Compile Include="Licenses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form11.Designer.cs">
-      <DependentUpon>Form11.cs</DependentUpon>
+    <Compile Include="Licenses.Designer.cs">
+      <DependentUpon>Licenses.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form12.cs">
+    <Compile Include="Not_Ready.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form12.Designer.cs">
-      <DependentUpon>Form12.cs</DependentUpon>
+    <Compile Include="Not_Ready.Designer.cs">
+      <DependentUpon>Not_Ready.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form13.cs">
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Select_partition.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form13.Designer.cs">
-      <DependentUpon>Form13.cs</DependentUpon>
+    <Compile Include="Select_partition.Designer.cs">
+      <DependentUpon>Select_partition.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="Select_tools_type.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="Select_tools_type.Designer.cs">
+      <DependentUpon>Select_tools_type.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form7.cs">
+    <Compile Include="Select_Windows_Edtions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form7.Designer.cs">
-      <DependentUpon>Form7.cs</DependentUpon>
+    <Compile Include="Select_Windows_Edtions.Designer.cs">
+      <DependentUpon>Select_Windows_Edtions.cs</DependentUpon>
     </Compile>
-    <Compile Include="format.cs">
+    <Compile Include="Temporary_I.cs" />
+    <Compile Include="Windows_Installation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="format.Designer.cs">
-      <DependentUpon>format.cs</DependentUpon>
+    <Compile Include="Windows_Installation.Designer.cs">
+      <DependentUpon>Windows_Installation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Select_installation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Select_installation.Designer.cs">
+      <DependentUpon>Select_installation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extract_iso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extract_iso.Designer.cs">
+      <DependentUpon>Extract_iso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Format.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Format.Designer.cs">
+      <DependentUpon>Format.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Helper.cs" />
@@ -168,6 +231,7 @@
     <Compile Include="Mount_Windows.Designer.cs">
       <DependentUpon>Mount_Windows.cs</DependentUpon>
     </Compile>
+    <Compile Include="Moving.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="NativeStructs.cs" />
     <Compile Include="preparing_installing_linux.cs">
@@ -191,17 +255,17 @@
     <Compile Include="Select_Image_File.Designer.cs">
       <DependentUpon>Select_Image_File.cs</DependentUpon>
     </Compile>
-    <Compile Include="Select_Linux.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Select_Linux.Designer.cs">
-      <DependentUpon>Select_Linux.cs</DependentUpon>
-    </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings_Menu.Designer.cs">
+      <DependentUpon>Settings_Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="set_partition.cs">
       <SubType>Form</SubType>
@@ -215,31 +279,50 @@
     <Compile Include="tools.Designer.cs">
       <DependentUpon>tools.cs</DependentUpon>
     </Compile>
-    <Compile Include="IntegrateOS_var.cs" />
+    <Compile Include="Native_IntegrateOS.cs" />
     <Compile Include="WimStruct.cs" />
-    <EmbeddedResource Include="Bcdedit_name.resx">
-      <DependentUpon>Bcdedit_name.cs</DependentUpon>
+    <EmbeddedResource Include="Advanced_Settings.resx">
+      <DependentUpon>Advanced_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Advanced_tools.resx">
+      <DependentUpon>Advanced_tools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command_Prompt.resx">
+      <DependentUpon>Command_Prompt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="convert_wim_esd.resx">
       <DependentUpon>convert_wim_esd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form11.resx">
-      <DependentUpon>Form11.cs</DependentUpon>
+    <EmbeddedResource Include="Licenses.resx">
+      <DependentUpon>Licenses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form12.resx">
-      <DependentUpon>Form12.cs</DependentUpon>
+    <EmbeddedResource Include="Not_Ready.resx">
+      <DependentUpon>Not_Ready.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form13.resx">
-      <DependentUpon>Form13.cs</DependentUpon>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <EmbeddedResource Include="Select_partition.resx">
+      <DependentUpon>Select_partition.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form7.resx">
-      <DependentUpon>Form7.cs</DependentUpon>
+    <EmbeddedResource Include="Select_tools_type.resx">
+      <DependentUpon>Select_tools_type.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="format.resx">
-      <DependentUpon>format.cs</DependentUpon>
+    <EmbeddedResource Include="Select_Windows_Edtions.resx">
+      <DependentUpon>Select_Windows_Edtions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows_Installation.resx">
+      <DependentUpon>Windows_Installation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Select_installation.resx">
+      <DependentUpon>Select_installation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extract_iso.resx">
+      <DependentUpon>Extract_iso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Format.resx">
+      <DependentUpon>Format.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="license.resx">
       <DependentUpon>license.cs</DependentUpon>
@@ -263,17 +346,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="selection-os.resx">
       <DependentUpon>selection-os.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Select_Image_File.resx">
       <DependentUpon>Select_Image_File.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Select_Linux.resx">
-      <DependentUpon>Select_Linux.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings_Menu.resx">
+      <DependentUpon>Settings_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="set_partition.resx">
       <DependentUpon>set_partition.cs</DependentUpon>
@@ -314,11 +401,18 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Black.png" />
+    <None Include="Resources\White.png" />
+    <None Include="Resources\white_left_arrow.png" />
+    <None Include="Resources\black_left_arrow.png" />
+    <None Include="Resources\refresh-32.ico" />
+    <None Include="Resources\refresh-48.ico" />
+    <None Include="Resources\refresh-48_lightmode.png" />
+    <None Include="Resources\refresh-48_darkmode.png" />
+    <None Include="Resources\LogoPentruFreeman.png" />
     <Content Include="windows_update.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\..\MetroFramework\MetroFramework\MetroFramework.csproj">
       <Project>{bb41ac8b-cbed-4387-a7e0-4567edb3f57f}</Project>

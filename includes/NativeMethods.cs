@@ -25,8 +25,8 @@ namespace ManagedWimLib
         #region Fields and Properties
         internal enum LongBits
         {
-            Long64 = 0, // Windows, Linux 32bit
-            Long32 = 1, // Linux 64bit
+            Long64 = 0, // Windows, Basic 32bit
+            Long32 = 1, // Basic 64bit
         }
 
         internal static IntPtr hModule;

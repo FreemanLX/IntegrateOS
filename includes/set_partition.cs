@@ -1,30 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace IntegrateOS
 {
-    public partial class set_partition : MetroFramework.Forms.MetroForm
+    public partial class Set_partition : MetroFramework.Forms.MetroForm
     {
-        public set_partition(System.Drawing.Point punct)
-        {
-            InitializeComponent();
-            Location = punct;
-        }
-        public set_partition(System.Drawing.Point punct, string partition, string type = "NTFS")
-        {  ///Aici vedem ce tipuri de clustere trebuie selectat (4 KB etc...)
+        public Set_partition(System.Drawing.Point punct, string partition, string type = "NTFS")
+        {  
             InitializeComponent();
             Location = punct;
             comboBox3.Text = type;
             comboBox1.Text = partition;
-
-            ///Si cum sa fie formatat, fast sau normal cum face rufus
             comboBox2.Items.Add("Fast");
             comboBox2.Items.Add("Normal");
             if (type == "EXT4")
@@ -41,25 +26,9 @@ namespace IntegrateOS
             }
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
+        private void Set_partition_Load(object sender, EventArgs e)
         {
-            try
-            {
-                var dialog = MetroFramework.MetroMessageBox.Show(this, "Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, IntegrateOS.IntegrateOS_var.color_t);
-                if (dialog == DialogResult.Yes)
-                {
-                    Environment.Exit(0);
-                }
-                if (dialog == DialogResult.No)
-                {
-                    e.Cancel = true;
-                }
-            }
-            catch { }
-        }
-        private void set_partition_Load(object sender, EventArgs e)
-        {
-            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
+            this.StyleManager = IntegrateOS.Themes.Generate(IntegrateOS.IntegrateOS_var.color, IntegrateOS.IntegrateOS_var.theme);
             if (IntegrateOS_var.dark == 0)
             {
                 label1.ForeColor = System.Drawing.Color.Black;
@@ -102,17 +71,6 @@ namespace IntegrateOS
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void metroButton3_Click(object sender, EventArgs e)
         {
             bool quick_format = false;
@@ -122,23 +80,18 @@ namespace IntegrateOS
             string com4 = this.comboBox4.GetItemText(this.comboBox4.SelectedItem);
             string com1 = this.comboBox1.Text;
             int t = 4096;
-            if (com4 == "8 KB") t = 8192;    ///aici luam clusterele si le convertim in Bytes, deci 8KB = 8192 B
+            if (com4 == "8 KB") t = 8192;    
             if (com4 == "16 KB") t = 16384;
             if (com4 == "32 KB") t = 32768;
             if (com4 == "64 KB") t = 65536;
             if (textBox1.Text.Length < 0) textBox1.Text = "Local Disk";
 
-            ///Evident aici este un alt form care imi formateaza o partitie. 
-            var temp = new format(Location, com1, textBox1.Text, t, com3, quick_format);
-            temp.Show();
-            this.Hide();
+            Moving.Form(this, new Format(Location, com1, textBox1.Text, t, com3, quick_format));
         }
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
-            var temp = new WindowsFormsApplication2.Form11(Location);
-            temp.Show();
-            this.Hide();
+            Moving.Form(this, new IntegrateOS.Select_Partition(Location));
         }
     }
 }

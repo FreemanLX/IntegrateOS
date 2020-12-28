@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IntegrateOS
@@ -16,34 +9,13 @@ namespace IntegrateOS
         {
             InitializeComponent();
             Location = punct;
-            foreach (string pointer in data)
-            {
-                checkedListBox1.Items.Add(pointer);
-            }
-
-        }
-
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            try
-            {
-                var dialog = MetroFramework.MetroMessageBox.Show(this, "Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, IntegrateOS.IntegrateOS_var.color_t);
-                if (dialog == DialogResult.Yes)
-                {
-                    Environment.Exit(0);
-                }
-                if (dialog == DialogResult.No)
-                {
-                    e.Cancel = true;
-                }
-            }
-            catch { }
+            foreach (string pointer in data) checkedListBox1.Items.Add(pointer);
         }
 
         private void Select_Image_File_Load(object sender, EventArgs e)
         {
             this.Theme = IntegrateOS_var.theme;
-            this.Style = IntegrateOS.IntegrateOS_var.color1;
+            this.Style = IntegrateOS.IntegrateOS_var.color;
 
             if(IntegrateOS_var.dark == 1)
             {
@@ -57,16 +29,9 @@ namespace IntegrateOS
             }
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            var x = new WindowsFormsApplication2.Form5(Location);
-            x.Show();
-            this.Hide();
+            Moving.Form(this, new IntegrateOS.Select_installation(Location));
         }
 
         private void checkedListBox1_ItemCheck_1(object sender, ItemCheckEventArgs e)
@@ -79,11 +44,8 @@ namespace IntegrateOS
 
         private void button4_Click(object sender, EventArgs e)
         {
-            WindowsSetup.Variabile.locatie = checkedListBox1.Items[checkedListBox1.SelectedIndex].ToString();
-            var x = new WindowsFormsApplication2.Form12(Location);
-            x.Show();
-            this.Hide();
-            
+            IntegrateOS.Temporary_I.locatie = checkedListBox1.Items[checkedListBox1.SelectedIndex].ToString();
+            Moving.Form(this, new IntegrateOS.Select_Windows_Edition(Location));
         }
     }
 }

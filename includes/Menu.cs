@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Security.Principal;
-using System.IO;
 using System.Diagnostics;
+using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace IntegrateOS
 {
+
+
     public partial class Menu : MetroFramework.Forms.MetroForm
     {
-        public Menu()
-        {
-            InitializeComponent();
-        }
+
+
+
         public Menu(string s, System.Drawing.Point punct)
         {
             InitializeComponent();
-            this.Text = s;
-            WindowsSetup.Variabile.version = s;
+            Icon test = Icon.FromHandle(Resources.IntegrateOS_Logo.GetHicon());
+            Icon = test;
+            IntegrateOS.Temporary_I.version = this.Text = s;
             this.Location = punct;
-
         }
 
         public bool IsElevated
@@ -33,103 +35,51 @@ namespace IntegrateOS
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            pictureBox3.BackColor = Generate_Colors.Generate(IntegrateOS_var.color_t);
-            if(!this.IsElevated)
+            if(IntegrateOS_var.program_mode == 2)
             {
-                var exeName = Process.GetCurrentProcess().MainModule.FileName;
-                ProcessStartInfo startInfo = new ProcessStartInfo(exeName);
-                startInfo.Verb = "runas";
-                startInfo.Arguments = "restart";
-                Process.Start(startInfo);
-                Application.Exit();
-            }
-            this.StyleManager = IntegrateOS.Themes.generate(IntegrateOS.IntegrateOS_var.color1, IntegrateOS.IntegrateOS_var.theme);
-            metroTile1.Style = IntegrateOS.IntegrateOS_var.color1;
-            metroTile2.Style = IntegrateOS.IntegrateOS_var.color1;
-            metroTile3.Style = IntegrateOS.IntegrateOS_var.color1;
-            if (IntegrateOS_var.dark == 0)
-            {
-                label1.ForeColor = System.Drawing.Color.Black;
-                label2.ForeColor = System.Drawing.Color.Black;
-                label5.ForeColor = System.Drawing.Color.Black;
+                Tools.Visible = false;
+                Settings.Location = new System.Drawing.Point(223, 110);
             }
             else
             {
-                label1.ForeColor = System.Drawing.Color.White;
-                label2.ForeColor = System.Drawing.Color.White;
-                label5.ForeColor = System.Drawing.Color.White;
+                Tools.Visible = true;
+                Settings.Location = new System.Drawing.Point(423, 110);
             }
+            if(!this.IsElevated)
+            {
+                var exeName = Process.GetCurrentProcess().MainModule.FileName;
+                ProcessStartInfo startInfo = new ProcessStartInfo(exeName)
+                {
+                    Verb = "runas",
+                    Arguments = "restart"
+                };
+                Process.Start(startInfo);
+                Application.Exit();
+            }
+            this.StyleManager = IntegrateOS.Themes.Generate(IntegrateOS.IntegrateOS_var.color, IntegrateOS.IntegrateOS_var.theme);
+            Setup.Style = Tools.Style = Settings.Style = IntegrateOS.IntegrateOS_var.color;
         }
 
-        private void metroTile1_Click(object sender, EventArgs e)
+        private void Selection_OS_Click(object sender, EventArgs e)
         {
-            var x = new selection_os(this.Location);
-            this.Hide();
-            x.Show();
+            Moving.Form(this, new Selection_os(Location));
         }
 
-        private void metroTile2_Click(object sender, EventArgs e)
+        private void Tools_Click(object sender, EventArgs e)
         {
-            var x = new tools(this.Location);
-            this.Hide();
-            x.Show();
+            Moving.Form(this, new Selection_os(Location, 1));
         }
 
-        private void metroTile3_Click(object sender, EventArgs e)
+        private void Settings_Click_1(object sender, EventArgs e)
         {
-            ////Settings
+            Moving.Form(this, new Settings_Menu(Location));
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void metroTile3_Click_1(object sender, EventArgs e)
-        {
-            var x = new Settings(this.Location);
-            x.Show();
-            this.Hide();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            var x = new Settings(this.Location);
-            x.Show();
-            this.Hide();
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            var x = new selection_os(this.Location);
-            this.Hide();
-            x.Show();
-        }
-
-        private void metroButton2_Click(object sender, EventArgs e)
+        private void Exit_Click(object sender, EventArgs e)
         {
             var eps = MetroFramework.MetroMessageBox.Show(this, "Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, IntegrateOS_var.color_t);
-            if(eps == DialogResult.Yes)
-              Environment.Exit(0);
-
-        }
-
-        private void pictureBox2_Click_1(object sender, EventArgs e)
-        {
-            var x = new tools(this.Location);
-            this.Hide();
-            x.Show();
-        }
-
-        private void pictureBox3_Click_1(object sender, EventArgs e)
-        {
-            var x = new selection_os(this.Location);
-            x.Show();
-            this.Hide();
-        }
-
-        private void Menu_LocationChanged(object sender, EventArgs e)
-        {
+            if(eps == DialogResult.Yes) Environment.Exit(0);
         }
     }
 }

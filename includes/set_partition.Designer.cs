@@ -1,6 +1,6 @@
 ﻿namespace IntegrateOS
 {
-    partial class set_partition
+    partial class Set_partition
     {
         /// <summary>
         /// Required designer variable.
@@ -104,7 +104,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(189, 29);
             this.comboBox1.TabIndex = 11;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -125,7 +124,6 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(189, 29);
             this.comboBox4.TabIndex = 13;
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -192,7 +190,7 @@
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Set partition";
-            this.Load += new System.EventHandler(this.set_partition_Load);
+            this.Load += new System.EventHandler(this.Set_partition_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,6 +1,9 @@
-﻿namespace IntegrateOS
+﻿using System;
+using System.Windows.Forms;
+
+namespace IntegrateOS
 {
-    partial class tools
+    partial class Basic_tools
     {
         /// <summary>
         /// Required designer variable.
@@ -28,94 +31,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.metroTile4 = new MetroFramework.Controls.MetroTile();
-            this.metroTile5 = new MetroFramework.Controls.MetroTile();
+            this.Convert_Windows_Installation = new MetroFramework.Controls.MetroTile();
+            this.Mount_Windows = new MetroFramework.Controls.MetroTile();
+            this.Wadvmode = new MetroFramework.Controls.MetroTile();
+            this.Wcommandmode = new MetroFramework.Controls.MetroTile();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
-            // metroTile1
+            // Convert_Windows_Installation
             // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(23, 101);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(194, 136);
-            this.metroTile1.TabIndex = 13;
-            this.metroTile1.Text = "Convert WIM to ESD";
-            this.metroTile1.UseSelectable = true;
-            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
+            this.Convert_Windows_Installation.ActiveControl = null;
+            this.Convert_Windows_Installation.Location = new System.Drawing.Point(43, 150);
+            this.Convert_Windows_Installation.Name = "metroTile1";
+            this.Convert_Windows_Installation.Size = new System.Drawing.Size(194, 136);
+            this.Convert_Windows_Installation.TabIndex = 13;
+            this.Convert_Windows_Installation.Text = "Convert Windows Setup Files";
+            this.Convert_Windows_Installation.UseSelectable = true;
+            this.Convert_Windows_Installation.Click += new System.EventHandler(this.Convert_Windows_Click);
             // 
-            // metroTile2
+            // Mount_Windows
             // 
-            this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(223, 101);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(194, 136);
-            this.metroTile2.TabIndex = 14;
-            this.metroTile2.Text = "Convert ESD to WIM";
-            this.metroTile2.UseSelectable = true;
-            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
+            this.Mount_Windows.ActiveControl = null;
+            this.Mount_Windows.Location = new System.Drawing.Point(243, 150);
+            this.Mount_Windows.Name = "metroTile4";
+            this.Mount_Windows.Size = new System.Drawing.Size(194, 136);
+            this.Mount_Windows.TabIndex = 16;
+            this.Mount_Windows.Text = "Mount Windows";
+            this.Mount_Windows.UseSelectable = true;
+            this.Mount_Windows.Click += new System.EventHandler(this.Mount_Windows_Click);
             // 
-            // metroTile4
+            // Wadvmode
             // 
-            this.metroTile4.ActiveControl = null;
-            this.metroTile4.Location = new System.Drawing.Point(423, 101);
-            this.metroTile4.Name = "metroTile4";
-            this.metroTile4.Size = new System.Drawing.Size(194, 136);
-            this.metroTile4.TabIndex = 16;
-            this.metroTile4.Text = "Mount Windows";
-            this.metroTile4.UseSelectable = true;
-            this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click);
+            this.Wadvmode.ActiveControl = null;
+            this.Wadvmode.Location = new System.Drawing.Point(443, 150);
+            this.Wadvmode.Name = "Compress";
+            this.Wadvmode.Size = new System.Drawing.Size(194, 136);
+            this.Wadvmode.TabIndex = 17;
+            this.Wadvmode.Text = "Boot to Windows advanced mode";
+            this.Wadvmode.UseSelectable = true;
+            this.Wadvmode.Click += new System.EventHandler(this.Wadvmode_Click_1);
             // 
-            // metroTile5
+            // Wcommandmode
             // 
-            this.metroTile5.ActiveControl = null;
-            this.metroTile5.Location = new System.Drawing.Point(23, 243);
-            this.metroTile5.Name = "metroTile5";
-            this.metroTile5.Size = new System.Drawing.Size(194, 136);
-            this.metroTile5.TabIndex = 17;
-            this.metroTile5.Text = "Edit Windows";
-            this.metroTile5.UseSelectable = true;
-            this.metroTile5.Click += new System.EventHandler(this.metroTile5_Click);
+            this.Wcommandmode.ActiveControl = null;
+            this.Wcommandmode.Location = new System.Drawing.Point(43, 293);
+            this.Wcommandmode.Name = "Compress";
+            this.Wcommandmode.Size = new System.Drawing.Size(194, 136);
+            this.Wcommandmode.TabIndex = 17;
+            this.Wcommandmode.Text = "IntegrateOS Command Mode";
+            this.Wcommandmode.UseSelectable = true;
+            this.Wcommandmode.Click += new System.EventHandler(this.Wcommandmode_Click);
             // 
-            // metroButton2
+            // Back
             // 
-            this.metroButton2.Location = new System.Drawing.Point(29, 540);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(120, 40);
+            this.metroButton2.FlatAppearance.BorderSize = 0;
+            this.metroButton2.Location = new System.Drawing.Point(29, 70);
+            this.metroButton2.Name = "Back";
+            this.metroButton2.Size = new System.Drawing.Size(50, 50);
             this.metroButton2.TabIndex = 25;
-            this.metroButton2.Text = "Back";
             this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.metroButton2.Click += new System.EventHandler(this.Back_Click);
             // 
-            // tools
+            // Basic_tools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.metroTile5);
-            this.Controls.Add(this.metroTile4);
-            this.Controls.Add(this.metroTile2);
-            this.Controls.Add(this.metroTile1);
+            this.Controls.Add(this.Mount_Windows);
+            this.Controls.Add(this.Convert_Windows_Installation);
+            this.Controls.Add(this.Wadvmode);
+            this.Controls.Add(this.Wcommandmode);
             this.MaximizeBox = false;
-            this.Name = "tools";
+            this.Name = "Basic_tools";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "IntegrateOS Tools";
-            this.Load += new System.EventHandler(this.tools_Load);
+            this.Load += new System.EventHandler(this.Tools_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private MetroFramework.Controls.MetroTile metroTile1;
-        private MetroFramework.Controls.MetroTile metroTile2;
-        private MetroFramework.Controls.MetroTile metroTile4;
-        private MetroFramework.Controls.MetroTile metroTile5;
+        private MetroFramework.Controls.MetroTile Convert_Windows_Installation;
+        private MetroFramework.Controls.MetroTile Mount_Windows;
         private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroTile Wadvmode;
+        private MetroFramework.Controls.MetroTile Wcommandmode;
     }
 }

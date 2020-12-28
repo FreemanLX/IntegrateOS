@@ -42,15 +42,15 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // metroButton2
+            // Back
             // 
             this.metroButton2.Location = new System.Drawing.Point(334, 537);
-            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Name = "Back";
             this.metroButton2.Size = new System.Drawing.Size(120, 40);
             this.metroButton2.TabIndex = 25;
             this.metroButton2.Text = "Exit";
             this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.metroButton2.Click += new System.EventHandler(this.Back_Click);
             // 
             // license
             // 
@@ -65,7 +65,7 @@
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "License";
-            this.Load += new System.EventHandler(this.license_Load);
+            this.Load += new System.EventHandler(this.License_Load);
             this.ResumeLayout(false);
 
         }
