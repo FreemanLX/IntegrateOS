@@ -1,9 +1,0 @@
-﻿  IntegrateOS Base.cpp
-c:\users\andreas\source\repos\integrateos base\integrateos base\integrateos base.cpp(98): warning C4018: '<': signed/unsigned mismatch
-     Creating library C:\Users\Andreas\Desktop\IntegrateOS\Release\IntegrateOS Base.lib and object C:\Users\Andreas\Desktop\IntegrateOS\Release\IntegrateOS Base.exp
-  Generating code
-  0 of 166 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  IntegrateOS Base.vcxproj -> C:\Users\Andreas\Desktop\IntegrateOS\Release\IntegrateOS Base.dll
