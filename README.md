@@ -40,8 +40,8 @@ A method to install every OS on every computer
            2.3.3) About (isn't ready)
            2.3.4) Licenses
            
-   2.4) Except the selection type and format partition forms, all forms had an icon for back (<-).
-   2.5) Increased the speed of communication between forms, and now it draws on idle only 6.5 MB (light) and 8 MB (dark) RAM.
-   2.6) The linux department from our team discoverd the option to install Linux from Windows by using shell and WSL. (Stay tuned).      
+   2.4) Except the selection type and format partition forms, all forms had an icon for back (<-).\
+   2.5) Increased the speed of communication between forms, and now it draws on idle only 6.5 MB (light) and 8 MB (dark) RAM.\
+   2.6) The linux department from our team discoverd the option to install Linux from Windows by using shell and WSL. (Stay tuned).\ 
 
 Hope you' ll stay healthy.
