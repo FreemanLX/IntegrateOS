@@ -92,7 +92,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -105,59 +105,92 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DiscUtils, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Discutils.0.11.0.2\lib\net40\DiscUtils.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>True</Private>
+    <Reference Include="FireSharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.2.0.4\lib\portable-net45+sl5+wp8+win8\FireSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Management" />
     <Reference Include="System.Management.Instrumentation" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Advanced_Settings.cs">
+    <Compile Include="Algorithms.cs" />
+    <Compile Include="Async_Processing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Advanced_Settings.Designer.cs">
-      <DependentUpon>Advanced_Settings.cs</DependentUpon>
+    <Compile Include="Async_Processing.Designer.cs">
+      <DependentUpon>Async_Processing.cs</DependentUpon>
     </Compile>
-    <Compile Include="Advanced_tools.cs">
+    <Compile Include="Default_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Advanced_tools.Designer.cs">
-      <DependentUpon>Advanced_tools.cs</DependentUpon>
+    <Compile Include="Default_form.Designer.cs">
+      <DependentUpon>Default_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Command_Prompt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Command_Prompt.Designer.cs">
-      <DependentUpon>Command_Prompt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="convert_wim_esd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="convert_wim_esd.Designer.cs">
-      <DependentUpon>convert_wim_esd.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Download_from_server.cs" />
+    <Compile Include="SHA256Encrypt.cs" />
+    <Compile Include="Generate_Colors.cs" />
+    <Compile Include="Generate_Process.cs" />
+    <Compile Include="IntegrateOS_Data.cs" />
     <Compile Include="Licenses.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Licenses.Designer.cs">
       <DependentUpon>Licenses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="NativeConstants.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="NativeStructures.cs" />
     <Compile Include="Not_Ready.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Not_Ready.Designer.cs">
       <DependentUpon>Not_Ready.cs</DependentUpon>
     </Compile>
+    <Compile Include="Read_settings_XML.cs" />
     <Compile Include="Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -168,17 +201,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Saving.cs" />
     <Compile Include="Select_partition.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Select_partition.Designer.cs">
       <DependentUpon>Select_partition.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Select_tools_type.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Select_tools_type.Designer.cs">
-      <DependentUpon>Select_tools_type.cs</DependentUpon>
     </Compile>
     <Compile Include="Select_Windows_Edtions.cs">
       <SubType>Form</SubType>
@@ -186,12 +214,12 @@
     <Compile Include="Select_Windows_Edtions.Designer.cs">
       <DependentUpon>Select_Windows_Edtions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Temporary_I.cs" />
-    <Compile Include="Windows_Installation.cs">
+    <Compile Include="InstallationData.cs" />
+    <Compile Include="Installation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows_Installation.Designer.cs">
-      <DependentUpon>Windows_Installation.cs</DependentUpon>
+    <Compile Include="Installation.Designer.cs">
+      <DependentUpon>Installation.cs</DependentUpon>
     </Compile>
     <Compile Include="Select_installation.cs">
       <SubType>Form</SubType>
@@ -199,32 +227,7 @@
     <Compile Include="Select_installation.Designer.cs">
       <DependentUpon>Select_installation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Extract_iso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Extract_iso.Designer.cs">
-      <DependentUpon>Extract_iso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Format.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Format.Designer.cs">
-      <DependentUpon>Format.cs</DependentUpon>
-    </Compile>
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Helper.cs" />
-    <Compile Include="license.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="license.Designer.cs">
-      <DependentUpon>license.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Mount_Windows.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,69 +235,39 @@
       <DependentUpon>Mount_Windows.cs</DependentUpon>
     </Compile>
     <Compile Include="Moving.cs" />
-    <Compile Include="NativeMethods.cs" />
-    <Compile Include="NativeStructs.cs" />
-    <Compile Include="preparing_installing_linux.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="preparing_installing_linux.Designer.cs">
-      <DependentUpon>preparing_installing_linux.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="ProgressCallback.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="selection-os.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="selection-os.Designer.cs">
-      <DependentUpon>selection-os.cs</DependentUpon>
-    </Compile>
     <Compile Include="Select_Image_File.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Select_Image_File.Designer.cs">
       <DependentUpon>Select_Image_File.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs">
+    <Compile Include="Settings_Themes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Settings.Designer.cs">
-      <DependentUpon>Settings.cs</DependentUpon>
+    <Compile Include="Settings_Themes.Designer.cs">
+      <DependentUpon>Settings_Themes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings_Menu.cs">
+    <Compile Include="Partition_Preferences.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Settings_Menu.Designer.cs">
-      <DependentUpon>Settings_Menu.cs</DependentUpon>
+    <Compile Include="Partition_Preferences.Designer.cs">
+      <DependentUpon>Partition_Preferences.cs</DependentUpon>
     </Compile>
-    <Compile Include="set_partition.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="set_partition.Designer.cs">
-      <DependentUpon>set_partition.cs</DependentUpon>
-    </Compile>
-    <Compile Include="tools.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="tools.Designer.cs">
-      <DependentUpon>tools.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Native_IntegrateOS.cs" />
-    <Compile Include="WimStruct.cs" />
-    <EmbeddedResource Include="Advanced_Settings.resx">
-      <DependentUpon>Advanced_Settings.cs</DependentUpon>
+    <Compile Include="Themes.cs" />
+    <Compile Include="Tools_location.cs" />
+    <EmbeddedResource Include="Async_Processing.resx">
+      <DependentUpon>Async_Processing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Advanced_tools.resx">
-      <DependentUpon>Advanced_tools.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Command_Prompt.resx">
-      <DependentUpon>Command_Prompt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="convert_wim_esd.resx">
-      <DependentUpon>convert_wim_esd.cs</DependentUpon>
+    <EmbeddedResource Include="Default_form.resx">
+      <DependentUpon>Default_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses.resx">
       <DependentUpon>Licenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Not_Ready.resx">
       <DependentUpon>Not_Ready.cs</DependentUpon>
@@ -306,35 +279,17 @@
     <EmbeddedResource Include="Select_partition.resx">
       <DependentUpon>Select_partition.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Select_tools_type.resx">
-      <DependentUpon>Select_tools_type.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Select_Windows_Edtions.resx">
       <DependentUpon>Select_Windows_Edtions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows_Installation.resx">
-      <DependentUpon>Windows_Installation.cs</DependentUpon>
+    <EmbeddedResource Include="Installation.resx">
+      <DependentUpon>Installation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Select_installation.resx">
       <DependentUpon>Select_installation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Extract_iso.resx">
-      <DependentUpon>Extract_iso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Format.resx">
-      <DependentUpon>Format.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="license.resx">
-      <DependentUpon>license.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Mount_Windows.resx">
       <DependentUpon>Mount_Windows.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="preparing_installing_linux.resx">
-      <DependentUpon>preparing_installing_linux.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -350,23 +305,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="selection-os.resx">
-      <DependentUpon>selection-os.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Select_Image_File.resx">
       <DependentUpon>Select_Image_File.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Settings.resx">
-      <DependentUpon>Settings.cs</DependentUpon>
+    <EmbeddedResource Include="Settings_Themes.resx">
+      <DependentUpon>Settings_Themes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Settings_Menu.resx">
-      <DependentUpon>Settings_Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="set_partition.resx">
-      <DependentUpon>set_partition.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="tools.resx">
-      <DependentUpon>tools.cs</DependentUpon>
+    <EmbeddedResource Include="Partition_Preferences.resx">
+      <DependentUpon>Partition_Preferences.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config">
@@ -410,7 +356,6 @@
     <None Include="Resources\refresh-48_lightmode.png" />
     <None Include="Resources\refresh-48_darkmode.png" />
     <None Include="Resources\LogoPentruFreeman.png" />
-    <Content Include="windows_update.ico" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -431,11 +376,9 @@
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
-  <Import Project="..\packages\ManagedWimLib.1.3.0\build\net451\ManagedWimLib.targets" Condition="Exists('..\packages\ManagedWimLib.1.3.0\build\net451\ManagedWimLib.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\ManagedWimLib.1.3.0\build\net451\ManagedWimLib.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ManagedWimLib.1.3.0\build\net451\ManagedWimLib.targets'))" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
   </Target>
 </Project>

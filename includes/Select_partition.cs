@@ -1,133 +1,100 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.IO;
-
+using MetroFramework;
+using MetroFramework.Drawing;
+using System.Drawing;
 
 namespace IntegrateOS
 {
     public partial class Select_Partition : MetroFramework.Forms.MetroForm
     {
         int linux_temp = 0;
-        public Select_Partition(System.Drawing.Point punct, int linux = 0)
-        { 
+        public Select_Partition(Point punct, int linux = 0)
+        {
             InitializeComponent();
             linux_temp = linux;
             Location = punct;
-            Partitions(linux);
+            Partitions();
         }
 
-        void Partitions(int linux)
+        bool Verify_drive_avaibility(DriveInfo driver) => !(driver.DriveType == 0 || driver.DriveType == DriveType.CDRom || driver.DriveType == DriveType.Network);
+
+        void Partitions()
         {
-            string[] drivers = new string[10];
-            DriveInfo[] driverslist = DriveInfo.GetDrives();
-            foreach (DriveInfo d in driverslist)
+            foreach (DriveInfo driver in DriveInfo.GetDrives())
             {
-                int i = 0;
-                if (d.DriveType == 0 || d.DriveType == DriveType.CDRom || d.DriveType == DriveType.Network) { }
-                else
+                if (Verify_drive_avaibility(driver) && driver.IsReady == true && driver.AvailableFreeSpace / Math.Pow(1024, 2) > InstallationData.size_in_mb + 100)
                 {
-                        long gamma = d.TotalSize;
-                        bool cond1 = linux == 1 ? gamma < 10000000000 : gamma < 2000000000;
-                        if (cond1) { }
-                        else
-                        {
-                            bool cond = linux == 1 ? (d.DriveFormat == "NTFS") || (d.DriveFormat == "FAT32") || (d.DriveFormat == "EXFAT") : (d.DriveFormat == "NTFS");
-                            if (cond)
-                            {
-                                drivers[i] = d.Name; i++;
-                                drivers[i] = d.DriveFormat.ToString(); i++;
-                                if (d.IsReady == true)
-                                {
-                                    drivers[i] = (d.TotalSize / (1024 * 1024 * 1024)).ToString() + " GB"; i++;
-                                    drivers[i] = (d.AvailableFreeSpace / (1024 * 1024 * 1024)).ToString() + " GB"; i++;
-                                    dataGridView1.Rows.Add(drivers);
-                                }
-                                
-                            }
-
-                        }
-
-                }
-
-            }
-        }
-
-        
-        private void Next_Click_1(object sender, EventArgs e)
-        {
-            string drive_letter = "";
-            try
-            {
-                drive_letter = dataGridView1[0, dataGridView1.CurrentCell.RowIndex].Value.ToString();
-            }
-            catch { }
-            char[] s = new char[2];
-            s[0] = drive_letter[0];
-            s[1] = drive_letter[1];
-            string ga = new string(s);
-            if (drive_letter != "")
-            {
-                if (File.Exists(new string(s) + "\\hiberfile.sys") || File.Exists(new string(s) + "\\pagefile.sys"))
-                {
-                    MetroFramework.MetroMessageBox.Show(this, "I can't Format your disk, it contains system files such as pagefile.sys", "Error formating", MessageBoxButtons.OK, MessageBoxIcon.Error, IntegrateOS_var.color_t);
-                }
-                else
-                {
-                    Temporary_I.format = ga + "\\";
-                    if (linux_temp == 1) IntegrateOS.Moving.Form(this, new IntegrateOS.Set_partition(Location, ga, "EXT4"));
-                    else IntegrateOS.Moving.Form(this, new IntegrateOS.Set_partition(Location, ga));
+                    Partition_list.Rows.Add(new string[] { driver.Name, driver.DriveFormat, Math.Round(driver.TotalSize / Math.Pow(1024, 3), 2).ToString() + " GB",
+                        Math.Round(driver.AvailableFreeSpace / Math.Pow(1024, 3), 2).ToString() + " GB" });
                 }
             }
-            else
-            {
-                MessageBox.Show("You didn't selected any option!", "Error 003", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
         }
         
-
-        private void Form11_Load(object sender, EventArgs e)
+        private void Select_Partition_Load(object sender, EventArgs e)
         {
-            this.StyleManager = IntegrateOS.Themes.Generate(IntegrateOS.IntegrateOS_var.color, IntegrateOS.IntegrateOS_var.theme);
-            dataGridView1.DefaultCellStyle.SelectionBackColor = IntegrateOS.Generate_Colors.Generate(IntegrateOS.IntegrateOS_var.color_t);
+            StyleManager = Themes.Generate;
+            Partition_list.DefaultCellStyle.SelectionBackColor = GenerateColors.Generate((int)Themes.MetroColor);
             metroButton1.BackgroundImageLayout = button2.BackgroundImageLayout = ImageLayout.Center;
-            if (IntegrateOS.IntegrateOS_var.dark == 0)
+            label4.ForeColor = Themes.GenerateTheme(!Themes.MetroTheme);
+            button2.BackgroundImage = Themes.Icon_Style;
+            if (Themes.MetroTheme == 0 || (int)Themes.MetroTheme == 1)
             {
-                button2.BackgroundImage = IntegrateOS.Resources.white_left_arrow;
-                metroButton1.BackgroundImage = IntegrateOS.Resources.refresh_48_lightmode;
-                dataGridView1.ForeColor = System.Drawing.Color.Black;
-                dataGridView1.BackColor = System.Drawing.Color.White;
-                dataGridView1.BackgroundColor = System.Drawing.Color.White;
-                dataGridView1.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-                dataGridView1.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = MetroFramework.Drawing.MetroPaint.BackColor.Form(MetroFramework.MetroThemeStyle.Light);
+                metroButton1.BackgroundImage = Resources.refresh_48_lightmode;
+                Partition_list.ForeColor = Color.Black;
+                Partition_list.BackColor = Color.White;
+                Partition_list.BackgroundColor = Color.White;
+                Partition_list.DefaultCellStyle.ForeColor = Color.Black;
+                Partition_list.DefaultCellStyle.BackColor = Color.White;
+                Partition_list.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+                Partition_list.ColumnHeadersDefaultCellStyle.BackColor = MetroPaint.BackColor.Form(MetroThemeStyle.Light);
             }
             else
             {
-                button2.BackgroundImage = IntegrateOS.Resources.black_left_arrow;
-                metroButton1.BackgroundImage = IntegrateOS.Resources.refresh_48_darkmode;
-                dataGridView1.ForeColor = System.Drawing.Color.White;
-                dataGridView1.BackColor = MetroFramework.Drawing.MetroPaint.BackColor.Form(MetroFramework.MetroThemeStyle.Dark);
-                dataGridView1.BackgroundColor = MetroFramework.Drawing.MetroPaint.BackColor.Form(MetroFramework.MetroThemeStyle.Dark);
-                dataGridView1.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
-                dataGridView1.DefaultCellStyle.BackColor = MetroFramework.Drawing.MetroPaint.BackColor.Form(MetroFramework.MetroThemeStyle.Dark);
-                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
-                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = MetroFramework.Drawing.MetroPaint.BackColor.Form(MetroFramework.MetroThemeStyle.Dark);
+                metroButton1.BackgroundImage = Resources.refresh_48_darkmode;
+                Partition_list.ForeColor = Color.White;
+                Partition_list.BackColor = MetroPaint.BackColor.Form(MetroThemeStyle.Dark);
+                Partition_list.BackgroundColor = MetroPaint.BackColor.Form(MetroThemeStyle.Dark);
+                Partition_list.DefaultCellStyle.ForeColor = Color.White;
+                Partition_list.DefaultCellStyle.BackColor = MetroPaint.BackColor.Form(MetroThemeStyle.Dark);
+                Partition_list.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                Partition_list.ColumnHeadersDefaultCellStyle.BackColor = MetroPaint.BackColor.Form(MetroThemeStyle.Dark);
             }
         }
 
-        private void Back_Click(object sender, EventArgs e)
+        /// <summary>
+        /// It moves back from this form to the form which the activity started
+        /// </summary>
+        /// <param name="sender">The button sender</param>
+        /// <param name="e">The button arguments</param>
+        private void Back_Click(object sender, EventArgs e) => Moving.Form(this, new Select_installation(Location));
+        
+        private void RefreshData()
         {
-            IntegrateOS.Moving.Form(this, new Select_installation(Location));
+            Partition_list.Rows.Clear(); ///clears the table
+            Partition_list.Refresh();  ///refreshing the table
+            Partitions(); ///recalling to search the partitions
         }
 
-        private void Refresh_Click(object sender, EventArgs e)
+        private void Refresh_Click(object sender, EventArgs e) => RefreshData();
+
+        private void PartitionList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.Rows.Clear();
-            dataGridView1.Refresh();
-            Partitions(linux_temp);
+            string drive_letter = Partition_list[0, Partition_list.CurrentCell.RowIndex].Value.ToString();
+            if(drive_letter != Path.GetPathRoot(Environment.SystemDirectory))
+            {
+                ///instalable even if you have the pagefile / hiberfile or whatever
+                InstallationData.partition = drive_letter;
+                Moving.Form(this, new Installation(Location));
+            }
         }
 
+        private void Format_Click(object sender, EventArgs e)
+        {
+            string drive_letter = Partition_list[0, Partition_list.CurrentCell.RowIndex].Value.ToString(); 
+            new Set_partition(Location, new string(new char[] { drive_letter[0], drive_letter[1] })).ShowDialog();
+            RefreshData();
+        }
     }
 }

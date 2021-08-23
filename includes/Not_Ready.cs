@@ -16,9 +16,6 @@ namespace IntegrateOS
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Moving.Form(this, new Menu("IntegrateOS Full Version: v0.2.8.5_betaC1", Location));
-        }
+        private void Button1_Click(object sender, EventArgs e) => Moving.Form(this, new Default_form(Location));
     }
 }

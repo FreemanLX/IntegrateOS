@@ -5,47 +5,70 @@ namespace IntegrateOS
 {
     public partial class Select_Image_File : MetroFramework.Forms.MetroForm
     {
-        public Select_Image_File(string[] data, System.Drawing.Point punct)
+        int type;
+        public Select_Image_File(System.Collections.Generic.List<string> data, System.Drawing.Point punct, int type = 0)
         {
             InitializeComponent();
             Location = punct;
-            foreach (string pointer in data) checkedListBox1.Items.Add(pointer);
+            foreach(string subdata in data)
+            {
+                Windows_Editions_List.Rows.Add(subdata, "Yes", "None");
+            }
+            this.type = type;
         }
 
         private void Select_Image_File_Load(object sender, EventArgs e)
         {
-            this.Theme = IntegrateOS_var.theme;
-            this.Style = IntegrateOS.IntegrateOS_var.color;
-
-            if(IntegrateOS_var.dark == 1)
+            button1.BackColor = Themes.GenerateTheme(Themes.MetroTheme);
+            button1.ForeColor = Themes.GenerateTheme(!Themes.MetroTheme);
+            button1.BackgroundImage = Themes.Icon_Style;
+            button1.BackgroundImageLayout = ImageLayout.Center;
+            Theme = Themes.MetroTheme;
+            Style = Themes.MetroColor;
+            Windows_Editions_List.DefaultCellStyle.SelectionBackColor = GenerateColors.Generate((int)Themes.MetroColor);
+            if ((int)Themes.MetroTheme == 0 || (int)Themes.MetroTheme == 1)
             {
-                checkedListBox1.BackColor = MetroFramework.Drawing.MetroPaint.BackColor.Form(MetroFramework.MetroThemeStyle.Dark);
-                checkedListBox1.ForeColor = System.Drawing.Color.White;
+                Windows_Editions_List.ForeColor = System.Drawing.Color.Black;
+                Windows_Editions_List.BackColor = System.Drawing.Color.White;
+                Windows_Editions_List.BackgroundColor = System.Drawing.Color.White;
+                Windows_Editions_List.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+                Windows_Editions_List.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+                Windows_Editions_List.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+                Windows_Editions_List.ColumnHeadersDefaultCellStyle.BackColor = MetroFramework.Drawing.MetroPaint.BackColor.Form(MetroFramework.MetroThemeStyle.Light);
             }
-            else 
+            else
             {
-                checkedListBox1.BackColor = MetroFramework.Drawing.MetroPaint.BackColor.Form(MetroFramework.MetroThemeStyle.Light);
-                checkedListBox1.ForeColor = System.Drawing.Color.Black;
+                Windows_Editions_List.ForeColor = System.Drawing.Color.White;
+                Windows_Editions_List.BackColor = MetroFramework.Drawing.MetroPaint.BackColor.Form(MetroFramework.MetroThemeStyle.Dark);
+                Windows_Editions_List.BackgroundColor = MetroFramework.Drawing.MetroPaint.BackColor.Form(MetroFramework.MetroThemeStyle.Dark);
+                Windows_Editions_List.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+                Windows_Editions_List.DefaultCellStyle.BackColor = MetroFramework.Drawing.MetroPaint.BackColor.Form(MetroFramework.MetroThemeStyle.Dark);
+                Windows_Editions_List.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
+                Windows_Editions_List.ColumnHeadersDefaultCellStyle.BackColor = MetroFramework.Drawing.MetroPaint.BackColor.Form(MetroFramework.MetroThemeStyle.Dark);
             }
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e) => Moving.Form(this, new IntegrateOS.Select_installation(Location));
+
+        private void Go_to_next()
         {
-            Moving.Form(this, new IntegrateOS.Select_installation(Location));
+            DataGridViewRow row = Windows_Editions_List.SelectedRows[0];
+            switch (type)
+            {
+                default: InstallationData.location = row.Cells[0].Value.ToString(); break;
+                case 1: ToolsData.Mount.path_to_mount = row.Cells[0].Value.ToString(); break;
+                case 2:
+                    ToolsData.Conversion.convert_path_type = System.IO.Path.GetExtension(row.Cells[0].Value.ToString());
+                    ToolsData.Conversion.convert_path = row.Cells[0].Value.ToString();
+                    break;
+            }
+            Moving.Form(this, new Select_Windows_Edition(Location, type));
         }
 
-        private void checkedListBox1_ItemCheck_1(object sender, ItemCheckEventArgs e)
-        {
-            for (int ix = 0; ix < checkedListBox1.Items.Count; ++ix)
-                if (ix != e.Index) checkedListBox1.SetItemChecked(ix, false);
-
-            button4.Visible = true;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            IntegrateOS.Temporary_I.locatie = checkedListBox1.Items[checkedListBox1.SelectedIndex].ToString();
-            Moving.Form(this, new IntegrateOS.Select_Windows_Edition(Location));
+        private void Windows_Editions_List_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
+            if(e.Button == MouseButtons.Left)
+                 Go_to_next();
         }
     }
 }

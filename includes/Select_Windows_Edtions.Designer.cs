@@ -28,38 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            MetroFramework.MetroThemeStyle metroThemeStyle1 = new MetroFramework.MetroThemeStyle();
+            MetroFramework.MetroThemeStyle metroThemeStyle2 = new MetroFramework.MetroThemeStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Next = new MetroFramework.Controls.MetroButton();
             this.Back = new MetroFramework.Controls.MetroButton();
             this.Refresh = new MetroFramework.Controls.MetroButton();
             this.Windows_Editions_List = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Compression = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Windows_Editions_List)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(23, 311);
+            this.textBox1.Location = new System.Drawing.Point(168, 333);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(10, 20);
             this.textBox1.TabIndex = 2;
             this.textBox1.Visible = false;
-            // 
-            // Next
-            // 
-            this.Next.Location = new System.Drawing.Point(640, 537);
-            this.Next.Name = "metroButton1";
-            this.Next.Size = new System.Drawing.Size(120, 40);
-            this.Next.TabIndex = 3;
-            this.Next.Text = "Next";
-            this.Next.UseSelectable = true;
-            this.Next.Click += new System.EventHandler(this.Next_Click);
             // 
             // Back
             // 
@@ -68,7 +61,10 @@
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(50, 50);
             this.Back.TabIndex = 25;
+            this.Back.Theme = metroThemeStyle1;
+            this.Back.UseCustomForeColor = false;
             this.Back.UseSelectable = true;
+            this.Back.UseStyleColors = false;
             this.Back.Click += new System.EventHandler(this.Moving_Selection_OS_Click);
             // 
             // Refresh
@@ -78,7 +74,10 @@
             this.Refresh.Name = "Back";
             this.Refresh.Size = new System.Drawing.Size(50, 50);
             this.Refresh.TabIndex = 25;
+            this.Refresh.Theme = metroThemeStyle2;
+            this.Refresh.UseCustomForeColor = false;
             this.Refresh.UseSelectable = true;
+            this.Refresh.UseStyleColors = false;
             this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
             // 
             // Windows_Editions_List
@@ -117,7 +116,7 @@
             this.Windows_Editions_List.DefaultCellStyle = dataGridViewCellStyle2;
             this.Windows_Editions_List.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.Windows_Editions_List.EnableHeadersVisualStyles = false;
-            this.Windows_Editions_List.Location = new System.Drawing.Point(27, 134);
+            this.Windows_Editions_List.Location = new System.Drawing.Point(23, 154);
             this.Windows_Editions_List.MultiSelect = false;
             this.Windows_Editions_List.Name = "Windows_Editions_List";
             this.Windows_Editions_List.ReadOnly = true;
@@ -140,9 +139,10 @@
             this.Windows_Editions_List.ShowCellToolTips = false;
             this.Windows_Editions_List.ShowEditingIcon = false;
             this.Windows_Editions_List.ShowRowErrors = false;
-            this.Windows_Editions_List.Size = new System.Drawing.Size(750, 374);
+            this.Windows_Editions_List.Size = new System.Drawing.Size(754, 362);
             this.Windows_Editions_List.TabIndex = 16;
             this.Windows_Editions_List.TabStop = false;
+            this.Windows_Editions_List.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Windows_Editions_List_CellDoubleClick);
             // 
             // Column1
             // 
@@ -160,29 +160,45 @@
             // Compression
             // 
             this.Compression.FillWeight = 50F;
-            this.Compression.HeaderText = "Compression Type";
+            this.Compression.HeaderText = "Description";
             this.Compression.Name = "Compression";
             this.Compression.ReadOnly = true;
+            // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(0, 137);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(800, 2);
+            this.label1.TabIndex = 35;
+            // 
+            // label2
+            // 
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Location = new System.Drawing.Point(0, 539);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(800, 2);
+            this.label2.TabIndex = 36;
             // 
             // Select_Windows_Edition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Windows_Editions_List);
             this.Controls.Add(this.Refresh);
             this.Controls.Add(this.Back);
-            this.Controls.Add(this.Next);
             this.Controls.Add(this.textBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Select_Windows_Edition";
             this.Resizable = false;
-            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Select Windows Editions";
             this.Load += new System.EventHandler(this.Form12_Load);
+            this.Shown += new System.EventHandler(this.Select_Windows_Edition_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.Windows_Editions_List)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,10 +207,11 @@
 
         #endregion
         private System.Windows.Forms.TextBox textBox1;
-        private MetroFramework.Controls.MetroButton Next;
         private MetroFramework.Controls.MetroButton Back;
         private new MetroFramework.Controls.MetroButton Refresh;
         private System.Windows.Forms.DataGridView Windows_Editions_List;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Compression;

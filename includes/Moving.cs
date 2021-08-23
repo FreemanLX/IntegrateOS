@@ -1,74 +1,39 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace IntegrateOS
 {
-
-    public static class OnClose
-    {
-        public static void Form(Form form, System.Windows.Forms.FormClosingEventArgs e)
-        {
-            var dialog = MetroFramework.MetroMessageBox.Show(form, "Do you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, IntegrateOS.IntegrateOS_var.color_t);
-            if (dialog == DialogResult.Yes) Environment.Exit(0);
-            else e.Cancel = true;
-        }
-
-    }
-
-    public static class Saving
-    {
-        public static void Data()
-        {
-            string[] complete = new string[3];
-            complete[0] = IntegrateOS_var.dark.ToString();
-            complete[1] = IntegrateOS_var.color_t.ToString();
-            complete[2] = IntegrateOS_var.program_mode.ToString();
-            if (System.IO.File.Exists("Settings\\user.dat")) System.IO.File.WriteAllLines("Settings\\user.dat", complete);
-            else
-            {
-                if (!System.IO.Directory.Exists("Settings")) System.IO.Directory.CreateDirectory("Settings");
-                using (System.IO.StreamWriter sw = System.IO.File.CreateText("Settings\\user.dat"))
-                {
-                    sw.WriteLine(complete[0]);
-                    sw.WriteLine(complete[1]);
-                    sw.WriteLine(complete[2]);
-                }
-            }
-        }
-
-    }
-
     public static class MessageBox
     {
         public static DialogResult Show(string data, string title = "Error", MessageBoxButtons messageBoxButtons = MessageBoxButtons.OK, MessageBoxIcon messageBoxIcon = MessageBoxIcon.None)
         {
-            System.Windows.Forms.Form text = new System.Windows.Forms.Form();
-            return Message.Show(text, data, title, messageBoxButtons, messageBoxIcon);
-        }
-    }
+            Form text = new Form();
+            text.Size = new System.Drawing.Size(data.Length * 10, text.Height); 
+            text.Location = new System.Drawing.Point((Screen.PrimaryScreen.WorkingArea.Width - text.Width) / 2,
+                          (Screen.PrimaryScreen.WorkingArea.Height - text.Height) / 2);
 
-    public static class Message
-    {
-
-        public static DialogResult Show(System.Windows.Forms.Form who, string data, string title, MessageBoxButtons messageBoxButtons, MessageBoxIcon messageBoxIcon)
-        {
-            return MetroFramework.MetroMessageBox.Show(who, data, title, messageBoxButtons, messageBoxIcon, IntegrateOS_var.color_t);
+            return Show(text, data, title, messageBoxButtons, messageBoxIcon);
         }
+        public static DialogResult Show(Form who, 
+            string data, 
+            string title, 
+            MessageBoxButtons messageBoxButtons, 
+            MessageBoxIcon messageBoxIcon) => MetroFramework.MetroMessageBox.Show(who, 
+                data, title, messageBoxButtons, 
+                messageBoxIcon, (int)Themes.MetroColor);
     }
 
     public static class Moving
     {
         /// <summary>
-        /// Change the form to another form in the safe way
+        /// Change the form to another form in a safer way
         /// </summary>
-        /// <param name="form1">From form1</param>
-        /// <param name="form2">To form2</param> 
-       
-        public static void Form(System.Windows.Forms.Form form1, System.Windows.Forms.Form form2)
+        /// <param name="oldform">From old form</param>
+        /// <param name="newform">To new form</param>        
+        public static void Form(Form oldform, Form newform)
         {
-            form1.Hide();
-            form2.ShowDialog();
-            form1.Dispose();
+            oldform.Hide();
+            newform.ShowDialog();
+            oldform.Dispose();
         }
     }
 }
