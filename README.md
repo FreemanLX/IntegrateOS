@@ -1,6 +1,7 @@
 # IntegrateOS
 A method to install every OS on every computer
 
+If you have questions please send an email to contact@integrateos.com
 
 <b> Update 0.2.8.5c1 </b>
 
