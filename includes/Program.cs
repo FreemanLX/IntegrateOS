@@ -21,10 +21,10 @@ namespace IntegrateOS
                     read_Settings_XML.Read();
                 }
             }
-            IntegrateOS_Data.list_of_history_codes = new List<string> { "menu" };
+            Data.list_of_history_codes = new List<string> { "menu" };
             int x = Screen.PrimaryScreen.Bounds.Width - 800;
             int y = Screen.PrimaryScreen.Bounds.Height - 600;
-            Application.Run(new Default_form(new Point(x / 2, y / 2)));
+            Application.Run(new PrincipalForm(new Point(x / 2, y / 2)));
         }
     }
 }
